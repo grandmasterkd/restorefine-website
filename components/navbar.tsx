@@ -66,20 +66,20 @@ const company = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black text-sm font-normal">
-      <div className="px-8 flex h-20 items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/15 text-sm font-normal">
+      <div className="flex h-20 px-16 items-center justify-between">
         {/* Logo */}
         <div>
           <Image src={navlogo} alt="Resto Refine" width={25} height={25} />
         </div>
 
         {/* Navigation Items Container */}
-        <div className="hidden md:block">
-          <div className="rounded-full border border-white/30 px-7 py-1">
+        <div className="flex items-center justify-center hidden md:block">
+          <div className="rounded-full border border-white/15 px-7 py-1 pr-10">
             <NavigationMenu>
-              <NavigationMenuList className="flex gap-x-8">
+              <NavigationMenuList className="flex items-center gap-x-8">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -99,13 +99,13 @@ export function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/portfolio" legacyBehavior passHref>
-                    <NavigationMenuLink className="bg-transparent text-white hover:bg-transparent hover:text-white/80">
+                    <NavigationMenuLink className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80">
                       Portfolio
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
                     Company
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -124,14 +124,14 @@ export function Navbar() {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink className="bg-transparent text-white hover:bg-transparent hover:text-white/80">
+                    <NavigationMenuLink className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80">
                       Blog
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className="bg-transparent text-white hover:bg-transparent hover:text-white/80">
+                    <NavigationMenuLink className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80">
                       Contact
                     </NavigationMenuLink>
                   </Link>
@@ -142,11 +142,11 @@ export function Navbar() {
         </div>
 
         {/* Book Call Button */}
-        <div className="flex items-center space-x-4">
+        <div className="bg-transparent border border-white/10 p-1.5 rounded-xl flex items-center space-x-4">
           <Button
             asChild
-            className="hidden md:inline-flex relative rounded-lg border border-white/30 bg-transparent text-white hover:bg-white/10"
-            style={{ boxShadow: "inset 0 0  5px rgba(164, 164, 164, 0.5)" }}
+            className="hidden md:inline-flex relative rounded-lg border border-white/35 bg-transparent text-white hover:bg-white/10"
+            style={{ boxShadow: "inset 0 0  15px rgba(164, 164, 164, 0.5)" }}
           >
             <Link href="">Enquire Now</Link>
           </Button>
@@ -174,11 +174,11 @@ const ListItem = React.forwardRef<
         >
           {Icon && (
             <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/10">
-              <Icon className="h-5 w-5 text-white" />
+              <Icon className="h-5 w-5 text-white/50" />
             </div>
           )}
           <div className="space-y-1">
-            <div className="text-base font-medium leading-none text-white">
+            <div className="text-base font-medium leading-none text-white/50">
               {title}
             </div>
             <p className="line-clamp-2 text-sm leading-snug text-gray-400">
