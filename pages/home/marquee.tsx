@@ -32,7 +32,7 @@ const logos = [
 export function LogoMarquee() {
   return (
     <main className="w-full">
-      <div className="py-4 relative">
+      <div className="pb-16 relative">
         <div
           aria-hidden="true"
           className="left-1/2 top-0 w-full center pointer-events-none absolute h-px max-w-full -translate-x-1/2 -translate-y-1/2"
@@ -49,7 +49,6 @@ export function LogoMarquee() {
               "conic-gradient(from 90deg, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)",
           }}
         ></div>
-        <section className="mt-8"></section>
       </div>
       <section className="w-full">
         <h1 className="text-center text-white/70 mb-4">
