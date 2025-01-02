@@ -83,7 +83,7 @@ export function Navbar() {
                     Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="w-[400px] space-y-3 p-4 bg-black">
+                    <ul className="w-[400px] space-y-3 p-4 border border-white/30 bg-black">
                       {services.map((service) => (
                         <ListItem
                           key={service.title}

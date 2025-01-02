@@ -32,7 +32,9 @@ const logos = [
 export function LogoMarquee() {
   return (
     <main className="w-full">
-      <h1 className="text-white/70 mb-4">Trusted By Top Innovative Teams</h1>
+      <h1 className="text-center text-white/70 mb-4">
+        Trusted By Top Innovative Teams
+      </h1>
       <section className="relative flex w-full overflow-x-hidden bg-black py-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-8">
           {logos.map((logo, index) => (
