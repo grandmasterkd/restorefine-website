@@ -74,7 +74,7 @@ export function Navbar() {
         </div>
 
         {/* Navigation Items Container */}
-        <div className="flex items-center justify-center hidden md:block">
+        <div className="ml-20 hidden md:block">
           <div className="rounded-full border border-white/15 px-7 py-1 pr-10">
             <NavigationMenu>
               <NavigationMenuList className="flex items-center gap-x-8">
