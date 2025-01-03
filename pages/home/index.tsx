@@ -5,6 +5,7 @@ import { LogoMarquee } from "./marquee";
 import { CreativePotential } from "./potential";
 import { Insights } from "./insights";
 import { Reviews } from "./reviews";
+import Cta from "@/components/cta";
 
 function Resto() {
   return (
@@ -15,6 +16,7 @@ function Resto() {
       <CreativePotential />
       <Insights />
       <Reviews />
+      <Cta />
     </main>
   );
 }
