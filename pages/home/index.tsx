@@ -4,6 +4,7 @@ import { BentoGrid } from "./properties";
 import { LogoMarquee } from "./marquee";
 import { CreativePotential } from "./potential";
 import { Insights } from "./insights";
+import { Reviews } from "./reviews";
 
 function Resto() {
   return (
@@ -13,6 +14,7 @@ function Resto() {
       <BentoGrid />
       <CreativePotential />
       <Insights />
+      <Reviews />
     </main>
   );
 }
