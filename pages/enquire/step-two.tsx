@@ -51,7 +51,7 @@ export function StepTwo() {
                 />
                 <Label
                   htmlFor={option.id}
-                  className="pl-4 text-xl font-normal text-white cursor-pointer"
+                  className="pl-4 text-md font-normal text-white cursor-pointer"
                 >
                   {option.title}
                 </Label>

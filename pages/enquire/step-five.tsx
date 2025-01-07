@@ -134,7 +134,7 @@ export function StepFive() {
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
-            <span className="pl-4 text-xl font-normal text-white">
+            <span className="pl-4 text-md font-normal text-white">
               {getServiceTypeTitle(state.serviceType)}
             </span>
           </div>
@@ -144,7 +144,7 @@ export function StepFive() {
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
-            <span className="pl-4 text-xl font-normal text-white">
+            <span className="pl-4 text-md font-normal text-white">
               {getBudgetTitle(state.budget)}
             </span>
           </div>
@@ -154,7 +154,7 @@ export function StepFive() {
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
-            <span className="pl-4 text-xl font-normal text-white">
+            <span className="pl-4 text-md font-normal text-white">
               {getTimelineTitle(state.timeline)}
             </span>
           </div>

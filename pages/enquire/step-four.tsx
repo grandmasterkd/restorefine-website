@@ -59,7 +59,7 @@ export function StepFour() {
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
-            <span className="pl-4 text-xl font-normal text-white">
+            <span className="pl-4 text-md font-normal text-white">
               {getServiceTypeTitle(state.serviceType)}
             </span>
           </div>
@@ -69,7 +69,7 @@ export function StepFour() {
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
-            <span className="pl-4 text-xl font-normal text-white">
+            <span className="pl-4 text-md font-normal text-white">
               {getBudgetTitle(state.budget)}
             </span>
           </div>
@@ -93,12 +93,12 @@ export function StepFour() {
               dispatch({ type: "SET_TIMELINE", payload: value });
               dispatch({ type: "SET_STEP", payload: 5 });
             }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 cursor-pointer"
           >
             {timelineOptions.map((option) => (
               <div
                 key={option.id}
-                className="flex grow items-center rounded-xl border border-white/80 bg-transparent p-4"
+                className="flex grow items-center rounded-xl border border-white/80 bg-transparent p-4 hover:bg-white/20"
               >
                 <RadioGroupItem
                   value={option.id}
@@ -107,7 +107,7 @@ export function StepFour() {
                 />
                 <Label
                   htmlFor={option.id}
-                  className="pl-4 text-xl font-normal text-white"
+                  className="pl-4 text-md font-normal text-white cursor-pointer"
                 >
                   {option.title}
                 </Label>
