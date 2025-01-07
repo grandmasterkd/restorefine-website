@@ -1,8 +1,9 @@
+import Enquire from "@/pages/enquire";
+
 export default function Contact() {
   return (
-    <main>
-      <h1>Contact Us</h1>
-      <p>Welcome to the Contact Page!</p>
+    <main className="pt-36">
+      <Enquire />
     </main>
   );
 }
