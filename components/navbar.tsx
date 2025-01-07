@@ -69,9 +69,9 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/15 text-sm font-normal">
       <div className="flex h-20 px-16 items-center justify-between">
         {/* Logo */}
-        <div>
+        <Link href="/" passHref>
           <Image src={navlogo} alt="Resto Refine" width={25} height={25} />
-        </div>
+        </Link>
 
         {/* Navigation Items Container */}
         <div className="ml-20 hidden md:block">
@@ -148,9 +148,9 @@ export function Navbar() {
             className="hidden md:inline-flex relative rounded-lg border border-white/35 bg-transparent text-white hover:bg-white/10"
             style={{ boxShadow: "inset 0 0  15px rgba(164, 164, 164, 0.5)" }}
           >
-            <Link href="">Enquire Now</Link>
+            <Link href="/contact">Enquire Now</Link>
           </Button>
-          {/* <MobileMenu /> */}
+          <MobileMenu />
         </div>
       </div>
     </header>
