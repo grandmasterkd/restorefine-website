@@ -38,7 +38,7 @@ export function StepThree() {
       </h2>
 
       <div className="grid gap-12 lg:grid-cols-2">
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Selected service tile from step 1 */}
           <div className="aspect-square rounded-[32px] bg-[#d9d9d9]" />
 
