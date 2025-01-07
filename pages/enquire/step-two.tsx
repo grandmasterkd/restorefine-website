@@ -16,17 +16,17 @@ export function StepTwo() {
   const { state, dispatch } = useFormState();
 
   return (
-    <div className="mx-auto max-w-4xl">
-      <h2 className="mb-12 text-5xl font-medium md:text-6xl">
-        <span className="inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
-          What Type Of
+    <div className="mx-auto">
+      <h2 className="mb-12 text-5xl font-medium">
+        <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
+          What Type Of Services
           <br />
-          Services Do You Need
+          Do You Need
         </span>
       </h2>
 
-      <div className="grid gap-12 lg:grid-cols-2">
-        <div className="aspect-square rounded-[32px] bg-[#d9d9d9]">
+      <div className="grid gap-16 lg:grid-cols-2 cursor-pointer">
+        <div className="aspect-[1/1] rounded-[32px] bg-[#d9d9d9]">
           {/* Selected service from step 1 */}
         </div>
 
@@ -42,7 +42,7 @@ export function StepTwo() {
             {serviceTypeOptions.map((option) => (
               <div
                 key={option.id}
-                className="flex grow items-center rounded-xl border border-white/80 bg-transparent p-4"
+                className="flex grow items-center rounded-xl border border-white/80 bg-transparent p-4 hover:bg-white/20"
               >
                 <RadioGroupItem
                   value={option.id}
@@ -51,7 +51,7 @@ export function StepTwo() {
                 />
                 <Label
                   htmlFor={option.id}
-                  className="pl-4 text-xl font-normal text-white"
+                  className="pl-4 text-xl font-normal text-white cursor-pointer"
                 >
                   {option.title}
                 </Label>
