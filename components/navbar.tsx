@@ -51,19 +51,6 @@ export const services = [
   },
 ];
 
-const company = [
-  {
-    title: "About Us",
-    href: "/company/about",
-    description: "Learn more about our company",
-  },
-  {
-    title: "Team",
-    href: "/company/team",
-    description: "Meet our team",
-  },
-];
-
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/15 text-sm font-normal">
@@ -75,7 +62,7 @@ export function Navbar() {
 
         {/* Navigation Items Container */}
         <div className="ml-20 hidden md:block">
-          <div className="rounded-full border border-white/15 px-7 py-1 pr-10">
+          <div className="rounded-full border border-white/15 px-10 py-1">
             <NavigationMenu>
               <NavigationMenuList className="flex items-center gap-x-8">
                 <NavigationMenuItem>
@@ -105,22 +92,11 @@ export function Navbar() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
-                    Company
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                      {company.map((item) => (
-                        <ListItem
-                          key={item.title}
-                          title={item.title}
-                          href={item.href}
-                        >
-                          {item.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
+                  <Link href="/company" legacyBehavior passHref>
+                    <NavigationMenuLink className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80">
+                      Company
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/blog" legacyBehavior passHref>
@@ -174,7 +150,7 @@ const ListItem = React.forwardRef<
         >
           {Icon && (
             <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/10">
-              <Icon className="h-5 w-5 text-white/50" />
+              <Icon className="size-5 text-white/50" />
             </div>
           )}
           <div className="space-y-1">
