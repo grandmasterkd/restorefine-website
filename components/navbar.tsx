@@ -67,7 +67,7 @@ export function Navbar() {
               <NavigationMenuList className="flex items-center gap-x-8">
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
-                    Services
+                    <Link href="/services">Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="w-[400px] space-y-3 p-4 border border-white/30 bg-black">

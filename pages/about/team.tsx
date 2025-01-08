@@ -46,9 +46,9 @@ export function Team() {
   const visibleMembers = teamMembers.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="py-24">
+    <section className="">
       <div className="">
-        <div className=" mx-auto mb-16 space-y-4">
+        <div className=" mx-auto mb-8">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
             Our Team
           </h2>
@@ -60,7 +60,7 @@ export function Team() {
         <div className="relative">
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-8"
+              className="flex gap-4"
               initial={false}
               animate={{ x: `${-currentIndex * (100 / 3)}%` }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -74,11 +74,11 @@ export function Team() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="aspect-square rounded-[32px] bg-[#d9d9d9] mb-6" />
-                  <h3 className="text-2xl font-medium text-white mb-2">
+                  <div className="aspect-square rounded-[24px] bg-[#d9d9d9] mb-3" />
+                  <h3 className="text-lg font-medium text-white">
                     {member.name}
                   </h3>
-                  <p className="text-lg text-white/80">{member.position}</p>
+                  <p className="text-sm text-white/80">{member.position}</p>
                 </motion.div>
               ))}
             </motion.div>
