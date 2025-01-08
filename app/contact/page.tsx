@@ -1,9 +1,12 @@
-import Enquire from "@/pages/enquire";
+import { ContactSection } from "@/pages/contact-us";
+import React from "react";
 
-export default function Contact() {
+function Contact() {
   return (
-    <main className="pt-36">
-      <Enquire />
+    <main>
+      <ContactSection />
     </main>
   );
 }
+
+export default Contact;

@@ -35,7 +35,7 @@ function RestoServices() {
           <Image src={hollow} alt="Funnel" width={600} height={600} />
         </div>
       </section>
-      <section className="absolute bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 rotate">
+      <section className="absolute bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">
         <div className="animate-marquee-infinite text-7xl font-bold text-white/60 flex min-w-screen shrink-0 items-center justify-around gap-8">
           RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
         </div>

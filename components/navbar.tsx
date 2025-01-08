@@ -124,7 +124,7 @@ export function Navbar() {
             className="hidden md:inline-flex relative rounded-lg border border-white/35 bg-transparent text-white hover:bg-white/10"
             style={{ boxShadow: "inset 0 0  15px rgba(164, 164, 164, 0.5)" }}
           >
-            <Link href="/contact">Enquire Now</Link>
+            <Link href="/enquire-now">Enquire Now</Link>
           </Button>
           <MobileMenu />
         </div>
