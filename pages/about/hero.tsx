@@ -25,10 +25,10 @@ function AboutHero() {
         <div className="aspect-video rounded-[32px] bg-[#d9d9d9]"></div>
 
         <div>
-          <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
             About Us
           </h2>
-          <div className="max-w-full text-md text-white/80">
+          <div className="max-w-full text-sm text-white/80">
             <p>
               RestoRefine Studios is your all-in-one digital partner, dedicated
               to the vibrant world of hospitality. From quaint cafes to bustling
