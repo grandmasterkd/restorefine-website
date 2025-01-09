@@ -39,7 +39,7 @@ export const services = [
   },
   {
     title: "Resto Web",
-    href: "/services/web",
+    href: "/services/restoweb",
     description: "Website and app development, SEO and more",
     icon: FileEdit,
   },

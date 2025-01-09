@@ -7,6 +7,7 @@ import { RestoOverview } from "./resto-services/resto-overview";
 import Cta from "@/components/cta";
 import signature from "@/public/restobrandingsignature.svg";
 import RestoBenefits from "./resto-services/resto-benefits";
+import { RestoExpectation } from "./resto-services/resto-expectation";
 
 function RBranding() {
   return (
@@ -19,7 +20,7 @@ function RBranding() {
 
       <div className="absolute left-0 right-0 top-12 h-full flex items-center justify-between">
         <div>
-          <Image src={baloon} alt="baloon" width={200} height={180} />
+          <Image src={baloon} alt="baloon" width={180} height={180} />
         </div>
 
         <div>
@@ -29,6 +30,7 @@ function RBranding() {
 
       <RestoOverview />
       <RestoBenefits />
+      <RestoExpectation />
       <Cta />
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">

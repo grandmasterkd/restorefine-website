@@ -49,7 +49,7 @@ export function RestoOverview() {
   const visibleFeatures = features.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="">
+    <section className="pb-24">
       <div className="">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
@@ -78,7 +78,7 @@ export function RestoOverview() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-[#d9d9d9] rounded-[32px] p-6 aspect-square flex flex-col justify-end h-full">
+                <div className="bg-[#d9d9d9] rounded-[32px] p-6 h-[350px] flex flex-col justify-end">
                   <h3 className="text-xl font-medium text-black mb-1">
                     {feature.title}
                   </h3>
