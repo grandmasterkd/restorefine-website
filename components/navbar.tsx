@@ -21,7 +21,7 @@ import Image from "next/image";
 export const services = [
   {
     title: "Resto Branding",
-    href: "/services/branding",
+    href: "/services/restobranding",
     description: "Development of brand identities, stories etc",
     icon: Box,
   },
