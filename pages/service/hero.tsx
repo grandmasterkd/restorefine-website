@@ -23,7 +23,7 @@ function ServicesHero() {
             and drive results. Our team blends strategy, creativity, and
             innovation to build identities that stand out in a crowded world.
           </p>
-          <Link href="/contact" className="flex items-center gap-1">
+          <Link href="/enquire-now" className="flex items-center gap-1">
             <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
               Lets Craft Something
             </div>
