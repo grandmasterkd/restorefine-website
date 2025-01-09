@@ -8,7 +8,7 @@ import Image from "next/image";
 function RBranding() {
   return (
     <main>
-      <section className="min-h-screen flex flex-col items-center justify-center text-center gap-y-4">
+      <section className=" min-h-screen flex flex-col items-center justify-center text-center gap-y-4">
         <h1 className="text-6xl font-medium">
           <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Resto-lutionary Branding
@@ -30,9 +30,9 @@ function RBranding() {
           <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
         </Link>
 
-        <div className="absolute left-0 right-0 h-full flex items-center justify-between">
+        <div className="absolute left-0 right-0 top-12 h-full flex items-center justify-between">
           <div>
-            <Image src={baloon} alt="baloon" width={200} height={200} />
+            <Image src={baloon} alt="baloon" width={200} height={180} />
           </div>
 
           <div>

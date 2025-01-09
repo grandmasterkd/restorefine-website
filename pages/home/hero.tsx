@@ -16,7 +16,7 @@ export default function Hero() {
       /> */}
 
       <div
-        className="mb-6 inline-flex rounded-full border border-white/10 bg-black/50 px-4 py-2"
+        className="mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2"
         style={{
           boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(8px)",

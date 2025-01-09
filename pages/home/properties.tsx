@@ -1,8 +1,15 @@
+import silverRing from "@/public/metallic-abstract-silver-shape.png";
+import Image from "next/image";
+
 export function BentoGrid() {
   return (
     <section className="">
       {/* Text Content */}
       <div className=" text-center mb-16">
+        <div className="flex flex-col items-center mb-8">
+          <Image src={silverRing} alt="silver ring" width={130} height={130} />
+        </div>
+
         <h2 className="mb-4 text-3xl font-medium text-white md:text-3xl lg:text-4xl font-medium text-white ">
           Not Reinventing The Wheel,
           <br />
