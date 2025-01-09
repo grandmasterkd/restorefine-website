@@ -6,10 +6,11 @@ import RestoServicesHero from "./resto-services/resto-hero";
 import { RestoOverview } from "./resto-services/resto-overview";
 import Cta from "@/components/cta";
 import signature from "@/public/restobrandingsignature.svg";
+import RestoBenefits from "./resto-services/resto-benefits";
 
 function RBranding() {
   return (
-    <main>
+    <main className="">
       <RestoServicesHero
         titletop="Resto-lutionary Branding"
         titlebottom="For Bold Visions"
@@ -27,6 +28,7 @@ function RBranding() {
       </div>
 
       <RestoOverview />
+      <RestoBenefits />
       <Cta />
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
