@@ -4,7 +4,7 @@ import hollow from "@/public/servicesherographic.svg";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-function RestoServices() {
+function ServicesHero() {
   return (
     <main className="grid place-items-center min-h-screen">
       <section className="flex justify-between items-center">
@@ -47,4 +47,4 @@ function RestoServices() {
   );
 }
 
-export default RestoServices;
+export default ServicesHero;

@@ -16,7 +16,7 @@ function Cta() {
 
       {/* Custom See More Button */}
       <Link
-        href="/contact"
+        href="/enquire-now"
         className="group mt-8 inline-flex items-center rounded-full border border-white/30 bg-black px-6 py-3 transition-colors hover:bg-white/5"
       >
         <span className="mr-4 text-lg text-white">Talk To Us Today</span>
