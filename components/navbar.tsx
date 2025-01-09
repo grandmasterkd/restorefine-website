@@ -32,7 +32,7 @@ export const services = [
     icon: Paperclip,
   },
   {
-    title: "Resto Consult",
+    title: "Resto Merch",
     href: "/services/consult",
     description: "Interactive business solutions and more",
     icon: ArrowUpRight,
@@ -44,7 +44,7 @@ export const services = [
     icon: FileEdit,
   },
   {
-    title: "Resto Events",
+    title: "Resto Media",
     href: "/services/events",
     description: "Event photography, videos, hosting and more",
     icon: Camera,
