@@ -1,10 +1,14 @@
 import React from "react";
-import money from "@/public/moneystartgraphic.svg";
+
 import Image from "next/image";
 // import { ZapIcon } from "lucide-react";
 import { BoltIcon } from "@heroicons/react/24/solid";
 
-function RestoBenefits() {
+interface RestoSignatureProps {
+  signature: string;
+}
+
+function RestoBenefits({ signature }: RestoSignatureProps) {
   return (
     <main className="py-32">
       <section className="grid grid-cols-1 lg:grid-cols-3 items-start h-full gap-x-16">
@@ -22,7 +26,7 @@ function RestoBenefits() {
           </div>
 
           <Image
-            src={money}
+            src={signature}
             alt="money"
             width={250}
             height={250}

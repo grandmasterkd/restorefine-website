@@ -49,7 +49,7 @@ export function RestoOverview() {
   const visibleFeatures = features.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="pb-24">
+    <section className="py-24">
       <div className="">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">

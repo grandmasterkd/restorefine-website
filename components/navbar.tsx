@@ -101,7 +101,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/blog" legacyBehavior passHref>
                     <NavigationMenuLink className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80">
-                      Blog
+                      Resources
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

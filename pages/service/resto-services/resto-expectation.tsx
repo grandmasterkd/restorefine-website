@@ -17,7 +17,7 @@ export function RestoExpectation() {
       <div className="">
         <div className="mb-16">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-            And We'll Do Something
+            And We&apos;ll Do Something
             <br />
             Like This For You
           </h2>

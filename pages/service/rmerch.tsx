@@ -7,10 +7,32 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { RestoOverview } from "./resto-services/resto-overview";
 import RestoBenefits from "./resto-services/resto-benefits";
+import Cta from "@/components/cta";
+import hood from "@/public/merchsignature.svg";
 
 const star = <Image src={restostar} alt="RestoStar" width={100} height={100} />;
 const merchring = <Image src={ring} alt="MerchRing" width={150} height={150} />;
 const triangle = <Image src={tri} alt="MerchAngle" width={50} height={50} />;
+
+const aboutRMerch = [
+  {
+    title: "What is RestoMerch?",
+    description:
+      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+  },
+  {
+    title: "How Does It Work?",
+    description:
+      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+  },
+  {
+    title: "Why It Works For You",
+    description:
+      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+  },
+];
+
+const services = ["Apparel Print", "Stationery Print", "Branding", "Design"];
 
 function RMerch() {
   return (
@@ -74,8 +96,68 @@ function RMerch() {
         </div>
       </section>
 
+      <section className="py-24">
+        <div className="">
+          <div className="grid md:grid-cols-3 gap-8">
+            {aboutRMerch.map((item, index) => (
+              <div key={index} className="flex items-center space-y-6">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-medium text-white mb-2">
+                    {item.title}
+                  </h2>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+                {index !== aboutRMerch.length - 1 && (
+                  <div className=" $ w-1 h-full bg-white/30"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <RestoOverview />
-      <RestoBenefits />
+      <RestoBenefits signature={hood} />
+
+      <section className="py-32">
+        <div className="">
+          <div className="mb-16">
+            <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
+              And We&apos;ll Do Something
+              <br />
+              Like This For You
+            </h2>
+            <p className="text-sm text-white/80">
+              Meet the creative minds at RestoRefine Studios.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-baseline mb-8">
+            {/* Top row with layered effect */}
+            <div className="relative">
+              <div className="absolute -top-5 left-6 w-[85%] h-[330px] bg-[#ABA9A9] rounded-[32px]" />
+
+              <div className="relative w-full h-[330px] bg-[#d9d9d9] rounded-[32px]" />
+            </div>
+            <div className=" h-[350px] bg-[#d9d9d9] rounded-[32px] lg:col-span-2" />
+          </div>
+
+          <div className="flex flex-wrap gap-4">
+            {services.map((service) => (
+              <button
+                key={service}
+                className="px-6 py-3 text-white border border-white/30 rounded-full hover:bg-white/10 transition-colors"
+              >
+                {service}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Cta />
     </main>
   );
 }
