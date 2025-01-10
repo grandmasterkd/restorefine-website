@@ -33,7 +33,7 @@ export const services = [
   },
   {
     title: "Resto Merch",
-    href: "/services/consult",
+    href: "/services/restomerch",
     description: "Interactive business solutions and more",
     icon: ArrowUpRight,
   },
