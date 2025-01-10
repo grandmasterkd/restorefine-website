@@ -53,7 +53,7 @@ export const services = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-b-white/20 text-sm font-normal">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/20 text-sm font-normal">
       <div className="flex h-20 px-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" passHref>
