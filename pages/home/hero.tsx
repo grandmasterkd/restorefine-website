@@ -1,19 +1,32 @@
 import Link from "next/link";
+import bghero from "@/public/bghero.webp";
+import Image from "next/image";
+import orbit from "@/public/orbitbg.svg";
 // import herobg from "@/public/home-hero-bg.svg";
 // import Image from "next/image";
 
 export default function Hero() {
   return (
-    <main className="bg-black relative flex min-h-screen flex-col items-center justify-center gap-y-1 pt-2 text-center">
+    <main className="bg-black flex min-h-screen flex-col items-center justify-center gap-y-1 pt-2 text-center">
       {/* Background Image */}
 
-      {/* <Image
-        src={herobg}
+      <Image
+        src={bghero}
         width={1920}
         height={1080}
-        className="pt-44 absolute z-0 object-cover opacity-40"
+        layout="responsive"
+        className="absolute top-0 right-0 z-20 object-cover bg-cover opacity-100"
         alt="Background"
-      /> */}
+      />
+
+      <Image
+        src={orbit}
+        width={1920}
+        height={1080}
+        layout="responsive"
+        className="h-full absolute -bottom-8 right-0 z-0 object-cover opacity-85"
+        alt="Background"
+      />
 
       <div
         className="mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2"
@@ -30,7 +43,7 @@ export default function Hero() {
         </span>
       </div>
       {/* Heading */}
-      <h1 className="mb-6 text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+      <h1 className="relative z-0 mb-6 text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
           Elevate Your Business
           <br />
