@@ -16,8 +16,8 @@ export function StepTwo() {
   const { state, dispatch } = useFormState();
 
   return (
-    <div className="mx-auto">
-      <h2 className="mb-12 text-5xl font-medium">
+    <div className="">
+      <h2 className="mb-2 text-3xl font-semibold">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
           What Type Of Services
           <br />
@@ -26,7 +26,7 @@ export function StepTwo() {
       </h2>
 
       <div className="grid gap-16 lg:grid-cols-2 cursor-pointer">
-        <div className="aspect-[1/1] rounded-[32px] bg-[#d9d9d9]">
+        <div className="aspect-[1/1] rounded-[24px] bg-[#d9d9d9]">
           {/* Selected service from step 1 */}
         </div>
 
@@ -63,12 +63,12 @@ export function StepTwo() {
 
       <button
         onClick={() => dispatch({ type: "SET_STEP", payload: 1 })}
-        className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-6 py-3 text-white transition-colors hover:bg-white/10"
+        className="mt-8 inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-4 py-2 text-white transition-colors hover:bg-white/10"
       >
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff0000]">
           <ArrowLeft className="h-4 w-4" />
         </div>
-        <span>Go Back</span>
+        <span className="text-sm">Go Back</span>
       </button>
     </div>
   );

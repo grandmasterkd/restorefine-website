@@ -17,6 +17,7 @@ export function ProgressIndicator() {
     { step: 3, isActive: currentStep >= 3 },
     { step: 4, isActive: currentStep >= 4 },
     { step: 5, isActive: currentStep >= 5 },
+    { step: 6, isActive: currentStep >= 6 },
   ];
 
   const handleStepClick = (step: number) => {
@@ -28,7 +29,7 @@ export function ProgressIndicator() {
   const completedStep = <Image src={star} alt="star" width={30} height={30} />;
 
   return (
-    <div className="flex items-center justify-between mx-auto max-w-4xl">
+    <div className="flex items-center justify-between mb-10">
       {steps.map((step, index) => (
         <div
           key={step.step}

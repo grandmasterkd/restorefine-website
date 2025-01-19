@@ -28,8 +28,8 @@ export function StepThree() {
   };
 
   return (
-    <div className="mx-auto">
-      <h2 className="mb-12 text-5xl font-medium">
+    <div className="">
+      <h2 className="mb-2 text-3xl font-semibold">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
           What Would
           <br />
@@ -38,9 +38,9 @@ export function StepThree() {
       </h2>
 
       <div className="grid gap-12 lg:grid-cols-2">
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Selected service tile from step 1 */}
-          <div className="aspect-square rounded-[32px] bg-[#d9d9d9]" />
+          <div className="aspect-square rounded-[24px] bg-[#d9d9d9]" />
 
           {/* Selected service type from step 2 */}
           <div className="flex items-center rounded-xl border border-white/80 bg-transparent p-4">
@@ -55,12 +55,12 @@ export function StepThree() {
           {/* Back button */}
           <button
             onClick={() => dispatch({ type: "SET_STEP", payload: 2 })}
-            className="inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-6 py-3 text-white transition-colors hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-4 py-2 text-white transition-colors hover:bg-white/10"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff0000]">
               <ArrowLeft className="h-4 w-4" />
             </div>
-            <span>Go Back</span>
+            <span className="text-sm">Go Back</span>
           </button>
         </div>
 

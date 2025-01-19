@@ -15,9 +15,9 @@ export function StepOne() {
   const { state, dispatch } = useFormState();
 
   return (
-    <main className="mx-auto">
-      <div className="mb-12 text-left">
-        <h1 className="mb-4 text-5xl font-medium">
+    <main className="">
+      <div className=" text-left">
+        <h1 className="mb-2 text-3xl font-semibold">
           <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             What Are You
             <br />
@@ -26,7 +26,7 @@ export function StepOne() {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {serviceOptions.map((option) => (
           <button
             key={option.id}
@@ -34,7 +34,7 @@ export function StepOne() {
               dispatch({ type: "SET_SERVICE_TYPE", payload: option.id });
               dispatch({ type: "SET_STEP", payload: 2 });
             }}
-            className={`aspect-square rounded-[32px] border transition-colors
+            className={`aspect-square rounded-[24px] border transition-colors
               ${
                 state.serviceType === option.id
                   ? "border-white bg-white/10"
