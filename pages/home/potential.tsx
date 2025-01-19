@@ -24,9 +24,9 @@ export function CreativePotential() {
             {/* Custom See More Button */}
             <Link
               href="/services"
-              className="group mt-8 inline-flex items-center rounded-full border border-white/30 bg-black px-6 py-3 transition-colors hover:bg-white/5"
+              className="group mt-8 inline-flex items-center rounded-full border border-white/30 bg-black px-5 py-2 transition-colors hover:bg-white/5"
             >
-              <span className="mr-4 text-lg text-white">See More</span>
+              <span className="mr-4 text-sm text-white">See More</span>
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-600 transition-transform group-hover:translate-x-1">
                 <ArrowRight className="h-5 w-5 text-white" />
               </span>
@@ -34,9 +34,9 @@ export function CreativePotential() {
           </div>
 
           {/* Empty Shapes */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="aspect-[3/4] rounded-[32px] bg-[#d9d9d9]" />
-            <div className="aspect-[3/4] rounded-[32px] bg-[#d9d9d9]" />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="aspect-[3/4] rounded-[24px] bg-[#d9d9d9]" />
+            <div className="aspect-[3/4] rounded-[24px] bg-[#d9d9d9]" />
           </div>
         </div>
 
