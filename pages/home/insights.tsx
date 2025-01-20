@@ -2,6 +2,7 @@ import Image from "next/image";
 import ring from "@/public/gloss-ring.svg";
 import cone from "@/public/gloss-cone.svg";
 import revenue from "@/public/revenuechart.svg";
+import workflow from "@/public/workflow.svg";
 
 export function Insights() {
   return (
@@ -44,8 +45,14 @@ export function Insights() {
 
       {/* Bottom Row */}
       <section className="w-full grid md:grid-cols-3 grid-cols-1 gap-x-6 gap-y-4">
-        <div className="col-span-2">
-          <div className="h-[350px] rounded-[32px] bg-[#d9d9d9]" />
+        <div className="col-span-2 h-[350px] rounded-[24px] bg-[#131313] grid place-items-center">
+          <Image
+            src={workflow}
+            alt="resto project flow"
+            width={350}
+            height={350}
+            className="w-full object-contain p-10 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+          />
         </div>
 
         <div className="col-span-1 group relative aspect-square md:aspect-auto rounded-[32px] bg-transparent border border-white/30 p-8 flex flex-col justify-end overflow-hidden">
