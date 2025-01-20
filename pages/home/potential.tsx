@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import apps from "@/public/serviceapps.svg";
+import tray from "@/public/restotray.svg";
 
 export function CreativePotential() {
   return (
@@ -54,12 +55,26 @@ export function CreativePotential() {
                 className="w-full absolute bottom-0 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
               />
             </div>
-            <div className="h-[500px] rounded-[24px] bg-[#131313]" />
+            <div className="h-[500px] rounded-[24px] bg-[#131313] relative">
+              <div className="absolute top-7 left-7 space-y-2">
+                <p className=" text-xs font-medium text-white/50">Reach</p>
+                <h2 className="text-md font-medium block text-white/80">
+                  Serve your restaurant <br /> to a global audience
+                </h2>
+              </div>
+              <Image
+                src={tray}
+                alt="restorefine-servingtray-graphic"
+                width={200}
+                height={200}
+                className="w-full absolute bottom-0 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+              />
+            </div>
           </div>
         </div>
 
         {/* Navigation Dots */}
-        <div className="mt-12 flex justify-end gap-4">
+        {/* <div className="mt-12 flex justify-end gap-4">
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2b2b2b] transition-colors hover:bg-[#3b3b3b]"
             aria-label="Previous slide"
@@ -72,7 +87,7 @@ export function CreativePotential() {
           >
             <ArrowRight className="h-5 w-5 text-white" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

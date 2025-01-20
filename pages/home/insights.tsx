@@ -1,13 +1,14 @@
 import Image from "next/image";
 import ring from "@/public/gloss-ring.svg";
 import cone from "@/public/gloss-cone.svg";
+import revenue from "@/public/revenuechart.svg";
 
 export function Insights() {
   return (
     <main className="mx-auto space-y-8">
       {/* Top Row */}
       <section className="w-full grid md:grid-cols-3 grid-cols-1 gap-x-6 gap-y-4">
-        <div className="col-span-1 group relative aspect-square md:aspect-auto rounded-[32px] bg-transparent border border-white/30 p-8 flex flex-col justify-end overflow-hidden">
+        <div className="col-span-1 group relative aspect-square md:aspect-auto rounded-[24px] bg-transparent border border-white/30 p-8 flex flex-col justify-end overflow-hidden">
           {/* 3D Object */}
           <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-3/4 size-44">
             <Image
@@ -30,8 +31,14 @@ export function Insights() {
           </div>
         </div>
 
-        <div className="col-span-2">
-          <div className="h-[350px] rounded-[32px] bg-[#d9d9d9]" />
+        <div className="col-span-2 h-[350px] rounded-[24px] bg-[#131313] grid place-items-center">
+          <Image
+            src={revenue}
+            alt="annual earnings chart"
+            width={350}
+            height={350}
+            className="w-full px-3 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+          />
         </div>
       </section>
 
