@@ -1,19 +1,22 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import apps from "@/public/serviceapps.svg";
 
 export function CreativePotential() {
   return (
     <section>
-      <div className="mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Text Content */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
+
+          <div className="col-span-1 w-fit space-y-6">
+            <h2 className=" text-3xl font-medium text-white md:text-3xl lg:text-4xl">
               Harness Our Full
               <br />
               Creative Potential
             </h2>
-            <div className="max-w-md text-md text-white/80">
+            <div className="max-w-sm text-md text-white/80">
               <p>
                 Harness our full creative power to transform your vision into
                 reality. We creaft impactful solutions that elevate your brand
@@ -24,7 +27,7 @@ export function CreativePotential() {
             {/* Custom See More Button */}
             <Link
               href="/services"
-              className="group mt-8 inline-flex items-center rounded-full border border-white/30 bg-black px-5 py-2 transition-colors hover:bg-white/5"
+              className="group mt-8 inline-flex items-center rounded-full border border-white/30 bg-black px-4 py-2 transition-colors hover:bg-white/5"
             >
               <span className="mr-4 text-sm text-white">See More</span>
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-600 transition-transform group-hover:translate-x-1">
@@ -34,9 +37,24 @@ export function CreativePotential() {
           </div>
 
           {/* Empty Shapes */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-[3/4] rounded-[24px] bg-[#d9d9d9]" />
-            <div className="aspect-[3/4] rounded-[24px] bg-[#d9d9d9]" />
+          <div className="ml-0 md:ml-20 col-span-2 grid grid-cols-2 gap-4">
+            <div className=" h-[500px] rounded-[24px] bg-[#131313] relative">
+              <div className="absolute top-7 left-7 space-y-2">
+                <p className=" text-xs font-medium text-white/50">Comfort</p>
+                <h2 className="text-md font-medium block text-white/80">
+                  All your digital needs <br /> in-one-house
+                </h2>
+              </div>
+
+              <Image
+                src={apps}
+                alt="restorefine-service-apps"
+                width={200}
+                height={200}
+                className="w-full absolute bottom-0 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+              />
+            </div>
+            <div className="h-[500px] rounded-[24px] bg-[#131313]" />
           </div>
         </div>
 
