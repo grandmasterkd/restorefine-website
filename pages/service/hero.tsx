@@ -32,7 +32,7 @@ function ServicesHero() {
         </div>
 
         <div className="w-full">
-          <Image src={hollow} alt="Funnel" width={600} height={600} />
+          <Image src={hollow} alt="Funnel" width={650} height={650} />
         </div>
       </section>
       <section className="absolute bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">

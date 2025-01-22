@@ -1,27 +1,28 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import pack from "@/public/restorefine_bag+box.jpg";
+import mealimage from "@/public/restomedia-photography.jpg";
+import tshirt from "@/public/restoprint-demo.jpg";
+import phone from "@/public/iPhone15Mockup.jpg";
 
 const services = [
   {
     title: "RestoWeb",
-    description:
-      "Our branding service dives deep into what makes your business unique, creating a powerful identity that not only stands out but connects with your audience on every level.",
-    image: "/placeholder.svg?height=400&width=600",
+    description: "Build a digital space that's truly yours.",
+    image: phone,
     href: "/services/web",
   },
   {
     title: "RestoPrint",
-    description:
-      "Our branding service dives deep into what makes your business unique, creating a powerful identity that not only stands out but connects with your audience on every level.",
-    image: "/placeholder.svg?height=400&width=600",
+    description: "Your vision on paper, with quality you can see and feel.",
+    image: tshirt,
     href: "/services/print",
   },
   {
     title: "RestoMedia",
-    description:
-      "Our branding service dives deep into what makes your business unique, creating a powerful identity that not only stands out but connects with your audience on every level.",
-    image: "/placeholder.svg?height=400&width=600",
+    description: "Frame the taste and savour the experience",
+    image: mealimage,
     href: "/services/media",
   },
 ];
@@ -59,7 +60,7 @@ const serviceDetails = [
 
 export default function ServiceTypes() {
   return (
-    <div className="py-24 space-y-20">
+    <div className="py-24 space-y-16">
       <div className="text-center">
         <h1 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
           Our Services
@@ -68,30 +69,31 @@ export default function ServiceTypes() {
           Shaping Brands with Purpose and Precision
         </p>
 
-        <div className="my-12 relative aspect-[16/9] rounded-[32px] overflow-hidden bg-[#d9d9d9]">
+        <div className="my-12 relative aspect-[16/9] rounded-[24px] overflow-hidden bg-[#d9d9d9]">
           <Image
-            src="/placeholder.svg?height=900&width=1600"
+            src={pack}
             alt="Services Hero"
-            fill
-            className="object-cover"
+            width={1920}
+            height={1080}
+            className="object-cover absolute -bottom-20"
           />
         </div>
       </div>
 
       <div className="mb-0">
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="flex flex-col lg:flex-row items-start justify-evenly">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
             RestoBranding
           </h2>
           <div className="space-y-6">
-            <p className="text-sm text-white/80">
+            <p className="max-w-[400px] text-sm text-white/80">
               Our branding service dives deep into what makes your business
               unique, creating a powerful identity that not only stands out but
               connects with your audience on every level.
             </p>
             <Link
               href="/services/branding"
-              className="inline-flex items-center gap-2 text-white border border-white/20 rounded-full px-4 py-2 hover:bg-white/10 transition-colors group"
+              className="text-sm inline-flex items-center gap-2 text-white border border-white/20 rounded-full px-4 py-2 hover:bg-white/10 transition-colors group"
             >
               See More
               <div className="bg-[red] w-8 h-8 rounded-full p-1 flex items-center jsutify-center ">
@@ -102,22 +104,30 @@ export default function ServiceTypes() {
         </div>
       </div>
 
-      <section className="space-y-6">
+      <section className="space-y-0">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-[#d9d9d9] rounded-[32px] overflow-hidden"
+              className="bg-[#d9d9d9] rounded-[24px] overflow-hidden relative"
             >
-              <div className="aspect-[4/3] relative">
+              <div className="absolute z-10 p-6 space-y-1">
+                <p className=" text-xs text-red font-medium text-white">
+                  {service.title}
+                </p>
+                <h2 className="text-xl font-semibold block text-white">
+                  {service.description}
+                </h2>
+              </div>
+              <div className="h-[550px] border-t border-t-black/80 relative">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover"
+                  className="absolute z-0 right-0 w-full object-cover grayscale scale-100 hover:scale-110 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer"
                 />
               </div>
-              <div className="p-8">
+              {/* <div className="p-8">
                 <h3 className="text-xl font-medium text-black mb-1">
                   {service.title}
                 </h3>
@@ -133,19 +143,19 @@ export default function ServiceTypes() {
                     <ArrowRight className="w-5 h-5 text-white transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
 
-        <div className="flex justify-end gap-4">
+        {/* <div className="flex justify-end gap-4">
           <button className="p-4 rounded-full bg-[#303030] text-white hover:bg-[#404040] transition-colors">
             <ArrowRight className="w-6 h-6 rotate-180" />
           </button>
           <button className="p-4 rounded-full bg-[#ff0000] text-white hover:bg-[#ff0000]/90 transition-colors">
             <ArrowRight className="w-6 h-6" />
           </button>
-        </div>
+        </div> */}
       </section>
 
       <div className="space-y-16">
