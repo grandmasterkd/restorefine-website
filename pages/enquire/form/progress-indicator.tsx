@@ -1,4 +1,4 @@
-import { useFormState } from "./contact-form-context";
+import { useFormState } from "../contact-form-context";
 import Image from "next/image";
 import star from "@/public/restostar.svg";
 
@@ -17,7 +17,7 @@ export function ProgressIndicator() {
     { step: 3, isActive: currentStep >= 3 },
     { step: 4, isActive: currentStep >= 4 },
     { step: 5, isActive: currentStep >= 5 },
-    { step: 6, isActive: currentStep >= 6 },
+    // { step: 6, isActive: currentStep >= 6 },
   ];
 
   const handleStepClick = (step: number) => {

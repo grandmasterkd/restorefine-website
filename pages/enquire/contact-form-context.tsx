@@ -4,9 +4,11 @@ import { createContext, useContext, useReducer } from "react";
 
 type FormState = {
   currentStep: number;
+  mainService: string | null;
   serviceType: string | null;
   budget: string | null;
   timeline: string | null;
+  customTimeline: string | null;
   isSubmitted: boolean;
   submissionData: {
     name: string;
@@ -19,17 +21,21 @@ type FormState = {
 
 type FormAction =
   | { type: "SET_STEP"; payload: number }
+  | { type: "SET_MAIN_SERVICE"; payload: string }
   | { type: "SET_SERVICE_TYPE"; payload: string }
   | { type: "SET_BUDGET"; payload: string }
   | { type: "SET_TIMELINE"; payload: string }
+  | { type: "SET_CUSTOM_TIMELINE"; payload: string }
   | { type: "SET_SUBMITTED"; payload: boolean }
   | { type: "SET_SUBMISSION_DATA"; payload: FormState["submissionData"] };
 
 const initialState: FormState = {
   currentStep: 1,
+  mainService: null,
   serviceType: null,
   budget: null,
   timeline: null,
+  customTimeline: null,
   isSubmitted: false,
   submissionData: null,
 };
@@ -46,12 +52,16 @@ function formReducer(state: FormState, action: FormAction): FormState {
   switch (action.type) {
     case "SET_STEP":
       return { ...state, currentStep: action.payload };
+    case "SET_MAIN_SERVICE":
+      return { ...state, mainService: action.payload, serviceType: null };
     case "SET_SERVICE_TYPE":
       return { ...state, serviceType: action.payload };
     case "SET_BUDGET":
       return { ...state, budget: action.payload };
     case "SET_TIMELINE":
-      return { ...state, timeline: action.payload };
+      return { ...state, timeline: action.payload, customTimeline: null };
+    case "SET_CUSTOM_TIMELINE":
+      return { ...state, customTimeline: action.payload };
     case "SET_SUBMITTED":
       return { ...state, isSubmitted: action.payload };
     case "SET_SUBMISSION_DATA":

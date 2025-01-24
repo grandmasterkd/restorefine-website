@@ -1,56 +1,25 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
-import { useFormState } from "./contact-form-context";
+import { useFormState } from "../../contact-form-context";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-
-const serviceTypeOptions = [
-  { id: "logo-design", title: "Logo Design" },
-  { id: "brand-identity", title: "Brand Identity" },
-  { id: "brand-strategy", title: "Brand Strategy" },
-  { id: "rebranding", title: "Re-branding" },
-];
-
-const budgetOptions = [
-  { id: "tier1", title: "£0 - £499" },
-  { id: "tier2", title: "£500 - £999" },
-  { id: "tier3", title: "£1000 - £2499" },
-  { id: "tier4", title: "£2500 - £4999" },
-  { id: "tier5", title: "£5000+" },
-];
-
-const timelineOptions = [
-  { id: "asap", title: "ASAP" },
-  { id: "1-2-weeks", title: "1-2 Weeks" },
-  { id: "1-month", title: "1 Month" },
-  { id: "1-3-months", title: "1-3 Months" },
-  { id: "flexible", title: "Flexible" },
-];
+import { SelectedService } from "../selected-service";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 
 export function StepFive() {
   const { state, dispatch } = useFormState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const getServiceTypeTitle = (id: string | null) => {
-    return serviceTypeOptions.find((option) => option.id === id)?.title || "";
-  };
-
-  const getBudgetTitle = (id: string | null) => {
-    return budgetOptions.find((option) => option.id === id)?.title || "";
-  };
-
-  const getTimelineTitle = (id: string | null) => {
-    return timelineOptions.find((option) => option.id === id)?.title || "";
-  };
+  const { toast } = useToast();
 
   const validateForm = (formData: FormData) => {
     const newErrors: Record<string, string> = {};
 
-    const fields = ["name", "email", "phone", "state", "message"];
+    const fields = ["name", "email", "phone", "company", "message"];
     fields.forEach((field) => {
       if (!formData.get(field)) {
         newErrors[field] = "This field is required";
@@ -88,34 +57,48 @@ export function StepFive() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // service: state.service,
-          serviceType: getServiceTypeTitle(state.serviceType),
-          budget: getBudgetTitle(state.budget),
-          timeline: getTimelineTitle(state.timeline),
+          mainService: state.mainService,
+          serviceType: state.serviceType,
+          budget: state.budget,
+          timeline:
+            state.timeline === "other" ? state.customTimeline : state.timeline,
           name: formData.get("name"),
           email: formData.get("email"),
           phone: formData.get("phone"),
-          state: formData.get("state"),
+          company: formData.get("company"),
           message: formData.get("message"),
         }),
       });
 
-      // In the handleSubmit function, after successful submission:
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || "Failed to send email");
       }
 
-      // On success, update the step and set submitted state
       dispatch({ type: "SET_SUBMITTED", payload: true });
+      dispatch({
+        type: "SET_SUBMISSION_DATA",
+        payload: {
+          name: formData.get("name") as string,
+          email: formData.get("email") as string,
+          phone: formData.get("phone") as string,
+          company: formData.get("company") as string,
+          message: formData.get("message") as string,
+        },
+      });
       dispatch({ type: "SET_STEP", payload: 6 });
 
-      // Handle success (could dispatch a success action or show a success message)
-      console.log("Form submitted successfully");
-      // You might want to add a success message here or redirect the user
+      toast({
+        title: "Success",
+        description: "Your enquiry was sent, thank you.",
+        action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+      });
     } catch (error) {
-      console.error("Submission error:", error);
-      // You might want to show an error message to the user here
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        submit:
+          "An error occurred while submitting the form. Please try again.",
+      }));
     } finally {
       setIsSubmitting(false);
     }
@@ -131,40 +114,37 @@ export function StepFive() {
 
       <div className="grid gap-12 lg:grid-cols-2">
         <div className="flex flex-col gap-y-4 h-[450px] overflow-y-auto">
-          {/* Selected service tile from step 1 */}
-          <div className="aspect-square rounded-[24px] bg-[#d9d9d9]" />
+          <SelectedService title={state.mainService || ""} />
 
-          {/* Selected service type from step 2 */}
           <div className="flex items-center rounded-xl border border-white/50 bg-transparent p-4">
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
             <span className="pl-4 text-md font-normal text-white">
-              {getServiceTypeTitle(state.serviceType)}
+              {state.serviceType}
             </span>
           </div>
 
-          {/* Selected budget from step 3 */}
           <div className="flex items-center rounded-xl border border-white/50 bg-transparent p-4">
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
             <span className="pl-4 text-md font-normal text-white">
-              {getBudgetTitle(state.budget)}
+              {state.budget}
             </span>
           </div>
 
-          {/* Selected timeline from step 4 */}
           <div className="flex items-center rounded-xl border border-white/50 bg-transparent p-4">
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
             <span className="pl-4 text-md font-normal text-white">
-              {getTimelineTitle(state.timeline)}
+              {state.timeline === "other"
+                ? state.customTimeline
+                : state.timeline}
             </span>
           </div>
 
-          {/* Back button */}
           <button
             onClick={() => dispatch({ type: "SET_STEP", payload: 4 })}
             className="w-fit inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-4 py-2 text-white transition-colors hover:bg-white/10"
@@ -225,17 +205,17 @@ export function StepFive() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="state" className="text-white">
+            <Label htmlFor="company" className="text-white">
               Company
             </Label>
             <Input
-              id="state"
-              name="state"
-              placeholder="What State Do You Live In"
+              id="company"
+              name="company"
+              placeholder="Enter Your Company Name"
               className="border-white/50 bg-transparent text-white placeholder:text-white/50"
             />
-            {errors.state && (
-              <p className="text-sm text-red-500">{errors.state}</p>
+            {errors.company && (
+              <p className="text-sm text-red-500">{errors.company}</p>
             )}
           </div>
 
@@ -254,12 +234,16 @@ export function StepFive() {
             )}
           </div>
 
+          {errors.submit && (
+            <p className="text-sm text-red-500 mb-4">{errors.submit}</p>
+          )}
+
           <button
             type="submit"
             disabled={isSubmitting}
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-black transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            Submit
+            {isSubmitting ? "Submitting..." : "Submit"}
             <div className="flex size-7 items-center justify-center rounded-full bg-[#ff0000]">
               <ArrowLeft className="size-4 rotate-180 text-white" />
             </div>

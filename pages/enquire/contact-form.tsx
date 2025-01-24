@@ -1,19 +1,19 @@
 "use client";
 
 import { useFormState } from "./contact-form-context";
-import { ProgressIndicator } from "./progress-indicator";
-import { StepOne } from "./step-one";
-import { StepTwo } from "./step-two";
-import { StepThree } from "./step-three";
-import { StepFour } from "./step-four";
-import { StepFive } from "./step-five";
-import { StepSix } from "./step-six";
+import { ProgressIndicator } from "./form/progress-indicator";
+import { StepOne } from "./form/steps/step-one";
+import { StepTwo } from "./form/steps/step-two";
+import { StepThree } from "./form/steps/step-three";
+import { StepFour } from "./form/steps/step-four";
+import { StepFive } from "./form/steps/step-five";
+import { StepSix } from "./form/steps/step-six";
 
 export function ContactForm() {
   const { state } = useFormState();
 
   return (
-    <div className="  ">
+    <div className="">
       <ProgressIndicator />
       {state.currentStep === 1 && <StepOne />}
       {state.currentStep === 2 && <StepTwo />}

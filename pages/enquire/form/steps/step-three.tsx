@@ -1,31 +1,21 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
-import { useFormState } from "./contact-form-context";
+import { useFormState } from "../../contact-form-context";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-
-const serviceTypeOptions = [
-  { id: "logo-design", title: "Logo Design" },
-  { id: "brand-identity", title: "Brand Identity" },
-  { id: "brand-strategy", title: "Brand Strategy" },
-  { id: "rebranding", title: "Re-branding" },
-];
+import { SelectedService } from "../selected-service";
 
 const budgetOptions = [
-  { id: "tier1", title: "£0 - £499" },
-  { id: "tier2", title: "£500 - £999" },
-  { id: "tier3", title: "£1000 - £2499" },
-  { id: "tier4", title: "£2500 - £4999" },
-  { id: "tier5", title: "£5000+" },
+  { id: "£0 - £499", title: "£0 - £499" },
+  { id: "£500 - £999", title: "£500 - £999" },
+  { id: "£1000 - £2499", title: "£1000 - £2499" },
+  { id: "£2500 - £4999", title: "£2500 - £4999" },
+  { id: "£5000+", title: "£5000+" },
 ];
 
 export function StepThree() {
   const { state, dispatch } = useFormState();
-
-  const getServiceTypeTitle = (id: string | null) => {
-    return serviceTypeOptions.find((option) => option.id === id)?.title || "";
-  };
 
   return (
     <div className="">
@@ -39,20 +29,17 @@ export function StepThree() {
 
       <div className="grid gap-12 lg:grid-cols-2">
         <div className="space-y-4">
-          {/* Selected service tile from step 1 */}
-          <div className="aspect-square rounded-[24px] bg-[#d9d9d9]" />
+          <SelectedService title={state.mainService || ""} />
 
-          {/* Selected service type from step 2 */}
           <div className="flex items-center rounded-xl border border-white/80 bg-transparent p-4">
             <div className="flex h-5 w-5 items-center justify-center">
               <div className="h-3 w-3 rounded-full bg-white" />
             </div>
             <span className="pl-4 text-md font-normal text-white">
-              {getServiceTypeTitle(state.serviceType)}
+              {state.serviceType}
             </span>
           </div>
 
-          {/* Back button */}
           <button
             onClick={() => dispatch({ type: "SET_STEP", payload: 2 })}
             className="inline-flex items-center gap-2 rounded-full border border-white bg-transparent px-4 py-2 text-white transition-colors hover:bg-white/10"

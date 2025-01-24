@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
+        "gradient-dark": "linear-gradient(0deg, #131313 0%, #131313 100%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -20,6 +21,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        customDark: "#131313",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

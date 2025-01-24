@@ -1,6 +1,7 @@
 import React from "react";
 import funnel from "@/public/aboutherographic.svg";
 import Image from "next/image";
+import huddle from "@/public/companyhuddle.jpg";
 
 function AboutHero() {
   return (
@@ -22,9 +23,18 @@ function AboutHero() {
       </section>
 
       <section className="space-y-6">
-        <div className="aspect-video rounded-[32px] bg-[#d9d9d9]"></div>
+        <div className="aspect-video rounded-[24px] bg-[#131313]">
+          <Image
+            src={huddle}
+            alt="resto huddle up"
+            layout="reponsive"
+            width={1920}
+            height={1080}
+            className="w-fit rounded-[24px] object-contain grayscale scale-100 hover:scale-110 hover:grayscale-0 transition-all duration-700 ease-in-out"
+          />
+        </div>
 
-        <div>
+        <div className="">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
             About Us
           </h2>
