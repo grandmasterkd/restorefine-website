@@ -5,7 +5,7 @@ import ring from "@/public/merchring.svg";
 import tri from "@/public/merchangle.svg";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { RestoOverview } from "./resto-services/resto-overview";
+// import { RestoOverview } from "./resto-services/resto-overview";
 import RestoBenefits from "./resto-services/resto-benefits";
 import Cta from "@/components/cta";
 import hood from "@/public/merchsignature.svg";
@@ -16,19 +16,19 @@ const triangle = <Image src={tri} alt="MerchAngle" width={50} height={50} />;
 
 const aboutRMerch = [
   {
-    title: "What is RestoMerch?",
+    title: "Personalised Stationery",
     description:
-      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+      "Supply custom-designed pens, notepads, and business cards that keep your brand in customers' minds.",
   },
   {
-    title: "How Does It Work?",
+    title: "Custom Clothing and Apparel",
     description:
-      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+      "Create uniquely branded uniforms, t-shirts, and aprons that your staff will wear with pride.",
   },
   {
-    title: "Why It Works For You",
+    title: "Promotional Items",
     description:
-      "we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand's digital presence to life.",
+      "Develop keychains, mugs, and other promotional items that make great giveaways and keep your brand visible.",
   },
 ];
 
@@ -61,9 +61,9 @@ function RMerch() {
         <div className="">
           <div className="mb-8 flex items-center justify-between">
             <p className="text-md w-[350px] text-white leading-relaxed">
-              we create immersive journeys that captivate audiences and drive
-              engagement. With strategy-led design and seamless functionality,
-              RestoWeb brings your brand&apos;s digital presence to life.
+              Enhance your branding with RestoMerch’s personalized products.
+              From stationery to clothing, we provide custom merchandise
+              solutions that help promote and amplify your brand visibility.
             </p>
 
             <div className="relative flex items-center justify-center">
@@ -102,7 +102,7 @@ function RMerch() {
             {aboutRMerch.map((item, index) => (
               <div key={index} className="flex items-center space-y-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-medium text-white mb-2">
+                  <h2 className="text-2xl font-medium text-white mb-1">
                     {item.title}
                   </h2>
                   <p className="text-sm text-white/80 leading-relaxed">
@@ -118,7 +118,7 @@ function RMerch() {
         </div>
       </section>
 
-      <RestoOverview />
+      {/* <RestoOverview /> */}
       <RestoBenefits signature={hood} />
 
       <section className="py-32">

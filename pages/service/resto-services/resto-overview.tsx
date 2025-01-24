@@ -6,28 +6,24 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Development Strategy",
-    description: "Our branding service dives deep into what makes your ...",
+    title: "Logo Design",
+    description:
+      "Design distinctive logos that represent your brand’s values and vision.",
   },
   {
-    title: "Target Research",
-    description: "Our branding service dives deep into what makes your ...",
+    title: "Brand Identity Development",
+    description:
+      "Develop a cohesive brand identity including colour schemes, typography, and more to ensure brand consistency across all mediums.",
   },
   {
-    title: "Content Management",
-    description: "Our branding service dives deep into what makes your ...",
+    title: "Social Media Design",
+    description:
+      "Create captivating graphics tailored for platforms like Instagram, Facebook, and LinkedIn to boost engagement and brand recognition.",
   },
   {
-    title: "User Experience",
-    description: "Our branding service dives deep into what makes your ...",
-  },
-  {
-    title: "Market Analysis",
-    description: "Our branding service dives deep into what makes your ...",
-  },
-  {
-    title: "Growth Strategy",
-    description: "Our branding service dives deep into what makes your ...",
+    title: "Brand Strategy Advisory",
+    description:
+      "Provide expert advice on developing effective brand strategies, including slogans, mission statements, and brand storytelling.",
   },
 ];
 
@@ -49,16 +45,14 @@ export function RestoOverview() {
   const visibleFeatures = features.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="py-24">
+    <section className="py-0">
       <div className="">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-            Designing Is Secondary,
-            <br />
-            We Help You Grow.
+            Define Your Brand Identity
           </h2>
           <p className="text-sm text-white/80">
-            Meet the creative minds at RestoRefine Studios.
+            Shaping a unique identity through creative strategy.
           </p>
         </div>
 
@@ -78,11 +72,13 @@ export function RestoOverview() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-[#d9d9d9] rounded-[32px] p-6 h-[350px] flex flex-col justify-end">
-                  <h3 className="text-xl font-medium text-black mb-1">
+                <div className="bg-[#d9d9d9] rounded-[24px] p-8 h-[350px] flex flex-col justify-end">
+                  <h3 className="text-lg font-semibold text-black mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-black/80">{feature.description}</p>
+                  <p className="text-xs line-clamp-2 text-black/80">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}

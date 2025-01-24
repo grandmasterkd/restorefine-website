@@ -21,7 +21,7 @@ function RestoBenefits({ signature }: RestoSignatureProps) {
             </h2>
 
             <p className="text-sm text-white/80">
-              Meet the creative minds at RestoRefine Studios.
+              Simplifying the complex, so you can focus on what matters.
             </p>
           </div>
 
@@ -45,11 +45,11 @@ function RestoBenefits({ signature }: RestoSignatureProps) {
               </span>
             </div>
 
-            <div className="w-auto h-[350px] rounded-3xl bg-[#d9d9d9]" />
+            <div className="w-auto h-[350px] rounded-[24px] bg-[#d9d9d9]" />
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <div className="w-auto h-[350px] rounded-3xl bg-[#d9d9d9]" />
+            <div className="w-auto h-[350px] rounded-[24px] bg-[#d9d9d9]" />
             <span className="bg-white text-sm text-black rounded-xl w-full h-14 flex items-center justify-center">
               Bespoke Pricing
             </span>

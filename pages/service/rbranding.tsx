@@ -16,7 +16,7 @@ function RBranding() {
       <RestoServicesHero
         titletop="Resto-lutionary Branding"
         titlebottom="For Bold Visions"
-        description="Our branding process dives deep to understand your goals, ensuring every element of your identity speaks with clarity and impact. "
+        description="With RestoBranding, develop a compelling brand that captures attention. From logo design to complete brand development, including social media graphics, we ensure your brand communicates clearly and effectively across all channels. "
       />
 
       <div className="absolute left-0 right-0 top-12 h-full flex items-center justify-between">

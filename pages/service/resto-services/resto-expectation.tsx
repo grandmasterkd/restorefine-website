@@ -22,7 +22,7 @@ export function RestoExpectation() {
             Like This For You
           </h2>
           <p className="text-sm text-white/80">
-            Meet the creative minds at RestoRefine Studios.
+            To turn your ideas into impactful solutions
           </p>
         </div>
 
