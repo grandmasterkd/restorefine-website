@@ -22,12 +22,11 @@ export function Insights() {
           </div>
           {/* Content */}
           <div className="relative">
-            <h3 className="text-2xl font-medium text-white mb-4">
+            <h3 className="text-2xl font-medium text-white mb-1">
               Business Insights
             </h3>
-            <p className="text-white/80">
-              Harness our full creative power to transform your vision into
-              reality.
+            <p className="text-sm text-white/80">
+              Understanding your needs to deliver tailored solutions.
             </p>
           </div>
         </div>
@@ -68,12 +67,11 @@ export function Insights() {
           </div>
           {/* Content */}
           <div className="relative">
-            <h3 className="text-2xl font-medium text-white mb-4">
+            <h3 className="text-2xl font-medium text-white mb-1">
               Interactive Solutions
             </h3>
-            <p className="text-white/80">
-              Harness our full creative power to transform your vision into
-              reality.
+            <p className="text-sm text-white/80">
+              Creating engaging experiences through innovative technology.
             </p>
           </div>
         </div>

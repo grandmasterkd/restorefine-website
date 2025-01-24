@@ -1,6 +1,8 @@
 import { useFormState } from "../../contact-form-context";
 import Image from "next/image";
 import { SelectedService } from "../selected-service";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const serviceTypeOptions = [
   { id: "logo-design", title: "Logo Design" },
@@ -31,18 +33,6 @@ export function StepSix() {
 
   if (!submissionData) return null;
 
-  // const getServiceTypeTitle = (id: string | null) => {
-  //   return serviceTypeOptions.find((option) => option.id === id)?.title || "";
-  // };
-
-  // const getBudgetTitle = (id: string | null) => {
-  //   return budgetOptions.find((option) => option.id === id)?.title || "";
-  // };
-
-  // const getTimelineTitle = (id: string | null) => {
-  //   return timelineOptions.find((option) => option.id === id)?.title || "";
-  // };
-
   return (
     <div className="">
       <h2 className="mb-2 text-3xl font-semibold">
@@ -54,7 +44,16 @@ export function StepSix() {
       </h2>
 
       <div className="grid lg:grid-cols-2 gap-16">
-        <SelectedService title={state.mainService || ""} />
+        <div className="space-y-4">
+          <SelectedService title={state.mainService || ""} />
+          <div>
+            <Link className="" href="/">
+              <Button className="w-full" size="lg" variant="secondary">
+                Go Back Home
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         <div className="space-y-6">
           <div className="capitalize">
