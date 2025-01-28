@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Box, Paperclip, ArrowUpRight, FileEdit, Camera } from "lucide-react";
+import { Box, Camera, Globe, Shirt, Printer } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
 import navlogo from "@/public/restorefine-logowhite.svg";
-
+import mesh from "@/public/enqbg.svg";
+import light from "@/public/enqlight.svg";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -29,19 +30,19 @@ export const services = [
     title: "Resto Print",
     href: "/services/print",
     description: "Menu design, prints and more",
-    icon: Paperclip,
+    icon: Printer,
   },
   {
     title: "Resto Merch",
     href: "/services/restomerch",
     description: "Interactive business solutions and more",
-    icon: ArrowUpRight,
+    icon: Shirt,
   },
   {
     title: "Resto Web",
     href: "/services/restoweb",
     description: "Website and app development, SEO and more",
-    icon: FileEdit,
+    icon: Globe,
   },
   {
     title: "Resto Media",
@@ -53,7 +54,7 @@ export const services = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/20 text-sm font-medium">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border-b border-b-white/20 text-sm font-medium">
       <div className="flex h-20 px-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" passHref>
@@ -70,17 +71,39 @@ export function Navbar() {
                     <Link href="/services">Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="w-[400px] space-y-2 p-4 rounded-[24px] border border-white/10 bg-black/50 backdrop-blur-lg">
-                      {services.map((service) => (
-                        <ListItem
-                          key={service.title}
-                          title={service.title}
-                          href={service.href}
-                          icon={service.icon}
-                        >
-                          {service.description}
-                        </ListItem>
-                      ))}
+                    <ul className="w-[600px] space-y-2 p-4 mr-3 rounded-[24px] border border-white/20 bg-black/70 backdrop-blur-lg flex items-start justify-between gap-x-4">
+                      <div className="w-auto flex flex-col items-start">
+                        {services.map((service) => (
+                          <ListItem
+                            key={service.title}
+                            title={service.title}
+                            href={service.href}
+                            icon={service.icon}
+                          >
+                            {service.description}
+                          </ListItem>
+                        ))}
+                      </div>
+
+                      <div className="relative h-[250px] w-[250px] rounded-[16px] bg-gradient-dark  overflow-hidden">
+                        <Image
+                          src={mesh || "/placeholder.svg"}
+                          alt="resto-enquire-mesh-bg"
+                          width={80}
+                          height={80}
+                          className="p-8 absolute top-0 right-0 z-10 w-full object-cover"
+                        />
+                        <Image
+                          src={light || "/placeholder.svg"}
+                          alt="resto-enquire-mesh-bg"
+                          width={100}
+                          height={100}
+                          className="absolute top-0 right-0 z-0 w-full object-left-bottom opacity-75"
+                        />
+                        <span className="relative z-20 flex h-full items-center justify-center font-semibold text-xl text-white capitalize">
+                          Resto
+                        </span>
+                      </div>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -143,7 +166,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "flex items-start gap-2 rounded-md p-2 hover:bg-white/5 transition-colors",
+            "w-full flex items-start gap-3 rounded-md p-2 hover:bg-white/20 transition-colors",
             className
           )}
           {...props}
