@@ -4,6 +4,7 @@ import nfc from "@/public/resto-nfc-des.svg";
 import dashboard from "@/public/Macbook_Air_Mockup_mod.png";
 import menu from "@/public/himalayan-menu.svg";
 import stationery from "@/public/Essential-Stationery-Mockup.png";
+import shirt from "@/public/resto-customtshirt.png";
 
 export function BentoGrid() {
   return (
@@ -58,7 +59,7 @@ export function BentoGrid() {
 
         {/* Small Rectangles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="aspect-[4/3] rounded-[24px] bg-[#131313] grid place-items-center">
+          <div className="h-[270px] rounded-[24px] bg-[#131313] grid place-items-center">
             <Image
               src={menu}
               alt="himalayan-dine-in-menu"
@@ -67,8 +68,16 @@ export function BentoGrid() {
               className="object-contain grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
             />
           </div>
-          <div className="aspect-[4/3] rounded-[24px] bg-[#131313]" />
-          <div className="aspect-[4/3] rounded-[24px] bg-[#131313] grid place-items-center">
+          <div className="h-[270px] rounded-[24px] bg-[#131313] grid place-items-center">
+            <Image
+              src={shirt}
+              alt="restorefine-custom-shirt"
+              width={190}
+              height={190}
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <div className="h-[270px] rounded-[24px] bg-[#131313] grid place-items-center">
             <Image
               src={stationery}
               alt="restorefine-cards"
