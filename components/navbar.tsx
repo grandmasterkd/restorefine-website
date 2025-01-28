@@ -53,7 +53,7 @@ export const services = [
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/20 text-sm font-normal">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-b-white/20 text-sm font-medium">
       <div className="flex h-20 px-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" passHref>
@@ -66,11 +66,11 @@ export function Navbar() {
             <NavigationMenu>
               <NavigationMenuList className="flex items-center gap-x-8">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent font-medium text-white/50 hover:bg-transparent hover:text-white/80 data-[state=open]:bg-transparent">
                     <Link href="/services">Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="w-[400px] space-y-3 p-4 border border-white/30 bg-black">
+                    <ul className="w-[400px] space-y-2 p-4 rounded-[24px] border border-white/10 bg-black/50 backdrop-blur-lg">
                       {services.map((service) => (
                         <ListItem
                           key={service.title}
@@ -143,21 +143,21 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "flex items-start gap-4 rounded-md p-3 hover:bg-white/5 transition-colors",
+            "flex items-start gap-2 rounded-md p-2 hover:bg-white/5 transition-colors",
             className
           )}
           {...props}
         >
           {Icon && (
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/10">
-              <Icon className="size-5 text-white/50" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/20">
+              <Icon className="size-4 text-white/50" />
             </div>
           )}
           <div className="space-y-1">
-            <div className="text-base font-medium leading-none text-white/50">
+            <div className="text-md font-medium leading-none text-white">
               {title}
             </div>
-            <p className="line-clamp-2 text-sm leading-snug text-gray-400">
+            <p className="line-clamp-2 text-xs leading-snug text-gray-400">
               {children}
             </p>
           </div>

@@ -8,9 +8,9 @@ function ServicesHero() {
   return (
     <main className="grid place-items-center min-h-screen">
       <section className="flex justify-between items-center">
-        <div className="space-y-6">
+        <div className="space-y-4">
           <h1 className="text-6xl font-medium">
-            <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
+            <span className="py-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
               Tranforming
               <br />
               Visions Into

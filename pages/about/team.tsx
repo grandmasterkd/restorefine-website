@@ -2,29 +2,35 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+// import { ArrowLeft, ArrowRight, Linkedin } from "lucide-react";
+import rohit from "@/public/staffportrait_rohit.jpg";
+import harpreet from "@/public/staffportrait_hapreet.jpg";
+import Image from "next/image";
+import Link from "next/link";
 
 const teamMembers = [
   {
     name: "Rohit Archaya",
     position: "Head Of Sales",
-    image: "/placeholder.svg?height=400&width=400",
+    image: rohit,
+    profile: "https://www.linkedin.com/in/acharya-rohit/",
   },
   {
     name: "Harpreet Singh",
     position: "Creative Director",
-    image: "/placeholder.svg?height=400&width=400",
+    image: harpreet,
+    profile: "https://www.linkedin.com/in/harpreet00/",
   },
-  {
-    name: "Sweta",
-    position: "Software Developer",
-    image: "/placeholder.svg?height=400&width=400",
-  },
-  {
-    name: "King",
-    position: "Creative",
-    image: "/placeholder.svg?height=400&width=400",
-  },
+  // {
+  //   name: "Sweta",
+  //   position: "Software Developer",
+  //   image: "/placeholder.svg?height=400&width=400",
+  // },
+  // {
+  //   name: "King",
+  //   position: "Creative",
+  //   image: "/placeholder.svg?height=400&width=400",
+  // },
   // Additional team members can be added here
 ];
 
@@ -46,21 +52,21 @@ export function Team() {
   const visibleMembers = teamMembers.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="">
+    <section className="pb-44">
       <div className="">
         <div className=" mx-auto mb-8">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
-            Our Team
+            The Founders
           </h2>
           <p className="text-sm text-white/80">
-            Meet the creative minds at RestoRefine Studios.
+            Meet the creative minds behind RestoRefine Studios.
           </p>
         </div>
 
         <div className="relative">
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-4"
+              className="flex items-start gap-x-6"
               initial={false}
               animate={{ x: `${-currentIndex * (100 / 3)}%` }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -74,17 +80,35 @@ export function Team() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="aspect-square rounded-[24px] bg-[#d9d9d9] mb-3" />
-                  <h3 className="text-lg font-medium text-white">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-white/80">{member.position}</p>
+                  <div className="aspect-square rounded-[24px] relative mb-3">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="absolute z-0 right-0 w-full object-cover grayscale scale-100 hover:scale-105 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer rounded-[24px]"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm text-white/70">{member.position}</p>
+                    </div>
+
+                    <Link href={member.profile} target="_blank">
+                      {" "}
+                      <span className="w-7 text-white/30 hover:text-white duration-500 ease-in-out cursor-pointer text-3xl font-extrabold">
+                        in
+                      </span>
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
           </div>
 
-          <div className="flex justify-end gap-4 mt-8">
+          {/* <div className="flex justify-end gap-4 mt-8">
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
@@ -99,7 +123,7 @@ export function Team() {
             >
               <ArrowRight className="w-6 h-6" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

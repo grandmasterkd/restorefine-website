@@ -8,7 +8,7 @@ function AboutHero() {
     <main className="">
       <section className="min-h-screen flex justify-between items-center">
         <h1 className="mb-4 text-6xl font-medium">
-          <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
+          <span className="p-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Refining Your
             <br />
             Vision, Amplifying

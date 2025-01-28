@@ -57,12 +57,10 @@ export function Reviews() {
 
   return (
     <section>
-      <div className="mx-auto">
+      <div className="">
         {/* Header */}
-        <div className="mx-auto text-center mb-16">
-          <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-            Our Clients
-          </h2>
+        <div className="mx-auto text-center mb-8">
+          <h2 className="text-3xl font-semibold text-white">Our Clients</h2>
           <p className="text-md text-white/80">
             Hear firsthand how our solutions have boosted online
             <br />
@@ -76,10 +74,10 @@ export function Reviews() {
             {reviews.slice(currentIndex, currentIndex + 2).map((review) => (
               <div
                 key={review.id}
-                className="rounded-[32px] bg-black p-8 border border-white/10"
+                className="rounded-[24px] bg-transparent p-8 border border-white/20"
               >
                 {/* Profile */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-x-6 gap-y-0 mb-6">
                   <div className="relative w-12 h-12">
                     {/* Client Image */}
                     <div className="absolute inset-0 rounded-full bg-[#d9d9d9]" />
@@ -94,13 +92,13 @@ export function Reviews() {
                   </div>
                 </div>
                 {/* Review Text */}
-                <p className="text-xl text-white">{review.review}</p>
+                <p className="w-full text-lg text-white">{review.review}</p>
               </div>
             ))}
           </div>
 
           {/* Navigation */}
-          <div className="mt-12 flex justify-end gap-4">
+          <div className="mt-8 flex justify-end gap-2">
             <button
               onClick={handlePrevious}
               disabled={currentIndex === 0}
