@@ -16,28 +16,25 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <article className="min-h-screen bg-black pb-32 pt-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <article className="pt-32">
+      <div className="">
         <header className="mb-16">
-          <h1 className="mb-8 text-6xl font-bold text-white">
+          <h1 className="mb-6 text-5xl font-bold text-white">
             {project.title}
           </h1>
-          <p className="max-w-3xl text-xl leading-relaxed text-white/80">
+          <p className="max-w-3xl text-lg leading-relaxed text-white/50">
             {project.description}
           </p>
         </header>
 
-        <div className="space-y-8">
+        <div className="w-full">
           {project.images.map((image, index) => (
-            <div
-              key={index}
-              className="relative aspect-[16/9] overflow-hidden rounded-[32px]"
-            >
+            <div key={index} className="relative aspect-[16/9] overflow-hidden">
               <Image
                 src={image || "/placeholder.svg"}
                 alt={`${project.title} - Image ${index + 1}`}
                 fill
-                className="object-cover"
+                className="w-full object-contain"
               />
             </div>
           ))}

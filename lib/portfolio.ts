@@ -1,41 +1,60 @@
+import quiknest_thumb from "@/public/work/quiknest/thumbnail.jpg";
+import masala_thumb from "@/public/work/masala/thumbnail.jpg";
+import { StaticImageData } from "next/image";
+
 export interface PortfolioItem {
   id: string;
   title: string;
   description: string;
-  thumbnail: string;
+  thumbnail: string | StaticImageData;
   images: string[];
   date: string;
 }
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: "restorefine-web",
-    title: "RestoRefine Web Platform",
+    id: "quiknest",
+    title: "Quiknest Logo Design",
     description:
       "Lorem ipsum dolor amet, consectetuer adipiscing elit. Accumsan rutrum rhoncus semper magnis justo lorem. Torquent dui hendrerit tortor condimentum per. Magnis lacinia suscipit risus suspendisse congue amet. Volutpat quisque fermentum torquent imperdiet curae. Varius efficitur netus purus habitasse finibus auctor.",
-    thumbnail: "/placeholder.svg?height=900&width=1600",
+    thumbnail: quiknest_thumb,
     images: [
-      "/placeholder.svg?height=900&width=1600",
-      "/placeholder.svg?height=900&width=1600",
-      "/placeholder.svg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 1@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 2@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 3@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 4@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 5@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 6@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 7@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 8@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 9@2x-100.jpg?height=900&width=1600",
+      "/work/quiknest/docs/Artboard 10@2x-100.jpg?height=900&width=1600",
     ],
     date: "2024-01-28",
   },
   {
-    id: "brand-identity",
-    title: "Brand Identity Project",
+    id: "masala-moves-by-luna-shree",
+    title: "Masala Moves By Luna Shree",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    thumbnail: "/placeholder.svg?height=600&width=900",
+    thumbnail: masala_thumb,
     images: [
-      "/placeholder.svg?height=900&width=1600",
-      "/placeholder.svg?height=900&width=1600",
+      "/work/masala/docs/Artboard 0@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 1@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 2@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 3@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 4@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 5@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 6@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 7@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 8@2x-100.jpg?height=900&width=1600",
+      "/work/masala/docs/Artboard 9@2x-100.jpg?height=900&width=1600",
     ],
     date: "2024-01-15",
   },
   {
     id: "digital-campaign",
-    title: "Winners Always Win",
+    title: "Digital Marketing Campaign",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     thumbnail: "/placeholder.svg?height=600&width=900",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { portfolioItems } from "@/lib/portfolio";
+import newtag from "@/public/newtag.svg";
 
 export default function Work() {
   // Sort items by date to ensure most recent is first
@@ -28,8 +29,14 @@ export default function Work() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {index === 0 && (
-                <div className="absolute left-6 top-6 rounded-full bg-white px-4 py-1 text-sm font-medium text-black">
-                  New
+                <div className="absolute left-6 top-6 ">
+                  <Image
+                    src={newtag}
+                    alt="resto-new-tag"
+                    width={100}
+                    height={100}
+                    className="coil"
+                  />
                 </div>
               )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
