@@ -45,16 +45,19 @@ export default function Hero() {
       {/* Heading */}
       <h1 className="relative z-0 mb-6 text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
-          Elevate Your Business
+          Your Partner in
+          <br />
+          Hospitality Success,
           <br />
           Beyond Digital
         </span>
       </h1>
       {/* Description */}
       <p className="mx-auto mb-12 max-w-3xl text-md font-normal text-white/80 sm:text-xl">
-        RestoRefine Studios drives your brands growth with strategic solutions
-        that boost visibility, engage customers, and seamlessly connect the
-        digital and physical worlds.
+        We know the hustle of running a restaurant, café, or takeaway, and we’re
+        here to make your life easier. From sleek websites that bring in
+        bookings to menus, signage, merch, and more; we’ve got everything your
+        business needs to stand out.
       </p>
       {/* CTA Button */}
       <div className="w-fit rounded-xl border border-white/20 p-2.5">

@@ -9,7 +9,7 @@ import Cta from "@/components/cta";
 
 function Resto() {
   return (
-    <main className="space-y-44">
+    <main className="">
       <Hero />
       <LogoMarquee />
       <BentoGrid />

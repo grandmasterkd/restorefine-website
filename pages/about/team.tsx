@@ -1,41 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// import { ArrowLeft, ArrowRight, Linkedin } from "lucide-react";
-import rohit from "@/public/staffportrait_rohit.jpg";
-import harpreet from "@/public/staffportrait_hapreet.jpg";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const teamMembers = [
-  {
-    name: "Rohit Archaya",
-    position: "Head Of Sales",
-    image: rohit,
-    profile: "https://www.linkedin.com/in/acharya-rohit/",
-  },
-  {
-    name: "Harpreet Singh",
-    position: "Creative Director",
-    image: harpreet,
-    profile: "https://www.linkedin.com/in/harpreet00/",
-  },
-  // {
-  //   name: "Sweta",
-  //   position: "Software Developer",
-  //   image: "/placeholder.svg?height=400&width=400",
-  // },
-  // {
-  //   name: "King",
-  //   position: "Creative",
-  //   image: "/placeholder.svg?height=400&width=400",
-  // },
-  // Additional team members can be added here
-];
+import { Modal } from "@/components/modal";
+import { teamMembers, type TeamMember } from "@/lib/profile";
 
 export function Team() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
   const nextSlide = () => {
     if (currentIndex + 3 < teamMembers.length) {
@@ -49,17 +23,20 @@ export function Team() {
     }
   };
 
-  const visibleMembers = teamMembers.slice(currentIndex, currentIndex + 3);
-
   return (
     <section className="pb-44">
       <div className="">
-        <div className=" mx-auto mb-8">
+        <div className="mx-auto mb-8">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
             The Founders
           </h2>
           <p className="text-sm text-white/80">
             Meet the creative minds behind RestoRefine Studios.
+            <br />{" "}
+            <span className="text-white/50">
+              {" "}
+              Click on image to view profile{" "}
+            </span>
           </p>
         </div>
 
@@ -80,9 +57,12 @@ export function Team() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="aspect-square rounded-[24px] relative mb-3">
+                  <div
+                    className="aspect-square rounded-[24px] relative mb-3"
+                    onClick={() => setSelectedMember(member)}
+                  >
                     <Image
-                      src={member.image}
+                      src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
                       className="absolute z-0 right-0 w-full object-cover grayscale scale-100 hover:scale-105 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer rounded-[24px]"
@@ -97,7 +77,6 @@ export function Team() {
                     </div>
 
                     <Link href={member.profile} target="_blank">
-                      {" "}
                       <span className="w-7 text-white/30 hover:text-white duration-500 ease-in-out cursor-pointer text-3xl font-extrabold">
                         in
                       </span>
@@ -107,25 +86,10 @@ export function Team() {
               ))}
             </motion.div>
           </div>
-
-          {/* <div className="flex justify-end gap-4 mt-8">
-            <button
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
-              className="p-4 rounded-full bg-[#303030] text-white disabled:opacity-50 transition-opacity"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextSlide}
-              disabled={currentIndex + 3 >= teamMembers.length}
-              className="p-4 rounded-full bg-[#ff0000] text-white disabled:opacity-50 transition-opacity"
-            >
-              <ArrowRight className="w-6 h-6" />
-            </button>
-          </div> */}
         </div>
       </div>
+
+      <Modal member={selectedMember} onClose={() => setSelectedMember(null)} />
     </section>
   );
 }
