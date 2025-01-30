@@ -7,6 +7,7 @@ import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
 import Cta from "@/components/cta";
 import websignature from "@/public/websignature.svg";
+import { rWebServices } from "@/lib/rwebServices";
 
 function RWeb() {
   return (
@@ -27,7 +28,7 @@ function RWeb() {
         />
       </div>
 
-      <RestoOverview />
+      <RestoOverview {...rWebServices} />
       <RestoBenefits signature={websignature} />
       <RestoExpectation />
       <Cta />

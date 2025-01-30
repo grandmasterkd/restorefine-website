@@ -10,6 +10,7 @@ import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
 import money from "@/public/moneystartgraphic.svg";
 import printsketch from "@/public/printherobg.svg";
+import { rPrintServices } from "@/lib/rprintServices";
 
 function RPrint() {
   return (
@@ -29,7 +30,7 @@ function RPrint() {
         />
       </div>
 
-      <RestoOverview />
+      <RestoOverview {...rPrintServices} />
       <RestoBenefits signature={money} />
       <RestoExpectation />
       <Cta />

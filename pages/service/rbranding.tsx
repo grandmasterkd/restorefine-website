@@ -9,6 +9,7 @@ import signature from "@/public/restobrandingsignature.svg";
 import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
 import money from "@/public/moneystartgraphic.svg";
+import { rBrandingServices } from "@/lib/rbrandingServices";
 
 function RBranding() {
   return (
@@ -29,7 +30,7 @@ function RBranding() {
         </div>
       </div>
 
-      <RestoOverview />
+      <RestoOverview {...rBrandingServices} />
       <RestoBenefits signature={money} />
       <RestoExpectation />
       <Cta />

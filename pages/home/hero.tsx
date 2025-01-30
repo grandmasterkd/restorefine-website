@@ -43,7 +43,7 @@ export default function Hero() {
         </span>
       </div>
       {/* Heading */}
-      <h1 className="relative z-0 mb-6 text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+      <h1 className="relative z-0 mb-6 text-center font-medium tracking-tight text-5xl md:text-7xl">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
           Your Partner in
           <br />

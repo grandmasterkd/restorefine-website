@@ -4,30 +4,22 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const features = [
-  {
-    title: "Logo Design",
-    description:
-      "Design distinctive logos that represent your brand’s values and vision.",
-  },
-  {
-    title: "Brand Identity Development",
-    description:
-      "Develop a cohesive brand identity including colour schemes, typography, and more to ensure brand consistency across all mediums.",
-  },
-  {
-    title: "Social Media Design",
-    description:
-      "Create captivating graphics tailored for platforms like Instagram, Facebook, and LinkedIn to boost engagement and brand recognition.",
-  },
-  {
-    title: "Brand Strategy Advisory",
-    description:
-      "Provide expert advice on developing effective brand strategies, including slogans, mission statements, and brand storytelling.",
-  },
-];
+interface Feature {
+  title: string;
+  description: string;
+}
 
-export function RestoOverview() {
+interface RestoOverviewProps {
+  title: string;
+  subtitle: string;
+  features: Feature[];
+}
+
+export function RestoOverview({
+  title,
+  subtitle,
+  features,
+}: RestoOverviewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -42,18 +34,14 @@ export function RestoOverview() {
     }
   };
 
-  const visibleFeatures = features.slice(currentIndex, currentIndex + 3);
-
   return (
     <section className="py-0">
       <div className="">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-            Define Your Brand Identity
+        <div className="grid place-items-center text-center mb-12">
+          <h2 className="w-fit text-3xl max-w-[50%] font-medium text-white md:text-3xl lg:text-4xl">
+            {title}
           </h2>
-          <p className="text-sm text-white/80">
-            Shaping a unique identity through creative strategy.
-          </p>
+          <p className="w-fit text-sm max-w-[50%] text-white/80">{subtitle}</p>
         </div>
 
         <div className="relative overflow-hidden mb-8">

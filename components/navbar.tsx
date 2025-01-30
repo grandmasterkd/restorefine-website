@@ -55,10 +55,15 @@ export const services = [
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border-b border-b-white/20 text-sm font-medium">
-      <div className="flex h-20 px-16 items-center justify-between">
+      <div className="flex h-20 px-4 md:px-8 items-center justify-between">
         {/* Logo */}
         <Link href="/" passHref>
-          <Image src={navlogo} alt="Resto Refine" width={25} height={25} />
+          <Image
+            src={navlogo || "/placeholder.svg"}
+            alt="Resto Refine"
+            width={25}
+            height={25}
+          />
         </Link>
 
         {/* Navigation Items Container */}
@@ -141,7 +146,7 @@ export function Navbar() {
         </div>
 
         {/* Book Call Button */}
-        <div className="bg-transparent border border-white/10 p-1.5 rounded-xl flex items-center space-x-4">
+        <div className="bg-transparent border border-white/40 md:border-white/10 p-1 rounded-xl flex items-center space-x-0 md:space-x-2">
           <Button
             asChild
             className="hidden md:inline-flex relative rounded-lg border border-white/35 bg-transparent text-white hover:bg-white/10"

@@ -3,6 +3,9 @@ import luxevent from "@/public/mediahero.jpg";
 import Image from "next/image";
 import mlogo from "@/public/rmedialogo.svg";
 import ctabg from "@/public/rmediactabg.jpg";
+import { RestoOverview } from "./resto-services/resto-overview";
+import { rMediaServices } from "@/lib/rmediaServices";
+import signature from "@/public/restobrandingsignature.svg";
 
 function RMedia() {
   return (
@@ -31,13 +34,29 @@ function RMedia() {
       <section className="py-24 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div className="h-[350px] bg-[#d9d9d9] rounded-[32px]"></div>
         <div className="space-y-2">
-          <h2 className="text-2xl font-medium">What is RestoMedia</h2>
+          <h2 className="text-2xl font-medium">What is Resto Media</h2>
           <p className="text-sm text-white/50">
             RestoMedia manages your social media and content creation,
             delivering high-quality photography and videography that showcases
             the best of your business. We handle your social platforms, ensuring
             engaging content that drives visibility and customer interaction.
           </p>
+        </div>
+      </section>
+
+      <RestoOverview {...rMediaServices} />
+
+      <section className="py-12">
+        <div className="flex w-full inset-x-0 overflow-x-hidden">
+          <Image
+            src={ctabg}
+            alt="mediactabackground"
+            layout="responsive"
+            width={100}
+            height={100}
+            className="w-full bg-norepeat"
+            objectFit="cover"
+          />
         </div>
       </section>
 
@@ -62,16 +81,25 @@ function RMedia() {
         </div>
       </section>
 
-      <section className="py-12 absolute left-0">
-        <div className="flex w-full inset-x-0 overflow-x-hidden">
+      <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
           <Image
-            src={ctabg}
-            alt="mediactabackground"
+            src={signature}
+            alt="signature"
             layout="responsive"
-            width={100}
-            height={100}
-            className="w-full bg-norepeat"
-            objectFit="cover"
+            width={500}
+            height={500}
+            className="w-full"
+          />
+        </div>
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          <Image
+            src={signature}
+            alt="signature"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="w-full"
           />
         </div>
       </section>
