@@ -40,16 +40,25 @@ function AboutHero() {
           </h2>
           <div className="max-w-full text-sm text-white/80">
             <p>
-              RestoRefine Studios is your all-in-one digital partner, dedicated
-              to the vibrant world of hospitality. From quaint cafes to bustling
-              restaurants, we craft customized digital experiences that capture
-              the essence of each venue. Our team, driven by a passion for
-              culinary excellence and service, offers a suite of services
-              designed to enhance every aspect of your online presence. Whether
-              it&apos;s through captivating website design, engaging social
-              media content, or stunning visual storytelling with photography
-              and videography, we ensure your business stands out in the digital
-              landscape.
+              At RestoRefine Studios, we set out with a clear goal: to become
+              Scotland’s top all-in-one agency, headquartered in Glasgow and
+              serving businesses across the nation. Our vision stems from a deep
+              understanding of the challenges faced by businesses and
+              hospitality sectors in finding a reliable one-stop solution for
+              all their needs.
+              <br />
+              <br />
+              From web design and custom apparel to promotional materials and
+              much more, we are here to simplify the process and deliver
+              exceptional results. We built this agency on the values of clear
+              communication, affordability, and a deep commitment to
+              understanding and meeting our clients’ unique needs.
+              <br />
+              <br />
+              At RestoRefine Studios, our clients are at the heart of everything
+              we do. Your success is our success, and we are dedicated to going
+              above and beyond to provide outstanding service and impactful
+              solutions for your business.
             </p>
           </div>
         </div>

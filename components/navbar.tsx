@@ -28,7 +28,7 @@ export const services = [
   },
   {
     title: "Resto Print",
-    href: "/services/print",
+    href: "/services/restoprint",
     description: "Menu design, prints and more",
     icon: Printer,
   },

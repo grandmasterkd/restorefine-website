@@ -15,7 +15,7 @@ export default function Hero() {
         width={1920}
         height={1080}
         layout="responsive"
-        className="absolute top-0 right-0 z-20 object-cover bg-cover opacity-100"
+        className="absolute top-0 right-0 z-20 object-cover bg-cover opacity-50"
         alt="Background"
       />
 
@@ -24,7 +24,7 @@ export default function Hero() {
         width={1920}
         height={1080}
         layout="responsive"
-        className="h-full absolute -bottom-8 right-0 z-0 object-cover opacity-85"
+        className="h-full absolute -bottom-8 right-0 z-0 object-cover opacity-90"
         alt="Background"
       />
 
@@ -53,7 +53,7 @@ export default function Hero() {
         </span>
       </h1>
       {/* Description */}
-      <p className="mx-auto mb-12 max-w-3xl text-md font-normal text-white/80 sm:text-xl">
+      <p className="mx-auto mb-12 max-w-3xl font-normal text-white/80">
         We know the hustle of running a restaurant, café, or takeaway, and we’re
         here to make your life easier. From sleek websites that bring in
         bookings to menus, signage, merch, and more; we’ve got everything your
