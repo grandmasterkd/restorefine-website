@@ -54,10 +54,9 @@ export default function Hero() {
       </h1>
       {/* Description */}
       <p className="mx-auto mb-12 max-w-3xl font-normal text-white/80">
-        We know the hustle of running a restaurant, café, or takeaway, and we’re
-        here to make your life easier. From sleek websites that bring in
-        bookings to menus, signage, merch, and more; we’ve got everything your
-        business needs to stand out.
+        Running a restaurant, café, or takeaway is tough. We make it easier.
+        From websites that drive bookings to menus, signage, and merch, we’ve
+        got you covered. Let’s elevate your business together.
       </p>
       {/* CTA Button */}
       <div className="w-fit rounded-xl border border-white/20 p-2.5">
