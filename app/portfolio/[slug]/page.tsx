@@ -19,10 +19,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <article className="pt-32">
       <div className="">
         <header className="mb-16">
-          <h1 className="mb-6 text-5xl font-bold text-white">
+          <h1 className="mb-2 lg:mb-6 text-3xl lg:text-5xl font-bold text-white">
             {project.title}
           </h1>
-          <p className="max-w-3xl text-lg leading-relaxed text-white/50">
+          <p className="max-w-3xl text-base lg:text-lg leading-relaxed text-white/50">
             {project.description}
           </p>
         </header>

@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 function ServicesHero() {
   return (
     <main className="grid place-items-center min-h-screen">
-      <section className="flex justify-between items-center">
-        <div className="space-y-4">
-          <h1 className="text-6xl font-medium">
+      <section className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
+        <div className="text-left space-y-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium">
             <span className="py-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
               Tranforming
               <br />
@@ -18,21 +18,29 @@ function ServicesHero() {
               Impactful Brands
             </span>
           </h1>
-          <p className="w-3/4 text-white/80">
+          <p className="w-full lg:w-3/4 text-sm sm:text-base text-white/80 pb-2">
             From concept to creation, we craft brands that resonate, inspire,
             and drive results. Our team blends strategy, creativity, and
             innovation to build identities that stand out in a crowded world.
           </p>
-          <Link href="/enquire-now" className="flex items-center gap-1">
-            <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
-              Lets Craft Something
-            </div>
-            <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
-          </Link>
+          <div>
+            <Link href="/enquire-now" className="flex items-center gap-1">
+              <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
+                Lets Craft Something
+              </div>
+              <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
+            </Link>
+          </div>
         </div>
 
         <div className="w-full">
-          <Image src={hollow} alt="Funnel" width={650} height={650} />
+          <Image
+            src={hollow}
+            alt="hollow"
+            width={750}
+            height={750}
+            layout="responsive"
+          />
         </div>
       </section>
       <section className="absolute bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">

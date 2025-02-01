@@ -1,30 +1,41 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import pack from "@/public/restorefine_bag+box.jpg";
 import mealimage from "@/public/restomedia-photography.jpg";
 import tshirt from "@/public/restoprint-demo.jpg";
 import phone from "@/public/iPhone15Mockup.jpg";
+import merch from "@/public/restomerch-demo.jpg";
 
 const services = [
   {
     title: "RestoWeb",
     description: "Build a digital space that's truly yours.",
     image: phone,
-    href: "/services/web",
+    href: "/services/restoweb",
   },
   {
     title: "RestoPrint",
     description: "Your vision on paper, with quality you can see and feel.",
     image: tshirt,
-    href: "/services/print",
+    href: "/services/restoprint",
   },
   {
     title: "RestoMedia",
     description: "Frame the taste and savour the experience",
     image: mealimage,
-    href: "/services/media",
+    href: "/services/restomedia",
   },
+  {
+    title: "RestoMerch",
+    description: "Represent you in your style",
+    image: merch,
+    href: "/services/restomerch",
+  },
+  // Add more services as needed
 ];
 
 const serviceDetails = [
@@ -59,34 +70,75 @@ const serviceDetails = [
 ];
 
 export default function ServiceTypes() {
-  return (
-    <div className="py-24 space-y-16">
-      <div className="text-center">
-        <h1 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-          Our Services
-        </h1>
-        <p className="text-sm text-white/80">
-          Shaping Brands with Purpose and Precision
-        </p>
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-        <div className="my-12 relative aspect-[16/9] rounded-[24px] overflow-hidden bg-[#d9d9d9]">
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024); // Adjust breakpoint as needed
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const nextSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 >= services.length ? 0 : prevIndex + 1
+    );
+    setTimeout(() => setIsTransitioning(false), 500); // Match this with the CSS transition duration
+  };
+
+  const prevSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? services.length - 1 : prevIndex - 1
+    );
+    setTimeout(() => setIsTransitioning(false), 500); // Match this with the CSS transition duration
+  };
+
+  const visibleServices = isMobile
+    ? services
+    : [
+        services[currentIndex],
+        services[(currentIndex + 1) % services.length],
+        services[(currentIndex + 2) % services.length],
+      ];
+
+  return (
+    <div className="py-24 space-y-8 lg:space-y-16">
+      <div className="">
+        <div className="flex flex-col items-center">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
+            Our Services
+          </h1>
+          <p className="max-w-[80%] md:max-w-[50%] text-sm sm:text-md md:text-base text-white/80">
+            Shaping Brands with Purpose and Precision
+          </p>
+        </div>
+
+        <div className="w-fulll my-6 md:my-12 relative h-[500px] lg:h-[600px] rounded-[24px] overflow-hidden bg-[#d9d9d9]">
           <Image
-            src={pack}
+            src={pack || "/placeholder.svg"}
             alt="Services Hero"
-            width={1920}
-            height={1080}
-            className="object-cover absolute -bottom-20"
+            fill
+            className="h-full object-cover flex lg:absolute bottom-0 lg:-bottom-8"
           />
         </div>
       </div>
 
       <div className="mb-0">
         <div className="flex flex-col lg:flex-row items-start justify-evenly">
-          <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
             RestoBranding
           </h2>
           <div className="space-y-6">
-            <p className="max-w-[400px] text-sm text-white/80">
+            <p className="max-w-full lg:max-w-[400px] text-sm md:text-base text-white/80">
               Our branding service dives deep into what makes your business
               unique, creating a powerful identity that not only stands out but
               connects with your audience on every level.
@@ -104,15 +156,22 @@ export default function ServiceTypes() {
         </div>
       </div>
 
-      <section className="space-y-0">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {services.map((service) => (
+      <section className="space-y-4">
+        <div
+          className={`grid ${
+            isMobile ? "grid-cols-1" : "md:grid-cols-2 lg:grid-cols-3"
+          } gap-4 overflow-hidden`}
+        >
+          {visibleServices.map((service, index) => (
             <div
-              key={service.title}
-              className="bg-[#d9d9d9] rounded-[24px] overflow-hidden relative"
+              key={`${service.title}-${index}`}
+              className={`bg-[#d9d9d9] rounded-[24px] overflow-hidden relative transition-transform duration-500 ease-in-out ${
+                isTransitioning ? "transform translate-x-full" : ""
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="absolute z-10 p-6 space-y-1">
-                <p className=" text-xs text-red font-medium text-white">
+                <p className="text-xs font-medium text-white">
                   {service.title}
                 </p>
                 <h2 className="text-xl font-semibold block text-white">
@@ -121,52 +180,45 @@ export default function ServiceTypes() {
               </div>
               <div className="h-[550px] border-t border-t-black/80 relative">
                 <Image
-                  src={service.image}
+                  src={service.image || "/placeholder.svg"}
                   alt={service.title}
                   fill
-                  className="absolute z-0 right-0 w-full object-cover grayscale scale-100 hover:scale-110 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer"
+                  className="absolute z-0 right-0 w-full object-cover grayscale-none md:grayscale scale-100 hover:scale-110 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer"
                 />
               </div>
-              {/* <div className="p-8">
-                <h3 className="text-xl font-medium text-black mb-1">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-black/80 mb-6">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="inline-flex text-sm items-center gap-2 border border-black/10 rounded-3xl px-3 py-2 text-black hover:text-black/70 transition-colors group"
-                >
-                  See More
-                  <div className="flex items-center justify-center bg-black rounded-full p-1 w-8 h-8 ">
-                    <ArrowRight className="w-5 h-5 text-white transition-transform group-hover:translate-x-1" />
-                  </div>
-                </Link>
-              </div> */}
             </div>
           ))}
         </div>
 
-        {/* <div className="flex justify-end gap-4">
-          <button className="p-4 rounded-full bg-[#303030] text-white hover:bg-[#404040] transition-colors">
-            <ArrowRight className="w-6 h-6 rotate-180" />
-          </button>
-          <button className="p-4 rounded-full bg-[#ff0000] text-white hover:bg-[#ff0000]/90 transition-colors">
-            <ArrowRight className="w-6 h-6" />
-          </button>
-        </div> */}
+        {!isMobile && services.length > 3 && (
+          <div className="flex justify-end gap-4">
+            <button
+              onClick={prevSlide}
+              className="p-4 rounded-full bg-[#303030] text-white hover:bg-[#404040] transition-colors"
+              disabled={isTransitioning}
+            >
+              <ArrowRight className="w-6 h-6 rotate-180" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="p-4 rounded-full bg-[#ff0000] text-white hover:bg-[#ff0000]/90 transition-colors"
+              disabled={isTransitioning}
+            >
+              <ArrowRight className="w-6 h-6" />
+            </button>
+          </div>
+        )}
       </section>
 
       <div className="space-y-16">
         {serviceDetails.map((service, index) => (
           <div key={service.number} className="relative">
             <div className="grid md:grid-cols-[100px_1fr] gap-4">
-              <div className="text-4xl font-medium text-white">
+              <div className="text-4xl font-semibold text-[red]">
                 {service.number}
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl font-medium text-white">
+                <h3 className="text-2xl font-semibold text-white">
                   {service.title}
                 </h3>
                 <p className="text-sm text-white/80">{service.description}</p>
@@ -174,7 +226,7 @@ export default function ServiceTypes() {
                   {service.services.map((item) => (
                     <button
                       key={item}
-                      className="px-6 py-3 text-white border border-white/20 rounded-full hover:bg-white/10 transition-colors"
+                      className="px-6 py-3 text-white text-xs border border-white/30 rounded-full hover:bg-white/10 transition-colors"
                     >
                       {item}
                     </button>
