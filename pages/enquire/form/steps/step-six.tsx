@@ -36,29 +36,19 @@ export function StepSix() {
   return (
     <div className="">
       <div>
-        <h2 className="mb-0 text-3xl font-semibold">
+        <h2 className="text-3xl font-semibold">
           <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Your Enquiry Was
             <br />
             Made Successfully
           </span>
         </h2>
-        <p>Below is an preview of your submitted details.</p>
+        <p>Below is a preview of your submitted details.</p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-16">
-        <div className="space-y-4">
-          <SelectedService title={state.mainService || ""} />
-          <div>
-            <Link className="" href="/">
-              <Button className="w-full" size="lg" variant="secondary">
-                Go Back Home
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        <div className="space-y-6">
+      <div className="mt-8 grid gap-12 lg:gap-16 grid-cols-1 lg:grid-cols-2 cursor-pointer">
+        <SelectedService title={state.mainService || ""} />
+        <section className="flex flex-col gap-y-6">
           <div className="capitalize">
             <div className="text-lg text-[#6D6C6D]">{state.serviceType}</div>
             <div className="text-lg text-white"> {state.budget}</div>
@@ -97,7 +87,14 @@ export function StepSix() {
               <div className="text-lg text-white">{submissionData.message}</div>
             </div>
           </div>
-        </div>
+          <div>
+            <Link className="" href="/">
+              <Button className="w-full" size="lg" variant="secondary">
+                Done
+              </Button>
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );
