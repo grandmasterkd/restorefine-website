@@ -6,24 +6,21 @@ import tray from "@/public/restotray.svg";
 
 export function CreativePotential() {
   return (
-    <section>
+    <section className="py-16 md:pt-44">
       <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Text Content */}
-
-          <div className="col-span-1 w-fit space-y-6">
-            <h2 className=" text-3xl font-medium text-white md:text-3xl lg:text-4xl">
+          <div className="col-span-1 space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
               Harness Our Full
-              <br />
-              Creative Potential
+              <br className="hidden md:inline" /> Creative Potential
             </h2>
-            <div className="max-w-sm text-md text-white/80">
-              <p>
-                Harness our full creative power to transform your vision into
-                reality. We creaft impactful solutions that elevate your brand
-                and leave a lasting impression.
-              </p>
-            </div>
+
+            <p className="text-sm sm:text-md md:text-base text-white/80">
+              Harness our full creative power to transform your vision into
+              reality. We craft impactful solutions that elevate your brand and
+              leave a lasting impression.
+            </p>
 
             {/* Custom See More Button */}
             <Link
@@ -38,42 +35,47 @@ export function CreativePotential() {
           </div>
 
           {/* Empty Shapes */}
-          <div className="ml-0 md:ml-20 col-span-2 grid grid-cols-2 gap-4">
-            <div className=" h-[500px] rounded-[24px] bg-[#131313] relative">
+          <div className="col-span-1 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:mt-0">
+            <div className="responsive-height rounded-[24px] bg-[#131313] relative overflow-hidden">
               <div className="absolute top-7 left-7 space-y-2">
-                <p className=" text-xs font-medium text-white/50">Comfort</p>
-                <h2 className="text-md font-medium block text-white/80">
-                  All your digital needs <br /> in-one-house
+                <p className="text-md md:text-xs font-medium text-white/50">
+                  Comfort
+                </p>
+                <h2 className="max-w-[70%] text-lg md:text-md font-medium block text-white/80">
+                  All your digital needs in-one-house
                 </h2>
               </div>
 
               <Image
-                src={apps}
+                src={apps || "/placeholder.svg"}
                 alt="restorefine-service-apps"
                 width={200}
                 height={200}
-                className="w-full absolute bottom-0 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                className="w-full absolute bottom-0 grayscale-none md:grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
               />
             </div>
-            <div className="h-[500px] rounded-[24px] bg-[#131313] relative">
+            <div className="responsive-height  rounded-[24px] bg-[#131313] relative overflow-hidden">
               <div className="absolute top-7 left-7 space-y-2">
-                <p className=" text-xs font-medium text-white/50">Reach</p>
-                <h2 className="text-md font-medium block text-white/80">
-                  Serve your restaurant <br /> to a global audience
+                <p className="text-md md:text-xs font-medium text-white/50">
+                  Reach
+                </p>
+                <h2 className="max-w-[70%] text-lg md:text-md font-medium block text-white/80">
+                  Serve your restaurant to a global audience
                 </h2>
               </div>
               <Image
-                src={tray}
+                src={tray || "/placeholder.svg"}
                 alt="restorefine-servingtray-graphic"
                 width={200}
                 height={200}
-                className="w-full absolute bottom-0 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                className="w-full absolute bottom-0 grayscale-none md:grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
               />
             </div>
           </div>
         </div>
 
         {/* Navigation Dots */}
+        {/* Commented out as per the original code */}
         {/* <div className="mt-12 flex justify-end gap-4">
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2b2b2b] transition-colors hover:bg-[#3b3b3b]"

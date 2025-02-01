@@ -31,8 +31,8 @@ const logos = [
 
 export function LogoMarquee() {
   return (
-    <main className="w-full">
-      <div className="pb-16 relative">
+    <main className="pb-24 w-full">
+      <div className="pb-12 md:pb-16 relative">
         <div
           aria-hidden="true"
           className="left-1/2 top-0 w-full center pointer-events-none absolute h-px max-w-full -translate-x-1/2 -translate-y-1/2"
@@ -54,7 +54,7 @@ export function LogoMarquee() {
         <h1 className="text-center text-white/70 mb-4">
           Trusted By Top Innovative Teams
         </h1>
-        <section className="relative flex w-full overflow-x-hidden bg-transparent py-4">
+        <section className="relative flex w-full overflow-x-hidden bg-transparent py-4 gap-x-8">
           <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-8">
             {logos.map((logo, index) => (
               <Image
@@ -63,7 +63,7 @@ export function LogoMarquee() {
                 alt={logo.name}
                 width={180}
                 height={60}
-                className="h-12 w-auto object-contain opacity-30 hover:opacity-100"
+                className="h-12 w-auto object-contain opacity-100 md:opacity-30 hover:opacity-100"
                 style={{ filter: logo.filter }}
               />
             ))}
@@ -76,7 +76,7 @@ export function LogoMarquee() {
                 alt={logo.name}
                 width={180}
                 height={60}
-                className="h-12 w-auto object-contain opacity-30 hover:opacity-100"
+                className="h-12 w-auto object-contain opacity-100 md:opacity-30 hover:opacity-100"
                 style={{ filter: logo.filter }}
               />
             ))}
