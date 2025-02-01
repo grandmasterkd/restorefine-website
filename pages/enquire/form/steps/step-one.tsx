@@ -22,14 +22,12 @@ export function StepOne() {
       <div className="text-left">
         <h1 className="mb-2 text-3xl font-semibold">
           <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
-            What Are You
-            <br />
-            Looking For?
+            What Are You Looking For?
           </span>
         </h1>
       </div>
 
-      <div className="w-full grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="w-full grid  gap-3 grid-cols-2 lg:grid-cols-3">
         {serviceOptions.map((option) => (
           <button
             key={option.id}

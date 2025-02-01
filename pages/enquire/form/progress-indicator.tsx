@@ -29,7 +29,7 @@ export function ProgressIndicator() {
   const completedStep = <Image src={star} alt="star" width={30} height={30} />;
 
   return (
-    <div className="flex items-center justify-between mb-10">
+    <div className="flex items-center justify-between mb-8">
       {steps.map((step, index) => (
         <div
           key={step.step}
@@ -38,11 +38,11 @@ export function ProgressIndicator() {
           <button
             onClick={() => handleStepClick(step.step)}
             disabled={!step.isActive}
-            className={`flex h-16 w-16 items-center justify-center rounded-full text-xl font-medium shrink-0 transition-colors
+            className={`flex  h-12 w-12 lg:h-16 lg:w-16 items-center justify-center rounded-full text-sm lg:text-base font-medium shrink-0 transition-colors
               ${
                 step.isActive
                   ? step.step === currentStep
-                    ? "border-2 border-white bg-transparent text-white"
+                    ? "border-2 border-white bg-transparent text-white "
                     : "bg-white text-black hover:bg-white/80"
                   : "bg-[#2b2b2b] text-white cursor-not-allowed"
               }`}

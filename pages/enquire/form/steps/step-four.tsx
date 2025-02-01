@@ -50,8 +50,8 @@ export function StepFour() {
         </span>
       </h2>
 
-      <div className="grid gap-12 lg:grid-cols-2">
-        <div className="space-y-4">
+      <div className="grid gap-12 lg:gap-16 grid-cols-1 lg:grid-cols-2 cursor-pointer">
+        <div className="order-2 lg:order-1 space-y-4">
           <SelectedService title={state.mainService || ""} />
 
           <div className="flex items-center rounded-xl border border-white/80 bg-transparent p-4">
@@ -83,7 +83,7 @@ export function StepFour() {
           </button>
         </div>
 
-        <div className="space-y-6">
+        <div className="order-1 lg:order-2 lg:space-y-0 space-y-12">
           <RadioGroup
             defaultValue={state.timeline || undefined}
             onValueChange={handleTimelineChange}
@@ -125,6 +125,7 @@ export function StepFour() {
               </button>
             </div>
           )}
+          <div className="grid lg:hidden w-full h-px bg-white/40"></div>
         </div>
       </div>
     </div>

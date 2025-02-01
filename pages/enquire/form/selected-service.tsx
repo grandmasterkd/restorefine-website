@@ -8,7 +8,7 @@ interface SelectedServiceProps {
 
 export function SelectedService({ title }: SelectedServiceProps) {
   return (
-    <div className="relative aspect-square rounded-[24px] border-2 border-[#4D4D4D] bg-gradient-dark  overflow-hidden">
+    <div className="relative h-[180px] lg:h-[350px] rounded-[24px] border-2 border-[#4D4D4D] bg-gradient-dark  overflow-hidden">
       <Image
         src={mesh || "/placeholder.svg"}
         alt="resto-enquire-mesh-bg"

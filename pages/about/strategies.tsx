@@ -33,8 +33,8 @@ const restoStar = <Image src={star} alt="star" width={50} height={50} />;
 
 export function StrategySection() {
   return (
-    <section className="py-24">
-      <div className="mx-auto">
+    <section className="pt-16">
+      <div className="">
         <div className="mx-auto mb-16">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
             Our Strategy For Work

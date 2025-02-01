@@ -60,10 +60,12 @@ export function StepTwo() {
         </span>
       </h2>
 
-      <div className="grid gap-16 lg:grid-cols-2 cursor-pointer">
-        <SelectedService title={state.mainService || ""} />
+      <div className="grid gap-12 lg:gap-16 grid-cols-1 lg:grid-cols-2 cursor-pointer">
+        <div className="order-2 lg:order-1">
+          <SelectedService title={state.mainService || ""} />
+        </div>
 
-        <div>
+        <div className="order-1 lg:order-2 lg:space-y-0 space-y-12">
           <RadioGroup
             defaultValue={state.serviceType || undefined}
             onValueChange={(value) => {
@@ -91,6 +93,7 @@ export function StepTwo() {
               </div>
             ))}
           </RadioGroup>
+          <div className="grid lg:hidden w-full h-px bg-white/40"></div>
         </div>
       </div>
 

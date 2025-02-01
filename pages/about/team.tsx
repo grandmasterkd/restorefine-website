@@ -24,7 +24,7 @@ export function Team() {
   };
 
   return (
-    <section className="pb-44">
+    <section className="pt-20 pb-44">
       <div className="">
         <div className="mx-auto mb-8">
           <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
@@ -43,7 +43,7 @@ export function Team() {
         <div className="relative">
           <div className="overflow-hidden">
             <motion.div
-              className="flex items-start gap-x-6"
+              className="flex flex-col lg:flex-row items-start gap-6"
               initial={false}
               animate={{ x: `${-currentIndex * (100 / 3)}%` }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}

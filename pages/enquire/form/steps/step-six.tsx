@@ -35,13 +35,16 @@ export function StepSix() {
 
   return (
     <div className="">
-      <h2 className="mb-2 text-3xl font-semibold">
-        <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
-          Your Enquiry Was
-          <br />
-          Made Successfully
-        </span>
-      </h2>
+      <div>
+        <h2 className="mb-0 text-3xl font-semibold">
+          <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
+            Your Enquiry Was
+            <br />
+            Made Successfully
+          </span>
+        </h2>
+        <p>Below is an preview of your submitted details.</p>
+      </div>
 
       <div className="grid lg:grid-cols-2 gap-16">
         <div className="space-y-4">

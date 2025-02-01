@@ -112,8 +112,8 @@ export function StepFive() {
         </span>
       </h2>
 
-      <div className="grid gap-12 lg:grid-cols-2">
-        <div className="flex flex-col gap-y-4 h-[450px] overflow-y-auto">
+      <div className="grid gap-12 lg:gap-16 grid-cols-1 lg:grid-cols-2 cursor-pointer">
+        <div className="order-2 lg:order-1 space-y-4">
           <SelectedService title={state.mainService || ""} />
 
           <div className="flex items-center rounded-xl border border-white/50 bg-transparent p-4">
@@ -156,99 +156,102 @@ export function StepFive() {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <Label htmlFor="name" className="text-white">
-              Name
-            </Label>
-            <Input
-              id="name"
-              name="name"
-              placeholder="Enter Your Name Here"
-              className="border-white/50 bg-transparent text-white placeholder:text-white/50"
-            />
-            {errors.name && (
-              <p className="text-sm text-red-500">{errors.name}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="email" className="text-white">
-              Email
-            </Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter Your Email Here"
-              className="border-white/50 bg-transparent text-white placeholder:text-white/50"
-            />
-            {errors.email && (
-              <p className="text-sm text-red-500">{errors.email}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="phone" className="text-white">
-              Mobile Phone
-            </Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              placeholder="Enter Your Phone Here"
-              className="border-white/50 bg-transparent text-white placeholder:text-white/50"
-            />
-            {errors.phone && (
-              <p className="text-sm text-red-500">{errors.phone}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="company" className="text-white">
-              Company
-            </Label>
-            <Input
-              id="company"
-              name="company"
-              placeholder="Enter Your Company Name"
-              className="border-white/50 bg-transparent text-white placeholder:text-white/50"
-            />
-            {errors.company && (
-              <p className="text-sm text-red-500">{errors.company}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="message" className="text-white">
-              Message
-            </Label>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="I'd like to know how you can help me with..."
-              className="min-h-[100px] border-white/50 bg-transparent text-white placeholder:text-white/50"
-            />
-            {errors.message && (
-              <p className="text-sm text-red-500">{errors.message}</p>
-            )}
-          </div>
-
-          {errors.submit && (
-            <p className="text-sm text-red-500 mb-4">{errors.submit}</p>
-          )}
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-black transition-opacity hover:opacity-90 disabled:opacity-50"
-          >
-            {isSubmitting ? "Submitting..." : "Submit"}
-            <div className="flex size-7 items-center justify-center rounded-full bg-[#ff0000]">
-              <ArrowLeft className="size-4 rotate-180 text-white" />
+        <section className="order-1 lg:order-2 lg:space-y-0 space-y-12">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-white">
+                Name
+              </Label>
+              <Input
+                id="name"
+                name="name"
+                placeholder="Enter Your Name Here"
+                className="border-white/50 bg-transparent text-white placeholder:text-white/50"
+              />
+              {errors.name && (
+                <p className="text-sm text-red-500">{errors.name}</p>
+              )}
             </div>
-          </button>
-        </form>
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-white">
+                Email
+              </Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter Your Email Here"
+                className="border-white/50 bg-transparent text-white placeholder:text-white/50"
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email}</p>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-white">
+                Mobile Phone
+              </Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Enter Your Phone Here"
+                className="border-white/50 bg-transparent text-white placeholder:text-white/50"
+              />
+              {errors.phone && (
+                <p className="text-sm text-red-500">{errors.phone}</p>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="company" className="text-white">
+                Company
+              </Label>
+              <Input
+                id="company"
+                name="company"
+                placeholder="Enter Your Company Name"
+                className="border-white/50 bg-transparent text-white placeholder:text-white/50"
+              />
+              {errors.company && (
+                <p className="text-sm text-red-500">{errors.company}</p>
+              )}
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-white">
+                Message
+              </Label>
+              <Textarea
+                id="message"
+                name="message"
+                placeholder="I'd like to know how you can help me with..."
+                className="min-h-[100px] border-white/50 bg-transparent text-white placeholder:text-white/50"
+              />
+              {errors.message && (
+                <p className="text-sm text-red-500">{errors.message}</p>
+              )}
+            </div>
+
+            {errors.submit && (
+              <p className="text-sm text-red-500 mb-4">{errors.submit}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-black transition-opacity hover:opacity-90 disabled:opacity-50"
+            >
+              {isSubmitting ? "Submitting..." : "Submit"}
+              <div className="flex size-7 items-center justify-center rounded-full bg-[#ff0000]">
+                <ArrowLeft className="size-4 rotate-180 text-white" />
+              </div>
+            </button>
+          </form>
+          <div className="grid lg:hidden w-full h-px bg-white/40"></div>
+        </section>
       </div>
     </div>
   );
