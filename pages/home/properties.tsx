@@ -18,11 +18,11 @@ export function BentoGrid() {
             width={120}
             height={120}
             sizes="(max-width: 900px) 50px"
-            className=""
+            className="hidden md:block"
           />
         </div>
 
-        <h2 className="max-w-[100%] md:max-w-[50%] text-2xl sm:text-3xl font-semibold text-white md:text-4xl ">
+        <h2 className="max-w-[100%] md:max-w-[50%] text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
           Not Reinventing The Wheel, Just Giving You Better
         </h2>
         <p className="max-w-[80%] md:max-w-[50%] text-sm sm:text-md md:text-base text-white/80">

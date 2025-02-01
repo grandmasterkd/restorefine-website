@@ -57,14 +57,15 @@ export function Reviews() {
 
   return (
     <section>
-      <div className="">
+      <div className="pt-32 md:pt-44">
         {/* Header */}
-        <div className="mx-auto text-center mb-8">
-          <h2 className="text-3xl font-semibold text-white">Our Clients</h2>
-          <p className="text-md text-white/80">
-            Hear firsthand how our solutions have boosted online
-            <br />
-            success for users like you.
+        <div className="flex flex-col items-center text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
+            Our Clients
+          </h2>
+          <p className="max-w-[80%] md:max-w-[50%] text-sm sm:text-md md:text-base text-white/80">
+            Hear firsthand how our solutions have boosted online success for
+            users like you.
           </p>
         </div>
 

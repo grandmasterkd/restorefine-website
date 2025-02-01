@@ -6,7 +6,7 @@ import tray from "@/public/restotray.svg";
 
 export function CreativePotential() {
   return (
-    <section className="py-16 md:pt-44">
+    <section className="pt-32 md:pt-44">
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Text Content */}
