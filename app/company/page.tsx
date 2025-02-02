@@ -1,4 +1,4 @@
-import AboutUs from "@/pages/about";
+import AboutUs from "@/blocks/about";
 import React from "react";
 
 function Company() {

@@ -1,4 +1,4 @@
-import Work from "@/pages/work";
+import Work from "@/blocks/work";
 import React from "react";
 
 function Portfolio() {

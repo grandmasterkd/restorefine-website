@@ -1,4 +1,4 @@
-import RestoServices from "@/pages/service";
+import RestoServices from "@/blocks/service";
 import React from "react";
 
 function Services() {

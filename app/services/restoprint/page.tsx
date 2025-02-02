@@ -1,4 +1,4 @@
-import RPrint from "@/pages/service/rprint";
+import RPrint from "@/blocks/service/rprint";
 import React from "react";
 
 function RestoPrint() {

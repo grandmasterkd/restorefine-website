@@ -1,4 +1,4 @@
-import RMerch from "@/pages/service/rmerch";
+import RMerch from "@/blocks/service/rmerch";
 import React from "react";
 
 function RestoMerch() {

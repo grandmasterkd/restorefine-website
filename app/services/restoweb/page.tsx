@@ -1,4 +1,4 @@
-import RWeb from "@/pages/service/rweb";
+import RWeb from "@/blocks/service/rweb";
 import React from "react";
 
 function RestoWeb() {

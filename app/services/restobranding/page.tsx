@@ -1,4 +1,4 @@
-import RBranding from "@/pages/service/rbranding";
+import RBranding from "@/blocks/service/rbranding";
 import React from "react";
 
 function RestoBranding() {

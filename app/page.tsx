@@ -1,4 +1,4 @@
-import Resto from "@/pages/home";
+import Resto from "@/blocks/home";
 
 export default function Home() {
   return (

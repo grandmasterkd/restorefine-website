@@ -1,4 +1,4 @@
-import RMedia from "@/pages/service/rmedia";
+import RMedia from "@/blocks/service/rmedia";
 import React from "react";
 
 function RestoMedia() {

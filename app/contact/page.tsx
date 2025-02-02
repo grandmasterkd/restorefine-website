@@ -1,4 +1,4 @@
-import { ContactSection } from "@/pages/contact-us";
+import { ContactSection } from "@/blocks/contact-us";
 import React from "react";
 
 function Contact() {

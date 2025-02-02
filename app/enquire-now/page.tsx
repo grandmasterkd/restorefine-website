@@ -1,4 +1,4 @@
-import Enquire from "@/pages/enquire";
+import Enquire from "@/blocks/enquire";
 
 export default function EnquireNow() {
   return (
