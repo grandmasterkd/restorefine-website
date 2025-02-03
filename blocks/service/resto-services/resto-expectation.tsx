@@ -32,9 +32,9 @@ export function RestoExpectation() {
       <div className="">
         <div className="mb-16">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">
-            And We&apos;ll Do Something
+            And These Inspiring
             <br />
-            Like This For You
+            Benefits Await You
           </h2>
           <p className="text-sm text-white/80">
             To turn your ideas into impactful solutions

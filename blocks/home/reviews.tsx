@@ -58,7 +58,7 @@ export function Reviews() {
 
   return (
     <section>
-      <div className="pt-32 md:pt-44">
+      <div className="py-32 md:py-36">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
