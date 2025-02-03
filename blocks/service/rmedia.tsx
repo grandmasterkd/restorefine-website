@@ -5,7 +5,7 @@ import mlogo from "@/public/rmedialogo.svg";
 import ctabg from "@/public/rmediactabg.jpg";
 import { RestoOverview } from "./resto-services/resto-overview";
 import { rMediaServices } from "@/lib/rmediaServices";
-import signature from "@/public/restobrandingsignature.svg";
+import signature from "@/public/restomediasignature.svg";
 import bio from "@/public/services/media/restomediabio.jpg";
 
 function RMedia() {

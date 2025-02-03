@@ -28,20 +28,23 @@ export default function Hero() {
         alt="Background"
       />
 
-      <div
-        className="mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2"
-        style={{
-          boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.05)",
-          backdropFilter: "blur(8px)",
-        }}
-      >
-        <span className="mr-2 rounded-full bg-red-600 px-2 py-1 text-xs font-semibold text-white">
-          NEW
-        </span>
-        <span className="text-sm text-white">
-          Latest addition to our portfolio
-        </span>
-      </div>
+      <Link href="/portfolio/quiknest" passHref className="cursor-pointer">
+        <div
+          className="mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2"
+          style={{
+            boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(8px)",
+          }}
+        >
+          <span className="mr-2 rounded-full bg-red-600 px-2 py-1 text-xs font-semibold text-white">
+            NEW
+          </span>
+          <span className="text-sm text-white">
+            Latest addition to our portfolio
+          </span>
+        </div>
+      </Link>
+
       {/* Heading */}
       <h1 className="relative z-0 mb-6 text-center font-medium tracking-tight text-5xl md:text-7xl">
         <span className="p-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
@@ -61,7 +64,8 @@ export default function Hero() {
       {/* CTA Button */}
       <div className="w-fit rounded-xl border border-white/20 p-2.5">
         <Link
-          href="/start"
+          href="/enquire-now"
+          passHref
           className="relative inline-flex items-center justify-center rounded-lg border border-white/10 bg-white px-6 py-2 text-base font-medium text-black transition-colors hover:bg-white/90"
           style={{
             boxShadow: `

@@ -149,7 +149,6 @@ export function ContactSection() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    required
                     placeholder="Enter Your Phone Here"
                     className="w-full bg-transparent border-white/30 text-white placeholder:text-white/40"
                   />
@@ -160,14 +159,13 @@ export function ContactSection() {
                     htmlFor="state"
                     className="block text-lg text-white/60 mb-2"
                   >
-                    State
+                    Company/Work
                   </label>
                   <Input
                     id="state"
                     name="state"
                     type="text"
-                    required
-                    placeholder="What State Do You Live In"
+                    placeholder="What Industry Do You Work In"
                     className="w-full bg-transparent border-white/30 text-white placeholder:text-white/40"
                   />
                 </div>
