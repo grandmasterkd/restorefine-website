@@ -33,7 +33,7 @@ const restoExpectationProps = {
   buildingCard: {
     image: globe.src,
     title: "Building",
-    subtitle: "For Future",
+    subtitle: "Future",
   },
   supportCard: {
     avatar: avatar.src,

@@ -97,7 +97,7 @@ export function MobileMenu() {
             <Link href="/company" className="hover:text-white/80">
               Company
             </Link>
-            <Link href="/blog" className="hover:text-white/80">
+            <Link href="/resources" className="hover:text-white/80">
               Resources
             </Link>
             <Link href="/contact" className="hover:text-white/80">

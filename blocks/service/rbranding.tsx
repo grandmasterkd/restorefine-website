@@ -49,7 +49,7 @@ const restoExpectationProps = {
   buildingCard: {
     image: globe.src,
     title: "Building",
-    subtitle: "For Future",
+    subtitle: "Future",
   },
   supportCard: {
     avatar: avatar.src,
@@ -95,7 +95,7 @@ function RBranding() {
             <Image src={ball} alt="ball" width={150} height={150} />
           </div>
         </div>
-        <div className=" flex lg:hidden">
+        <div className="flex items-center justify-center lg:hidden">
           <Image src={artefacts} alt="artefacts" width={300} height={300} />
         </div>
       </section>

@@ -5,8 +5,8 @@ import huddle from "@/public/companyhuddle.jpg";
 function AboutHero() {
   return (
     <main className="">
-      <section className=" min-h-screen flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-16 lg:gap-4">
-        <h1 className="text-left text-5xl lg:text-6xl font-medium max-w-2xl">
+      <section className="relative z-10 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-3 md:gap-y-4">
+        <h1 className="relative z-0 text-left md:text-center font-medium tracking-tight rservicehero text-4xl md:text-7xl">
           <span className="p-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Refining Your
             <br />

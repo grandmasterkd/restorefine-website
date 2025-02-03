@@ -57,7 +57,7 @@ export function RestoExpectation({
     <section className="py-20 mg:py-32">
       <div className="">
         <div className="mb-16">
-          <h2 className="text-3xl font-medium text-[#ffffff] md:text-3xl lg:text-4xl max-w-[40%]">
+          <h2 className="text-3xl font-medium text-[#ffffff] md:text-3xl lg:text-4xl max-w-full md:max-w-[40%]">
             {title.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}

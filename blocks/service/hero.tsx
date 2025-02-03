@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 
 function ServicesHero() {
   return (
-    <main className="grid place-items-center min-h-screen">
-      <section className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-16">
-        <div className="text-left space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium">
+    <main className="grid place-items-center min-h-screen gap-y-4">
+      <section className="relative z-10 mt-6 md:mt-24 mb-8 lg:mb-0 lg:mt-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-3 md:gap-y-4">
+        <div className="flex flex-col items-start md:items-center gap-y-4">
+          <h1 className="relative z-0 text-left md:text-center font-medium tracking-tight rservicehero text-4xl md:text-7xl">
             <span className="py-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
               Tranforming
               <br />
@@ -43,7 +43,7 @@ function ServicesHero() {
           />
         </div>
       </section>
-      <section className="absolute bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">
+      <section className="absolute -bottom-10 lg:bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">
         <div className="animate-marquee-infinite text-7xl font-bold text-white/60 flex min-w-screen shrink-0 items-center justify-around gap-8">
           RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
         </div>

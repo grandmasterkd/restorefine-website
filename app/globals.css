@@ -34,6 +34,20 @@ body {
   }
 }
 
+@media (max-width: 639px) {
+  .rservicehero {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 379px) {
+  .rservicehero {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
 .responsive-height {
   height: 600px;
 }

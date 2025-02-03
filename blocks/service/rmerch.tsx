@@ -39,7 +39,7 @@ const aboutRMerch = [
   },
 ];
 
-const services = ["Apparel Print", "Stationery Print", "Branding", "Design"];
+// const services = ["Apparel Print", "Stationery Print", "Branding", "Design"];
 
 const benefitsContent = {
   title: "And We Make It\nEasier For You",

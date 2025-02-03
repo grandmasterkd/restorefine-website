@@ -52,12 +52,12 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="pt-44 pb-8 lg:pb-20">
+    <footer className="pt-44 pb-12 lg:pb-20">
       <div className="w-full">
-        <div className="grid grid-cols-1 gap-8 lg:gap-20 place-items-end justify-between lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:gap-20 place-items-start lg:place-items-end justify-between lg:grid-cols-12">
           {/* Logo and Social Links */}
-          <div className="flex flex-col h-full justify-between lg:col-span-4">
-            <Link href="/" className="block mb-8">
+          <div className="flex flex-col h-full justify-between col-span-1 lg:col-span-4">
+            <Link href="/" className="block mb-4 lg:mb-8">
               <Image
                 src="/restorefine-logowhite.svg"
                 alt="RestoRefine"
