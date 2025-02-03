@@ -14,15 +14,17 @@ function RestoServicesHero({
   description,
 }: RestoServicesHeroProps) {
   return (
-    <main className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center gap-y-4">
-      <h1 className="text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+    <main className="relative z-10 -mt-32 mb-36 md:mb-0 md:pb-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-4">
+      <h1 className="relative z-0 mb-0 md:mb-6 text-left md:text-center font-medium tracking-tight text-5xl md:text-7xl">
         <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
           {titletop}
           <br />
           {titlebottom}
         </span>
       </h1>
-      <p className="min-w-1/2 w-3/5 text-white/80">{description}</p>
+      <p className="w-full md:min-w-1/2 md:w-3/5 text-white/80">
+        {description}
+      </p>
       <Link
         href="/enquire-now"
         className="flex items-center gap-1 mt-1 hover:opacity-90"

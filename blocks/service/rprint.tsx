@@ -28,32 +28,33 @@ function RPrint() {
           className="h-full object-none animate-pulse"
         />
       </div>
+      <section className="pt-16 lg:pt-32">
+        <RestoOverview {...rPrintServices} />
+        <RestoBenefits signature={money} />
+        <RestoExpectation />
 
-      <RestoOverview {...rPrintServices} />
-      <RestoBenefits signature={money} />
-      <RestoExpectation />
-
-      <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
-        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
-          <Image
-            src={signature}
-            alt="signature"
-            layout="responsive"
-            width={500}
-            height={500}
-            className="w-full"
-          />
-        </div>
-        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
-          <Image
-            src={signature}
-            alt="signature"
-            layout="responsive"
-            width={500}
-            height={500}
-            className="w-full"
-          />
-        </div>
+        <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
+          <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+            <Image
+              src={signature}
+              alt="signature"
+              layout="responsive"
+              width={500}
+              height={500}
+              className="w-full"
+            />
+          </div>
+          <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+            <Image
+              src={signature}
+              alt="signature"
+              layout="responsive"
+              width={500}
+              height={500}
+              className="w-full"
+            />
+          </div>
+        </section>
       </section>
     </main>
   );

@@ -58,7 +58,7 @@ export function RestoExpectation() {
                   lineHeight: 1.4,
                 }}
               >
-                <span className="text-[#ffffff] text-2xl sm:text-3xl md:text-4xl">
+                <span className="text-[#ffffff] text-4xl">
                   Partner <span className="text-[#000000]">with</span>
                   <br />
                   Creativity
@@ -103,7 +103,7 @@ export function RestoExpectation() {
               <div className="w-full h-full rounded-[24px] bg-gradient-to-br from-[#1B1B1B] to-[#000000]"></div>
             </div>
 
-            <div className="absolute top-6 left-6 flex flex-col lg:flex-row items-start lg:items-center p-0 gap-3">
+            <div className="absolute top-6 left-6 flex flex-row items-center p-0 gap-3">
               <Image
                 src={avatar || "/placeholder.svg?height=80&width=80"}
                 alt="Communications Support Avatar"

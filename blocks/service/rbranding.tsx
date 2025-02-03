@@ -10,6 +10,7 @@ import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
 import money from "@/public/moneystartgraphic.svg";
 import { rBrandingServices } from "@/lib/rbrandingServices";
+import artefacts from "@/public/services/branding/rbrandinghomemobile.svg";
 
 function RBranding() {
   return (
@@ -20,15 +21,20 @@ function RBranding() {
         description="With RestoBranding, develop a compelling brand that captures attention. From logo design to complete brand development, including social media graphics, we ensure your brand communicates clearly and effectively across all channels. "
       />
 
-      <div className="absolute left-0 right-0 top-12 h-full flex items-center justify-between">
-        <div>
-          <Image src={baloon} alt="baloon" width={180} height={180} />
-        </div>
+      <section className="absolute top-64 left-0 right-0 lg:top-12 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:gap-0 gap-2">
+        <div className="hidden lg:flex">
+          <div>
+            <Image src={baloon} alt="baloon" width={180} height={180} />
+          </div>
 
-        <div>
-          <Image src={ball} alt="ball" width={150} height={150} />
+          <div>
+            <Image src={ball} alt="ball" width={150} height={150} />
+          </div>
         </div>
-      </div>
+        <div className="block lg:hidden">
+          <Image src={artefacts} alt="artefacts" width={300} height={300} />
+        </div>
+      </section>
 
       <RestoOverview {...rBrandingServices} />
       <RestoBenefits signature={money} />

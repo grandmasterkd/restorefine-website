@@ -10,6 +10,11 @@ import RestoBenefits from "./resto-services/resto-benefits";
 // import Cta from "@/components/cta";
 import hood from "@/public/merchsignature.svg";
 import signature from "@/public/restomerchsignature.svg";
+import headlineimg from "@/public/services/merch/pexels-oyindamola-taiwo-346083207-18930893.jpg";
+import stationery from "@/public/services/merch/restorefine_floatingpens.jpg";
+import apron from "@/public/services/merch/HOM-000-024-M-Freebie.jpg";
+import chestshot from "@/public/services/merch/pexels-skgphotography-22617996.jpg";
+import cards from "@/public/services/merch/restorefine_thankyoucard.jpg";
 
 const star = <Image src={restostar} alt="RestoStar" width={100} height={100} />;
 const merchring = <Image src={ring} alt="MerchRing" width={150} height={150} />;
@@ -39,7 +44,7 @@ function RMerch() {
   return (
     <main className="py-44">
       <section className="relative z-10 flex flex-col items-center justify-center text-center gap-y-4">
-        <h1 className="text-center text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
+        <h1 className="relative z-0 mb-6 text-center font-medium tracking-tight text-5xl md:text-7xl">
           <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Finally You Can
             <br />
@@ -51,16 +56,16 @@ function RMerch() {
           href="/enquire-now"
           className="flex items-center gap-1 mt-1 hover:opacity-90"
         >
-          <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
+          <div className="w-auto bg-white text-black text-sm rounded-[24px] px-6 py-3">
             Lets Craft Something
           </div>
           <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
         </Link>
       </section>
 
-      <section className="pt-16 pb-36">
+      <section className="pt-12 lg:pt-16 pb-36">
         <div className="">
-          <div className="mb-8 flex items-center justify-between">
+          <div className="mb-8 flex flex-col lg:flex-row items-center justify-between gap-4">
             <p className="text-md w-[350px] text-white leading-relaxed">
               Enhance your branding with RestoMerch’s personalized products.
               From stationery to clothing, we provide custom merchandise
@@ -73,49 +78,85 @@ function RMerch() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {/* Left column */}
             <div className="mt-12 grid gap-4">
-              <div className="h-[200px] bg-[#d9d9d9] rounded-[32px]" />
-              <div className="h-[300px] bg-[#d9d9d9] rounded-[32px]" />
+              <div className="relative h-[200px] bg-[#d9d9d9] rounded-[24px]">
+                <Image
+                  src={stationery}
+                  alt="restomerchstationery"
+                  fill
+                  className="absolute top-0 object-cover w-full rounded-[24px]"
+                />
+              </div>
+              <div className="relative h-[300px] bg-[#d9d9d9] rounded-[24px]">
+                <Image
+                  src={apron}
+                  alt="restomerchapron"
+                  fill
+                  className="absolute top-0 object-cover w-full rounded-[24px]"
+                />
+              </div>
             </div>
 
             {/* Center column */}
             <div className="relative">
-              <div className="absolute -top-24 z-10 left-1/2 -translate-x-1/2">
+              <div className="absolute -top-12 z-10 left-1/2 -translate-x-1/2">
                 {star}
               </div>
-              <div className="absolute -top-12 z-0 h-[700px] bg-[#d9d9d9] rounded-[32px] w-full h-full" />
+              <div className="relative z-0 h-[550px] bg-[#d9d9d9] rounded-[24px] ">
+                <Image
+                  src={headlineimg}
+                  alt="restomerchheroimg"
+                  fill
+                  className="absolute top-0 object-cover w-full rounded-[24px]"
+                />
+              </div>
             </div>
 
             {/* Right column */}
-            <div className="mt-12 grid gap-4">
-              <div className="h-[300px] bg-[#d9d9d9] rounded-[32px]" />
-              <div className="h-[200px] bg-[#d9d9d9] rounded-[32px]" />
+            <div className="mt-0 lg:mt-12 grid gap-4">
+              <div className="relative h-[300px] bg-[#d9d9d9] rounded-[24px]">
+                <Image
+                  src={chestshot}
+                  alt="restomerchprint-tshirt"
+                  fill
+                  className="absolute top-0 object-cover w-full rounded-[24px]"
+                />
+              </div>
+              <div className="relative h-[200px] bg-[#d9d9d9] rounded-[24px]">
+                <Image
+                  src={cards}
+                  alt="restomerchstationerycards"
+                  fill
+                  className="absolute top-0 object-cover w-full rounded-[24px]"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="">
-          <div className="grid md:grid-cols-3 gap-8">
-            {aboutRMerch.map((item, index) => (
-              <div key={index} className="flex items-center space-y-6">
-                <div>
-                  <h2 className="text-2xl font-medium text-white mb-1">
-                    {item.title}
-                  </h2>
-                  <p className="text-sm text-white/80 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-                {index !== aboutRMerch.length - 1 && (
-                  <div className=" $ w-1 h-full bg-white/30"></div>
-                )}
+      <section className="py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {aboutRMerch.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col lg:flex-row items-start lg:items-center gap-6"
+            >
+              <div>
+                <h2 className="text-2xl font-medium text-white mb-1">
+                  {item.title}
+                </h2>
+                <p className="text-sm text-white/80 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            ))}
-          </div>
+              {index !== aboutRMerch.length - 1 && (
+                <div className=" w-full lg:w-px h-px lg:h-full bg-white/30"></div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -138,11 +179,11 @@ function RMerch() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-baseline mb-8">
             {/* Top row with layered effect */}
             <div className="relative">
-              <div className="absolute -top-5 left-6 w-[85%] h-[330px] bg-[#ABA9A9] rounded-[32px]" />
+              <div className="absolute -top-5 left-6 w-[85%] h-[330px] bg-[#ABA9A9] rounded-[24px]" />
 
-              <div className="relative w-full h-[330px] bg-[#d9d9d9] rounded-[32px]" />
+              <div className="relative w-full h-[330px] bg-[#d9d9d9] rounded-[24px]" />
             </div>
-            <div className=" h-[350px] bg-[#d9d9d9] rounded-[32px] lg:col-span-2" />
+            <div className=" h-[350px] bg-[#d9d9d9] rounded-[24px] lg:col-span-2" />
           </div>
 
           <div className="flex flex-wrap gap-4">
