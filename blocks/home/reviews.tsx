@@ -7,40 +7,40 @@ import { ArrowRight } from "lucide-react";
 const reviews = [
   {
     id: 1,
-    name: "Talia Taylor",
-    position: "Digital Marketing Director @ Quantum",
+    name: "Raj",
+    position: "Himalayan Dine In",
     review:
-      "This product has completely transformed how I manage my projects and deadlines.",
+      "The print quality was amazing, and I couldn't believe how affordable it was compared to my last supplier. Great service and fast delivery!",
     image: "/placeholder.svg?height=80&width=80",
-    companyLogo: "/placeholder.svg?height=80&width=80",
+    companyLogo: "/himalayanlogo.svg?height=80&width=80",
   },
   {
     id: 2,
-    name: "John Smith",
-    position: "CEO @ TechCorp",
+    name: "Balraj",
+    position: "Favourite Spot",
     review:
-      "The innovative solutions provided have revolutionized our business operations.",
+      "RestoRefine Studios gave our café a fresh look with a great logo redesign and incredible food photos. The photos really improved our social media presence, which has helped bring in more customers. Highly recommend them for creative and professional work in Glasgow!",
     image: "/placeholder.svg?height=80&width=80",
     companyLogo: "/placeholder.svg?height=80&width=80",
   },
-  {
-    id: 3,
-    name: "Rohit Acharya",
-    position: "Co-Founder @ Resto Refine Studios",
-    review:
-      "The innovative solutions provided have revolutionized our business operations.",
-    image: "/placeholder.svg?height=80&width=80",
-    companyLogo: "/placeholder.svg?height=80&width=80",
-  },
-  {
-    id: 4,
-    name: "Louisa Vaslisa",
-    position: "CEO @ Lova Juices",
-    review:
-      "The innovative solutions provided have revolutionized our business operations.",
-    image: "/placeholder.svg?height=80&width=80",
-    companyLogo: "/placeholder.svg?height=80&width=80",
-  },
+  // {
+  //   id: 3,
+  //   name: "Rohit Acharya",
+  //   position: "Co-Founder @ Resto Refine Studios",
+  //   review:
+  //     "The innovative solutions provided have revolutionized our business operations.",
+  //   image: "/placeholder.svg?height=80&width=80",
+  //   companyLogo: "/placeholder.svg?height=80&width=80",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Louisa Vaslisa",
+  //   position: "CEO @ Lova Juices",
+  //   review:
+  //     "The innovative solutions provided have revolutionized our business operations.",
+  //   image: "/placeholder.svg?height=80&width=80",
+  //   companyLogo: "/placeholder.svg?height=80&width=80",
+  // },
   // Add more reviews as needed
 ];
 
@@ -93,13 +93,17 @@ export function Reviews() {
                   </div>
                 </div>
                 {/* Review Text */}
-                <p className="w-full text-lg text-white">{review.review}</p>
+                <p className="w-full text-sm text-white">{review.review}</p>
               </div>
             ))}
           </div>
 
           {/* Navigation */}
-          <div className="mt-8 flex justify-end gap-2">
+          <div
+            className={`${
+              currentIndex < 1 ? "hidden" : "flex"
+            } mt-8 justify-end gap-2`}
+          >
             <button
               onClick={handlePrevious}
               disabled={currentIndex === 0}
