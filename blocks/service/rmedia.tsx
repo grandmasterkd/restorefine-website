@@ -7,6 +7,44 @@ import { RestoOverview } from "./resto-services/resto-overview";
 import { rMediaServices } from "@/lib/rmediaServices";
 import signature from "@/public/restomediasignature.svg";
 import bio from "@/public/services/media/restomediabio.jpg";
+import { RestoExpectation } from "./resto-services/resto-expectation";
+
+const restoExpectationProps = {
+  title: "And These Inspiring Benefits Await You",
+  subtitle: " To turn your ideas into impactful solutions",
+  partnerCard: {
+    title: "Showcase your Business",
+    gradient: { from: "#FFE0A7", to: "#483920" },
+    backgroundColor: "#C9A585",
+  },
+  typewriterPhrases: [
+    "Enhance Interaction & Attract New Customers",
+    "Compelling Video Compositions",
+    "Strategy That Speaks Directly To Your Audience",
+  ],
+  buildingCard: {
+    image: "",
+    title: "",
+    subtitle: "",
+  },
+  supportCard: {
+    avatar: "",
+    textImage: "",
+    title: "",
+    subtitle: "",
+  },
+  iterationsCard: {
+    image: "",
+    title: "",
+    subtitle: "",
+  },
+  services: [
+    "Photography",
+    "Videography",
+    "Content Creation",
+    "Social Media Strategy",
+  ],
+};
 
 function RMedia() {
   return (
@@ -68,26 +106,7 @@ function RMedia() {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="mb-12">
-          <h2 className="text-2xl font-medium text-white">
-            Take A Look At Some Case Studies
-          </h2>
-          <p className="text-sm text-white/50">
-            Dynamic Social Media and Content Services
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-baseline mb-8">
-          {/* Top row with layered effect */}
-          <div className="relative">
-            <div className="absolute -top-5 left-6 w-[85%] h-[330px] bg-[#ABA9A9] rounded-[32px]" />
-
-            <div className="relative w-full h-[330px] bg-[#d9d9d9] rounded-[32px]" />
-          </div>
-          <div className=" h-[350px] bg-[#d9d9d9] rounded-[32px] lg:col-span-2" />
-        </div>
-      </section>
+      <RestoExpectation {...restoExpectationProps} />
 
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">

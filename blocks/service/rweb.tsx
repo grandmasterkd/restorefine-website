@@ -9,6 +9,54 @@ import { RestoExpectation } from "./resto-services/resto-expectation";
 import websignature from "@/public/websignature.svg";
 import { rWebServices } from "@/lib/rwebServices";
 import signature from "@/public/restowebsignature.svg";
+import globe from "@/public/services/branding/globe.png";
+import pulse from "@/public/services/branding/iterationschart.svg";
+import avatar from "@/public/services/branding/commsavatar.svg";
+import commstext from "@/public/services/branding/commstext.svg";
+
+const restoExpectationProps = {
+  title: "And These Inspiring Benefits Await You",
+  subtitle: " To turn your ideas into impactful solutions",
+  partnerCard: {
+    title: "Surf the New way",
+    gradient: {
+      from: "#ff0000",
+      to: "#a90909",
+    },
+    backgroundColor: "#ae0404",
+  },
+  typewriterPhrases: [
+    "Apt Tech Stack & Infrastructure",
+    "Smooth User Interfaces Across All Devices",
+    "Enhance Customer Interactions",
+  ],
+  buildingCard: {
+    image: globe.src,
+    title: "Building",
+    subtitle: "For Future",
+  },
+  supportCard: {
+    avatar: avatar.src,
+    textImage: commstext.src,
+    title: "Reliable 24h Support",
+    subtitle: "This means just as much to us, reach us anytime",
+  },
+  iterationsCard: {
+    image: pulse.src,
+    title: "Iterations",
+    subtitle: " As many needed to achieve excellence",
+  },
+  services: [
+    "Product Design",
+    "User Research",
+    "User Experience",
+    "User Interface",
+    "Landing Pages",
+    "Email Marketing",
+    "SEO",
+    "Website Management",
+  ],
+};
 
 const benefitsContent = {
   title: "And We Make It\nEasier For You",
@@ -45,7 +93,7 @@ function RWeb() {
 
       <RestoOverview {...rWebServices} />
       <RestoBenefits {...benefitsContent} />
-      <RestoExpectation />
+      <RestoExpectation {...restoExpectationProps} />
       {/* <Cta /> */}
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">

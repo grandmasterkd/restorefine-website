@@ -10,6 +10,49 @@ import { RestoExpectation } from "./resto-services/resto-expectation";
 import money from "@/public/moneystartgraphic.svg";
 import printsketch from "@/public/printherobg.svg";
 import { rPrintServices } from "@/lib/rprintServices";
+import globe from "@/public/services/branding/globe.png";
+import pulse from "@/public/services/branding/iterationschart.svg";
+import avatar from "@/public/services/branding/commsavatar.svg";
+import commstext from "@/public/services/branding/commstext.svg";
+const restoExpectationProps = {
+  title: "And These Inspiring Benefits Await You",
+  subtitle: " To turn your ideas into impactful solutions",
+  partnerCard: {
+    title: "Print with Execellence",
+    gradient: {
+      from: "#ff0000",
+      to: "#a90909",
+    },
+    backgroundColor: "#ae0404",
+  },
+  typewriterPhrases: [
+    "Eye-Catching Promotional Materials",
+    "Align With Your Restaurants Ambience",
+    "Attract Attention To Your Business",
+  ],
+  buildingCard: {
+    image: globe.src,
+    title: "Building",
+    subtitle: "For Future",
+  },
+  supportCard: {
+    avatar: avatar.src,
+    textImage: commstext.src,
+    title: "Reliable 24h Support",
+    subtitle: "This means just as much to us, reach us anytime",
+  },
+  iterationsCard: {
+    image: pulse.src,
+    title: "Iterations",
+    subtitle: " As many needed to achieve excellence",
+  },
+  services: [
+    "Restaurant Menu",
+    "Signage",
+    "Restaurant Stationery Print",
+    "Apparel Printing",
+  ],
+};
 
 const benefitsContent = {
   title: "And We Make It\nEasier For You",
@@ -45,7 +88,7 @@ function RPrint() {
       <section className="pt-16 lg:pt-32">
         <RestoOverview {...rPrintServices} />
         <RestoBenefits {...benefitsContent} />
-        <RestoExpectation />
+        <RestoExpectation {...restoExpectationProps} />
 
         <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
           <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
