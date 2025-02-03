@@ -39,7 +39,7 @@ export function RestoOverview({
   return (
     <section className="">
       <div className="">
-        <div className="flex flex-col items-center justify-center mb-8">
+        <div className="text-center flex flex-col items-center justify-center mb-8">
           <h2 className="max-w-[100%] md:max-w-[50%] text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
             {title}
           </h2>

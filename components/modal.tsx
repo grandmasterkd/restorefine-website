@@ -38,7 +38,7 @@ export function Modal({ member, onClose }: ModalProps) {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full h-[75%] w-[60%] overflow-hidden rounded-[24px] overflow-y-auto bg-black border border-white/20"
+            className="relative w-[80] h-[75%] md:w-[60%] overflow-hidden rounded-[24px] overflow-y-auto bg-black border border-white/20"
           >
             <button
               onClick={onClose}
@@ -47,7 +47,7 @@ export function Modal({ member, onClose }: ModalProps) {
               <X className="h-5 w-5" />
             </button>
 
-            <div className="grid md:grid-cols-2">
+            <div className=" grid md:grid-cols-2">
               <div className="aspect-square">
                 <Image
                   src={member.image || "/placeholder.svg"}

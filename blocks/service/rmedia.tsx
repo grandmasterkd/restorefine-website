@@ -6,6 +6,7 @@ import ctabg from "@/public/rmediactabg.jpg";
 import { RestoOverview } from "./resto-services/resto-overview";
 import { rMediaServices } from "@/lib/rmediaServices";
 import signature from "@/public/restobrandingsignature.svg";
+import bio from "@/public/services/media/restomediabio.jpg";
 
 function RMedia() {
   return (
@@ -32,7 +33,14 @@ function RMedia() {
       </section>
 
       <section className="py-24 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div className="h-[350px] bg-[#d9d9d9] rounded-[32px]"></div>
+        <div className="relative h-[350px] bg-[#d9d9d9] rounded-[24px]">
+          <Image
+            src={bio}
+            alt="resto media bio"
+            fill
+            className="absolute rounded-[24px] object-cover w-full"
+          />
+        </div>
         <div className="space-y-2">
           <h2 className="text-2xl font-medium">What is Resto Media</h2>
           <p className="text-sm text-white/50">

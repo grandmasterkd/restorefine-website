@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // Sample review data - replace with actual data
 const reviews = [
@@ -11,8 +12,8 @@ const reviews = [
     position: "Himalayan Dine In",
     review:
       "The print quality was amazing, and I couldn't believe how affordable it was compared to my last supplier. Great service and fast delivery!",
-    image: "/placeholder.svg?height=80&width=80",
-    companyLogo: "/himalayanlogo.svg?height=80&width=80",
+    image: "/placeholder.svg",
+    companyLogo: "/himalayanlogo.svg",
   },
   {
     id: 2,
@@ -20,8 +21,8 @@ const reviews = [
     position: "Favourite Spot",
     review:
       "RestoRefine Studios gave our café a fresh look with a great logo redesign and incredible food photos. The photos really improved our social media presence, which has helped bring in more customers. Highly recommend them for creative and professional work in Glasgow!",
-    image: "/placeholder.svg?height=80&width=80",
-    companyLogo: "/placeholder.svg?height=80&width=80",
+    image: "/placeholder.svg",
+    companyLogo: "/placeholder.svg",
   },
   // {
   //   id: 3,
@@ -81,9 +82,23 @@ export function Reviews() {
                 <div className="flex items-center gap-x-6 gap-y-0 mb-6">
                   <div className="relative w-12 h-12">
                     {/* Client Image */}
-                    <div className="absolute inset-0 rounded-full bg-[#d9d9d9]" />
+                    <div className="absolute inset-0 rounded-full bg-[#d9d9d9] flex items-center justify-center">
+                      <Image
+                        src={review.companyLogo || ""}
+                        alt={""}
+                        fill
+                        className="rounded-full object-cover w-full "
+                      />
+                    </div>
                     {/* Company Logo - positioned to overlap */}
-                    <div className="absolute inset-0 translate-x-4 rounded-full bg-[#2b2b2b]" />
+                    <div className="absolute inset-0 translate-x-4 rounded-full bg-[#2b2b2b] flex items-center justify-center">
+                      <Image
+                        src={review.image || ""}
+                        alt={""}
+                        fill
+                        className="rounded-full object-cover w-full "
+                      />
+                    </div>
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-white">

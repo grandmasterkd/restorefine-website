@@ -43,28 +43,28 @@ const serviceDetails = [
     number: "01",
     title: "Web Design",
     description:
-      "Our expertise lies in crafting bespoke web designs that are interactive, scalable, tailored to your brand.",
+      "Crafting visually stunning and user-friendly websites tailored to your unique needs.",
     services: ["Product Design"],
   },
   {
     number: "02",
     title: "Software Development",
     description:
-      "Bringing your vision to life with cutting-edge technology and seamless functionality.",
+      "Innovative software solutions that drive efficiency and growth for your business.",
     services: ["FrontEnd & Backend Development"],
   },
   {
     number: "03",
     title: "Restaurant Menu",
     description:
-      "Bringing your vision to life with cutting-edge technology and seamless functionality.",
+      "Exquisite culinary creations that tantalize your taste buds and elevate your dining experience.",
     services: ["Menu Structure & Design", "Menu Bulk Print"],
   },
   {
     number: "04",
     title: "Brand Identity",
     description:
-      "Bringing your vision to life with cutting-edge technology and seamless functionality.",
+      "Building cohesive and impactful brand identities that resonate with your audience.",
     services: ["Graphic Design", "Brand Strategy", "Social Media Management"],
   },
 ];

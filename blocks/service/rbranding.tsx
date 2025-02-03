@@ -4,7 +4,7 @@ import baloon from "@/public/rbrandingherobaloon.svg";
 import Image from "next/image";
 import RestoServicesHero from "./resto-services/resto-hero";
 import { RestoOverview } from "./resto-services/resto-overview";
-import Cta from "@/components/cta";
+// import Cta from "@/components/cta";
 import signature from "@/public/restobrandingsignature.svg";
 import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
@@ -33,7 +33,7 @@ function RBranding() {
       <RestoOverview {...rBrandingServices} />
       <RestoBenefits signature={money} />
       <RestoExpectation />
-      <Cta />
+      {/* <Cta /> */}
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
         <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
           <Image

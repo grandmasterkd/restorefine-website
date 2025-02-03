@@ -7,8 +7,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 // import { RestoOverview } from "./resto-services/resto-overview";
 import RestoBenefits from "./resto-services/resto-benefits";
-import Cta from "@/components/cta";
+// import Cta from "@/components/cta";
 import hood from "@/public/merchsignature.svg";
+import signature from "@/public/restomerchsignature.svg";
 
 const star = <Image src={restostar} alt="RestoStar" width={100} height={100} />;
 const merchring = <Image src={ring} alt="MerchRing" width={150} height={150} />;
@@ -157,7 +158,30 @@ function RMerch() {
         </div>
       </section>
 
-      <Cta />
+      {/* <Cta /> */}
+
+      <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          <Image
+            src={signature}
+            alt="signature"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="w-full"
+          />
+        </div>
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          <Image
+            src={signature}
+            alt="signature"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="w-full"
+          />
+        </div>
+      </section>
     </main>
   );
 }

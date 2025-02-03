@@ -5,9 +5,10 @@ import Image from "next/image";
 import { RestoOverview } from "./resto-services/resto-overview";
 import RestoBenefits from "./resto-services/resto-benefits";
 import { RestoExpectation } from "./resto-services/resto-expectation";
-import Cta from "@/components/cta";
+// import Cta from "@/components/cta";
 import websignature from "@/public/websignature.svg";
 import { rWebServices } from "@/lib/rwebServices";
+import signature from "@/public/restowebsignature.svg";
 
 function RWeb() {
   return (
@@ -31,7 +32,29 @@ function RWeb() {
       <RestoOverview {...rWebServices} />
       <RestoBenefits signature={websignature} />
       <RestoExpectation />
-      <Cta />
+      {/* <Cta /> */}
+      <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          <Image
+            src={signature}
+            alt="signature"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="w-full"
+          />
+        </div>
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          <Image
+            src={signature}
+            alt="signature"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="w-full"
+          />
+        </div>
+      </section>
     </main>
   );
 }
