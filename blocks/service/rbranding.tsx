@@ -12,6 +12,20 @@ import money from "@/public/moneystartgraphic.svg";
 import { rBrandingServices } from "@/lib/rbrandingServices";
 import artefacts from "@/public/services/branding/rbrandinghomemobile.svg";
 
+const benefitsContent = {
+  title: "And We Make It\nEasier For You",
+  subtitle: "Simplifying the complex, so you can focus on what matters.",
+  signature: money.src,
+  makeRequest: {
+    title: "Make Your Request",
+    image: "/services/branding/makereqsgraphic.svg",
+  },
+  receiveRefine: {
+    title: "Receive and Refine",
+    image: "/services/branding/restomedal.svg",
+  },
+};
+
 function RBranding() {
   return (
     <main className="">
@@ -21,23 +35,23 @@ function RBranding() {
         description="With RestoBranding, develop a compelling brand that captures attention. From logo design to complete brand development, including social media graphics, we ensure your brand communicates clearly and effectively across all channels. "
       />
 
-      <section className="absolute top-64 left-0 right-0 lg:top-12 h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:gap-0 gap-2">
-        <div className="hidden lg:flex">
-          <div>
+      <section className="w-screen absolute top-[65%] left-0 right-0 lg:top-12 h-full flex flex-col lg:flex-row items-center justify-between lg:gap-0 gap-2">
+        <div className="hidden lg:flex lg:flex-row items-end justify-between w-full">
+          <div className="flex justify-start">
             <Image src={baloon} alt="baloon" width={180} height={180} />
           </div>
 
-          <div>
+          <div className="flex justify-end">
             <Image src={ball} alt="ball" width={150} height={150} />
           </div>
         </div>
-        <div className="block lg:hidden">
+        <div className=" flex lg:hidden">
           <Image src={artefacts} alt="artefacts" width={300} height={300} />
         </div>
       </section>
 
       <RestoOverview {...rBrandingServices} />
-      <RestoBenefits signature={money} />
+      <RestoBenefits {...benefitsContent} />
       <RestoExpectation />
       {/* <Cta /> */}
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">

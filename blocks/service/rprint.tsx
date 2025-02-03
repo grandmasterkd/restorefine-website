@@ -11,6 +11,20 @@ import money from "@/public/moneystartgraphic.svg";
 import printsketch from "@/public/printherobg.svg";
 import { rPrintServices } from "@/lib/rprintServices";
 
+const benefitsContent = {
+  title: "And We Make It\nEasier For You",
+  subtitle: "Simplifying the complex, so you can focus on what matters.",
+  signature: money.src,
+  makeRequest: {
+    title: "Make Your Request",
+    image: "/services/print/restoprintreq.svg",
+  },
+  receiveRefine: {
+    title: "Receive and Refine",
+    image: "/services/print/restoprintmedal.svg",
+  },
+};
+
 function RPrint() {
   return (
     <main className="">
@@ -20,7 +34,7 @@ function RPrint() {
         description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand’s excellence. "
       />
 
-      <div className="absolute z-0 left-0 right-0 top-28 min-w-full mx-auto min-h-screen flex flex-col items-center justify-center">
+      <div className="absolute z-0 left-0 right-0 top-10 lg:top-28 min-w-full mx-auto min-h-screen flex flex-col items-center justify-center">
         <Image
           src={printsketch}
           alt="resto print sketch"
@@ -30,7 +44,7 @@ function RPrint() {
       </div>
       <section className="pt-16 lg:pt-32">
         <RestoOverview {...rPrintServices} />
-        <RestoBenefits signature={money} />
+        <RestoBenefits {...benefitsContent} />
         <RestoExpectation />
 
         <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">

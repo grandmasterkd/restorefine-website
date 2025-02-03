@@ -28,7 +28,7 @@ const phrases = [
 
 export function RestoExpectation() {
   return (
-    <section className="py-32">
+    <section className="py-20 mg:py-32">
       <div className="">
         <div className="mb-16">
           <h2 className="text-3xl font-medium text-white md:text-3xl lg:text-4xl">

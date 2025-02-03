@@ -40,6 +40,20 @@ const aboutRMerch = [
 
 const services = ["Apparel Print", "Stationery Print", "Branding", "Design"];
 
+const benefitsContent = {
+  title: "And We Make It\nEasier For You",
+  subtitle: "Simplifying the complex, so you can focus on what matters.",
+  signature: hood.src,
+  makeRequest: {
+    title: "Make Your Request",
+    image: "/services/merch/restomerchreq.svg",
+  },
+  receiveRefine: {
+    title: "Receive and Refine",
+    image: "/services/merch/restomerchmedal.svg",
+  },
+};
+
 function RMerch() {
   return (
     <main className="py-44">
@@ -161,7 +175,7 @@ function RMerch() {
       </section>
 
       {/* <RestoOverview /> */}
-      <RestoBenefits signature={hood} />
+      <RestoBenefits {...benefitsContent} />
 
       <section className="py-32">
         <div className="">

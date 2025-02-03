@@ -10,6 +10,20 @@ import websignature from "@/public/websignature.svg";
 import { rWebServices } from "@/lib/rwebServices";
 import signature from "@/public/restowebsignature.svg";
 
+const benefitsContent = {
+  title: "And We Make It\nEasier For You",
+  subtitle: "Simplifying the complex, so you can focus on what matters.",
+  signature: websignature.src,
+  makeRequest: {
+    title: "Make Your Request",
+    image: "/services/web/restowebreq.svg",
+  },
+  receiveRefine: {
+    title: "Receive and Refine",
+    image: "/services/web/restowebmedal.svg",
+  },
+};
+
 function RWeb() {
   return (
     <main>
@@ -19,7 +33,7 @@ function RWeb() {
         description="we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand’s digital presence to life. "
       />
 
-      <div className="absolute z-0 top-0 flex flex-col h-full items-center justify-center opacity-80">
+      <div className="absolute z-0 top-0 lg:top-0 flex flex-col h-full items-center justify-center opacity-80">
         <Image
           src={mesh}
           alt="mesh"
@@ -30,7 +44,7 @@ function RWeb() {
       </div>
 
       <RestoOverview {...rWebServices} />
-      <RestoBenefits signature={websignature} />
+      <RestoBenefits {...benefitsContent} />
       <RestoExpectation />
       {/* <Cta /> */}
       <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">

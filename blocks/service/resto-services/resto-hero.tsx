@@ -14,8 +14,8 @@ function RestoServicesHero({
   description,
 }: RestoServicesHeroProps) {
   return (
-    <main className="relative z-10 -mt-32 mb-36 md:mb-0 md:pb-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-4">
-      <h1 className="relative z-0 mb-0 md:mb-6 text-left md:text-center font-medium tracking-tight text-5xl md:text-7xl">
+    <main className="relative z-10 -mt-32 mb-52 md:mb-0 md:-mt-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-4">
+      <h1 className="relative z-0  text-left md:text-center font-medium tracking-tight text-5xl md:text-7xl">
         <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
           {titletop}
           <br />
