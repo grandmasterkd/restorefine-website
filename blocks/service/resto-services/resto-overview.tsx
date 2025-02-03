@@ -58,7 +58,7 @@ export function RestoOverview({
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex-none w-full md:w-[calc(33.333%-1rem)]"
+                className="flex-none gap-3 lg:gap-0 w-full md:w-[calc(33.333%-1rem)]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
@@ -76,7 +76,7 @@ export function RestoOverview({
                     <h3 className="text-xl font-semibold text-[#ffffff] mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-[#ffffff]/80 truncate">
+                    <p className="text-sm text-[#ffffff]/80 md:truncate sm:overflow-visible sm:whitespace-normal sm:overflow-auto hover:overflow-visible hover:whitespace-normal hover:overflow-auto cursor-pointer transition-transform duration-500 ease-in-out">
                       {feature.description}
                     </p>
                   </div>
@@ -86,7 +86,11 @@ export function RestoOverview({
           </motion.div>
         </div>
 
-        <div className="flex justify-end gap-4">
+        <div
+          className={` ${
+            features.length <= 3 ? "hidden" : "flex"
+          } justify-end gap-4`}
+        >
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}

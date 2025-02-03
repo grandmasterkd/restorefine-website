@@ -7,19 +7,20 @@ export const rPrintServices = {
       title: "Menu Design and Printing",
       description:
         "Design and print custom menus that align with your restaurant's ambiance and customer expectations.",
-      image: "/services/branding/pexels-mikael-blomkvist-6476579.jpg",
+      image: "/services/print/pexels-julieaagaard-2351274.jpg",
     },
     {
       title: "Promotional Printing",
       description:
         "Produce eye-catching promotional materials such as flyers, posters, and brochures to attract and inform customers.",
-      image: "/services/branding/pexels-mikael-blomkvist-6476579.jpg",
+      image:
+        "/services/print/pexels-anastasia-nagibina-1116204043-29996215.jpg",
     },
     {
       title: "Custom Banners and Signage",
       description:
         "Create banners and signs that make a statement and attract attention to your business.",
-      image: "/services/branding/pexels-mikael-blomkvist-6476579.jpg",
+      image: "/services/print/pexels-sofia-gurashvili-2116386591-30452609.jpg",
     },
   ],
 };
