@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+
 html,
 body {
   letter-spacing: -0.025em;

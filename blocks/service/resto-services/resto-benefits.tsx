@@ -1,8 +1,8 @@
 import React from "react";
-
 import Image from "next/image";
-// import { ZapIcon } from "lucide-react";
 import { BoltIcon } from "@heroicons/react/24/solid";
+import makereq from "@/public/services/branding/makereqsgraphic.svg";
+import medal from "@/public/services/branding/restomedal.svg";
 
 interface RestoSignatureProps {
   signature: string;
@@ -14,7 +14,7 @@ function RestoBenefits({ signature }: RestoSignatureProps) {
       <section className="grid grid-cols-1 lg:grid-cols-3 items-start h-full gap-x-16">
         <div className="h-full col-span-1 flex flex-col items-center justify-between">
           <div>
-            <h2 className="text-2xl font-medium text-white md:text-3xl lg:text-4xl mb-2">
+            <h2 className="text-2xl font-semibold text-white md:text-3xl lg:text-4xl mb-2">
               And We Make It
               <br />
               Easier For You
@@ -35,23 +35,39 @@ function RestoBenefits({ signature }: RestoSignatureProps) {
         </div>
 
         <div className="ml-20 col-span-2 grid grid-cols-2 gap-x-4">
-          <div className="flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-3">
             <div className="w-full flex items-center gap-x-2">
               <span className="border border-white/40 w-32 h-14 rounded-xl flex items-center justify-center">
                 <BoltIcon className="h-8 w-8 text-white" />
               </span>
-              <span className="bg-white text-sm text-black rounded-xl w-full h-14 flex items-center justify-center">
-                Lightening Fast Delivery
+              <span className="bg-white text-sm text-black font-semibold rounded-xl w-full h-14 flex items-center justify-center">
+                Make Your Request
               </span>
             </div>
 
-            <div className="w-auto h-[350px] rounded-[24px] bg-[#d9d9d9]" />
+            <div className="w-auto h-[350px] rounded-[24px] bg-[#131313] border border-white/10 flex items-center justify-center">
+              <Image
+                src={makereq || "/placeholder.svg"}
+                alt="restorefine-make-a-request"
+                width={200}
+                height={200}
+                className="object-contain w-[70%] transition-all duration-700 ease-in-out"
+              />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-y-2">
-            <div className="w-auto h-[350px] rounded-[24px] bg-[#d9d9d9]" />
-            <span className="bg-white text-sm text-black rounded-xl w-full h-14 flex items-center justify-center">
-              Bespoke Pricing
+          <div className="flex flex-col gap-y-3">
+            <div className="w-auto h-[350px] rounded-[24px] bg-[#131313] border border-white/10 flex items-center justify-center">
+              <Image
+                src={medal || "/placeholder.svg"}
+                alt="restorefine-refine-a-request"
+                width={200}
+                height={200}
+                className="object-contain w-[50%] transition-all duration-700 ease-in-out"
+              />
+            </div>
+            <span className="font-semibold bg-white text-sm text-black rounded-xl w-full h-14 flex items-center justify-center">
+              Receive and Refine
             </span>
           </div>
         </div>

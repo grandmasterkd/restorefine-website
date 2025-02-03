@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+// import Image from "next/image";
+// import logodes from "@/public/services/branding/pexels-ron-lach-9617889.jpg";
 
 interface Feature {
   title: string;
@@ -38,6 +40,7 @@ export function RestoOverview({
     <section className="py-0">
       <div className="">
         <div className="grid place-items-center text-center mb-12">
+          {/* <Image src={logodes} alt={title} className="object-cover" fill /> */}
           <h2 className="w-fit text-3xl max-w-[50%] font-medium text-white md:text-3xl lg:text-4xl">
             {title}
           </h2>
