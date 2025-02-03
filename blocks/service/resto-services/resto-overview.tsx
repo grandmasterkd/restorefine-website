@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-// import Image from "next/image";
-// import logodes from "@/public/services/branding/pexels-ron-lach-9617889.jpg";
+import Image from "next/image";
 
 interface Feature {
   title: string;
   description: string;
+  image: string;
 }
 
 interface RestoOverviewProps {
@@ -37,19 +37,20 @@ export function RestoOverview({
   };
 
   return (
-    <section className="py-0">
+    <section className="">
       <div className="">
-        <div className="grid place-items-center text-center mb-12">
-          {/* <Image src={logodes} alt={title} className="object-cover" fill /> */}
-          <h2 className="w-fit text-3xl max-w-[50%] font-medium text-white md:text-3xl lg:text-4xl">
+        <div className="flex flex-col items-center justify-center mb-8">
+          <h2 className="max-w-[100%] md:max-w-[50%] text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
             {title}
           </h2>
-          <p className="w-fit text-sm max-w-[50%] text-white/80">{subtitle}</p>
+          <p className="max-w-[80%] md:max-w-[50%] text-sm sm:text-md md:text-base text-white/80">
+            {subtitle}
+          </p>
         </div>
 
         <div className="relative overflow-hidden mb-8">
           <motion.div
-            className="flex gap-4"
+            className="flex gap-6"
             initial={false}
             animate={{ x: `${-currentIndex * (100 / 3)}%` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -57,30 +58,39 @@ export function RestoOverview({
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex-none w-full md:w-[calc(33.333%-1.333rem)]"
+                className="flex-none w-full md:w-[calc(33.333%-1rem)]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="bg-[#d9d9d9] rounded-[24px] p-8 h-[350px] flex flex-col justify-end">
-                  <h3 className="text-lg font-semibold text-black mb-1">
-                    {feature.title}
-                  </h3>
-                  <p className="text-xs line-clamp-2 text-black/80">
-                    {feature.description}
-                  </p>
+                <div className="relative rounded-[24px] overflow-hidden h-[350px]">
+                  <Image
+                    src={feature.image || "/placeholder.svg"}
+                    alt={feature.title}
+                    className="object-cover"
+                    fill
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000000] to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-xl font-semibold text-[#ffffff] mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-[#ffffff]/80 truncate">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        <div className="flex justify-end gap-2">
+        <div className="flex justify-end gap-4">
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="p-4 rounded-full bg-[#303030] text-white disabled:opacity-50 transition-opacity"
+            className="p-4 rounded-full bg-[#323232] text-[#ffffff] disabled:opacity-50 transition-opacity"
             aria-label="Previous features"
           >
             <ArrowRight className="w-6 h-6 rotate-180" />
@@ -88,7 +98,7 @@ export function RestoOverview({
           <button
             onClick={nextSlide}
             disabled={currentIndex + 3 >= features.length}
-            className="p-4 rounded-full bg-[#ff0000] text-white disabled:opacity-50 transition-opacity"
+            className="p-4 rounded-full bg-[#ff0000] text-[#ffffff] disabled:opacity-50 transition-opacity"
             aria-label="Next features"
           >
             <ArrowRight className="w-6 h-6" />
