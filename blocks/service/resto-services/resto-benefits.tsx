@@ -59,7 +59,7 @@ export function RestoBenefits({
               </span>
             </div>
 
-            <div className="w-auto h-[350px] rounded-[24px] bg-[#131313] border border-[#ffffff]/30 md:border-[#ffffff]/10 flex items-center justify-center overflow-hidden">
+            <div className="p-6 w-auto h-[350px] rounded-[24px] bg-[#131313] border border-[#ffffff]/30 md:border-[#ffffff]/10 flex items-center justify-center overflow-hidden">
               <Image
                 src={makeRequest.image || "/placeholder.svg"}
                 alt="restorefine-make-a-request"
@@ -71,7 +71,7 @@ export function RestoBenefits({
           </div>
 
           <div className="flex flex-col gap-y-3">
-            <div className="w-auto h-[350px] rounded-[24px] bg-[#131313] border border-[#ffffff]/30 md:border-[#ffffff]/10 flex items-center justify-center overflow-hidden">
+            <div className="p-6 w-auto h-[350px] rounded-[24px] bg-[#131313] border border-[#ffffff]/30 md:border-[#ffffff]/10 flex items-center justify-center overflow-hidden">
               <Image
                 src={receiveRefine.image || "/placeholder.svg"}
                 alt="restorefine-refine-a-request"
