@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 function ServicesHero() {
   return (
     <main className="grid place-items-center min-h-screen gap-y-4">
-      <section className="relative z-10 mt-6 md:mt-24 mb-8 lg:mb-0 lg:mt-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-3 md:gap-y-4">
-        <div className="flex flex-col items-start md:items-center gap-y-4">
-          <h1 className="relative z-0 text-left md:text-center font-medium tracking-tight rservicehero text-4xl md:text-7xl">
+      <section className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-center text-left gap-y-3 md:gap-y-4">
+        <div className="text-left flex flex-col items-start gap-y-4">
+          <h1 className="relative z-0 text-left font-medium tracking-tight rservicehero text-4xl md:text-6xl">
             <span className="py-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
               Tranforming
               <br />

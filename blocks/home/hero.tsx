@@ -13,7 +13,7 @@ export default function Hero() {
         width={1920}
         height={1080}
         layout="responsive"
-        className="absolute top-0 right-0 z-20 object-cover bg-cover opacity-50"
+        className="absolute top-0 right-0 z-0 object-cover bg-cover opacity-50"
         alt="Background"
       />
 
@@ -28,8 +28,7 @@ export default function Hero() {
 
       <Link
         href="/portfolio/quiknest"
-        passHref
-        className="mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2"
+        className="relative z-20 mb-6 inline-flex rounded-full border border-white/20 bg-black/50 px-4 py-2 hover:bg-white/10"
         style={{
           boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(8px)",
@@ -60,11 +59,13 @@ export default function Hero() {
         got you covered. Let’s elevate your business together.
       </p>
       {/* CTA Button */}
-      <div className="w-fit rounded-xl border border-white/20 p-2.5">
-        <Link
-          href="/enquire-now"
-          passHref
-          className="relative inline-flex items-center justify-center rounded-lg border border-white/10 bg-white px-6 py-2 text-base font-medium text-black transition-colors hover:bg-white/90"
+
+      <Link
+        href="/enquire-now"
+        className="relaitve z-20 w-fit rounded-xl border border-white/20 p-2.5 cursor-pointer"
+      >
+        <div
+          className="relative inline-flex items-center justify-center rounded-lg border border-white/10 bg-white px-6 py-2 text-base font-medium text-black transition-colors hover:bg-white/70 hover:font-semibold"
           style={{
             boxShadow: `
                 0 0 0 1px rgba(255, 255, 255, 0.1),
@@ -74,8 +75,8 @@ export default function Hero() {
           }}
         >
           Enquire Now
-        </Link>
-      </div>
+        </div>
+      </Link>
     </main>
   );
 }
