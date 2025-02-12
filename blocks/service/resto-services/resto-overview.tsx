@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -23,10 +23,31 @@ export function RestoOverview({
   features,
 }: RestoOverviewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+      setCurrentIndex(0);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const nextSlide = () => {
-    if (currentIndex + 3 < features.length) {
-      setCurrentIndex((prev) => prev + 1);
+    if (isMobile) {
+      if (currentIndex < features.length - 1) {
+        setCurrentIndex((prev) => prev + 1);
+      }
+    } else {
+      if (currentIndex + 3 < features.length) {
+        setCurrentIndex((prev) => prev + 1);
+      }
     }
   };
 
@@ -48,17 +69,21 @@ export function RestoOverview({
           </p>
         </div>
 
-        <div className="relative overflow-hidden mb-8">
+        <div className="w-full relative overflow-hidden mb-8">
           <motion.div
-            className="flex gap-6"
+            className="w-full flex md:gap-6 gap-0"
             initial={false}
-            animate={{ x: `${-currentIndex * (100 / 3)}%` }}
+            animate={{
+              x: `${-currentIndex * (isMobile ? 100 : 100 / 2.5)}%`,
+            }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="flex-none gap-3 lg:gap-0 w-full md:w-[calc(33.333%-1rem)]"
+                className={`flex-none gap-3 lg:gap-0 ${
+                  isMobile ? "w-full" : "w-[calc(33.333%-1rem)]"
+                }`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
@@ -87,8 +112,8 @@ export function RestoOverview({
         </div>
 
         <div
-          className={` ${
-            features.length <= 3 ? "hidden" : "flex"
+          className={`${
+            features.length <= (isMobile ? 1 : 3) ? "hidden" : "flex"
           } justify-end gap-4`}
         >
           <button
@@ -101,7 +126,11 @@ export function RestoOverview({
           </button>
           <button
             onClick={nextSlide}
-            disabled={currentIndex + 3 >= features.length}
+            disabled={
+              isMobile
+                ? currentIndex >= features.length - 1
+                : currentIndex + 3 >= features.length
+            }
             className="p-4 rounded-full bg-[#ff0000] text-[#ffffff] disabled:opacity-50 transition-opacity"
             aria-label="Next features"
           >
