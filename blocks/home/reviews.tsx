@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-// Sample review data - replace with actual data
 const reviews = [
   {
     id: 1,
@@ -24,37 +23,46 @@ const reviews = [
     image: "/placeholder.svg",
     companyLogo: "/placeholder.svg",
   },
-  // {
-  //   id: 3,
-  //   name: "Rohit Acharya",
-  //   position: "Co-Founder @ Resto Refine Studios",
-  //   review:
-  //     "The innovative solutions provided have revolutionized our business operations.",
-  //   image: "/placeholder.svg?height=80&width=80",
-  //   companyLogo: "/placeholder.svg?height=80&width=80",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Louisa Vaslisa",
-  //   position: "CEO @ Lova Juices",
-  //   review:
-  //     "The innovative solutions provided have revolutionized our business operations.",
-  //   image: "/placeholder.svg?height=80&width=80",
-  //   companyLogo: "/placeholder.svg?height=80&width=80",
-  // },
   // Add more reviews as needed
 ];
 
 export function Reviews() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    if (isMobile && scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -scrollRef.current.offsetWidth,
+        behavior: "smooth",
+      });
+    } else {
+      setCurrentIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev < reviews.length - 1 ? prev + 1 : prev));
+    if (isMobile && scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: scrollRef.current.offsetWidth,
+        behavior: "smooth",
+      });
+    } else {
+      setCurrentIndex((prev) => (prev < reviews.length - 2 ? prev + 1 : prev));
+    }
   };
+
+  const showArrows = !isMobile && reviews.length > 2;
 
   return (
     <section>
@@ -72,11 +80,24 @@ export function Reviews() {
 
         {/* Reviews */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {reviews.slice(currentIndex, currentIndex + 2).map((review) => (
+          <div
+            ref={scrollRef}
+            className={`
+              ${
+                isMobile
+                  ? "flex overflow-x-auto scrollbar-hide"
+                  : "grid grid-cols-1 md:grid-cols-2"
+              } 
+              gap-6
+            `}
+          >
+            {reviews.map((review) => (
               <div
                 key={review.id}
-                className="rounded-[24px] bg-transparent p-8 border border-white/20"
+                className={`
+                  rounded-[24px] bg-transparent p-8 border border-white/20
+                  ${isMobile ? "flex-none w-[80vw]" : ""}
+                `}
               >
                 {/* Profile */}
                 <div className="flex items-center gap-x-6 gap-y-0 mb-6">
@@ -114,38 +135,34 @@ export function Reviews() {
           </div>
 
           {/* Navigation */}
-          <div
-            className={`${
-              currentIndex < 1 ? "hidden" : "flex"
-            } mt-8 justify-end gap-2`}
-          >
-            <button
-              onClick={handlePrevious}
-              disabled={currentIndex === 0}
-              className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors
-                ${
+          {showArrows && (
+            <div className="mt-8 flex justify-end gap-2">
+              <button
+                onClick={handlePrevious}
+                disabled={currentIndex === 0}
+                className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
                   currentIndex === 0
                     ? "bg-[#2b2b2b] cursor-not-allowed"
                     : "bg-[#2b2b2b] hover:bg-[#3b3b3b]"
                 }`}
-              aria-label="Previous review"
-            >
-              <ArrowRight className="h-5 w-5 rotate-180 text-white" />
-            </button>
-            <button
-              onClick={handleNext}
-              disabled={currentIndex >= reviews.length - 2}
-              className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors
-                ${
+                aria-label="Previous review"
+              >
+                <ArrowRight className="h-5 w-5 rotate-180 text-white" />
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={currentIndex >= reviews.length - 2}
+                className={`flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
                   currentIndex >= reviews.length - 2
                     ? "bg-[#2b2b2b] cursor-not-allowed"
                     : "bg-red-600 hover:bg-red-700"
                 }`}
-              aria-label="Next review"
-            >
-              <ArrowRight className="h-5 w-5 text-white" />
-            </button>
-          </div>
+                aria-label="Next review"
+              >
+                <ArrowRight className="h-5 w-5 text-white" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
