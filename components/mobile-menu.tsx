@@ -29,6 +29,10 @@ export function MobileMenu() {
     setServicesOpen(!servicesOpen);
   };
 
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild className="md:hidden">
@@ -46,7 +50,9 @@ export function MobileMenu() {
       >
         <SheetHeader>
           <SheetTitle className="text-white">
-            <Link href="/">Go Home</Link>
+            <Link href="/" onClick={handleLinkClick}>
+              Go Home
+            </Link>
           </SheetTitle>
         </SheetHeader>
         <div className="mt-8">
@@ -64,7 +70,10 @@ export function MobileMenu() {
                   <Link
                     href="/services"
                     className="flex-grow text-left"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLinkClick();
+                    }}
                   >
                     Services
                   </Link>
@@ -80,7 +89,8 @@ export function MobileMenu() {
                     <Link
                       key={service.title}
                       href={service.href}
-                      className=" text-white/70 hover:text-white flex items-center gap-2"
+                      className="text-white/70 hover:text-white flex items-center gap-2"
+                      onClick={handleLinkClick}
                     >
                       <service.icon className="h-5 w-5" />
                       {service.title}
@@ -91,16 +101,32 @@ export function MobileMenu() {
             </AccordionItem>
           </Accordion>
           <nav className="mt-4 flex flex-col space-y-6">
-            <Link href="/portfolio" className="hover:text-white/80">
+            <Link
+              href="/portfolio"
+              className="hover:text-white/80"
+              onClick={handleLinkClick}
+            >
               Portfolio
             </Link>
-            <Link href="/company" className="hover:text-white/80">
+            <Link
+              href="/company"
+              className="hover:text-white/80"
+              onClick={handleLinkClick}
+            >
               Company
             </Link>
-            <Link href="/resources" className="hover:text-white/80">
+            <Link
+              href="/resources"
+              className="hover:text-white/80"
+              onClick={handleLinkClick}
+            >
               Resources
             </Link>
-            <Link href="/contact" className="hover:text-white/80">
+            <Link
+              href="/contact"
+              className="hover:text-white/80"
+              onClick={handleLinkClick}
+            >
               Contact
             </Link>
           </nav>
@@ -111,7 +137,9 @@ export function MobileMenu() {
               boxShadow: "inset 0 0 15px rgba(164, 164, 164, 0.5)",
             }}
           >
-            <Link href="/enquire-now">Enquire Now</Link>
+            <Link href="/enquire-now" onClick={handleLinkClick}>
+              Enquire Now
+            </Link>
           </Button>
         </div>
       </SheetContent>
