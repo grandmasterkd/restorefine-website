@@ -78,10 +78,10 @@ export function ContactSection() {
                 Have a general query? We&rsquo;ll always do our best to help:
               </p>
               <a
-                href="mailto:info@restorefine.com"
+                href="mailto:enquiries@restorefine.com"
                 className="inline-flex items-center justify-center px-8 py-3 text-md text-white border border-white/30 rounded-full hover:bg-white/10 transition-colors"
               >
-                info@restorefine.com
+                enquiries@restorefine.com
               </a>
             </div>
 
@@ -94,10 +94,10 @@ export function ContactSection() {
                 let&rsquo;s connect!
               </p>
               <a
-                href="mailto:hiring@restorefine.com"
+                href="mailto:hello@restorefine.com"
                 className="inline-flex items-center justify-center px-8 py-3 text-md text-white border border-white/30 rounded-full hover:bg-white/10 transition-colors"
               >
-                hiring@restorefine.com
+                hello@restorefine.com
               </a>
             </div>
           </div>
