@@ -144,7 +144,7 @@ export default function ServiceTypes() {
               connects with your audience on every level.
             </p>
             <Link
-              href="/services/branding"
+              href="/services/restobranding"
               className="text-sm inline-flex items-center gap-2 text-white border border-white/20 rounded-full px-4 py-2 hover:bg-white/10 transition-colors group"
             >
               See More
@@ -158,14 +158,19 @@ export default function ServiceTypes() {
 
       <section className="space-y-4">
         <div
-          className={`grid ${
-            isMobile ? "grid-cols-1" : "md:grid-cols-2 lg:grid-cols-3"
-          } gap-4 overflow-hidden`}
+          className={`${
+            isMobile
+              ? "flex overflow-x-auto scrollbar-hide"
+              : "grid md:grid-cols-2 lg:grid-cols-3"
+          } gap-4`}
         >
           {visibleServices.map((service, index) => (
-            <div
+            <Link
               key={`${service.title}-${index}`}
-              className={`bg-[#d9d9d9] rounded-[24px] overflow-hidden relative transition-transform duration-500 ease-in-out ${
+              href={service.href}
+              className={`${
+                isMobile ? "flex-none w-[80vw]" : ""
+              } bg-[#d9d9d9] rounded-[24px] overflow-hidden relative transition-transform duration-500 ease-in-out ${
                 isTransitioning ? "transform translate-x-full" : ""
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -186,7 +191,7 @@ export default function ServiceTypes() {
                   className="absolute z-0 right-0 w-full object-cover grayscale-none md:grayscale scale-100 hover:scale-110 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer"
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
