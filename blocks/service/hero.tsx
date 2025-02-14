@@ -1,56 +1,59 @@
 import Image from "next/image";
-import React from "react";
 import hollow from "@/public/servicesherographic.svg";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 function ServicesHero() {
   return (
-    <main className="grid place-items-center min-h-screen gap-y-4">
-      <section className="relative z-10 min-h-screen flex flex-col md:flex-row items-center justify-center text-left gap-y-3 md:gap-y-4">
-        <div className="text-left flex flex-col items-start gap-y-4">
-          <h1 className="relative z-0 text-left font-medium tracking-tight rservicehero text-4xl md:text-6xl">
-            <span className="py-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
-              Tranforming
+    <main className="min-h-screen overflow-hidden pt-12">
+      <section className="px-4 md:px-0 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
+        <div className="w-full lg:w-1/2 text-left flex flex-col items-start gap-y-4 mb-8 lg:mb-0">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
+            <span className="inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
+              Transforming
               <br />
               Visions Into
               <br />
               Impactful Brands
             </span>
           </h1>
-          <p className="w-full lg:w-3/4 text-sm sm:text-base text-white/80 pb-2">
+          <p className="w-full lg:w-3/4 text-sm sm:text-base text-white/80">
             From concept to creation, we craft brands that resonate, inspire,
             and drive results. Our team blends strategy, creativity, and
             innovation to build identities that stand out in a crowded world.
           </p>
-          <div>
-            <Link href="/enquire-now" className="flex items-center gap-1">
-              <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
-                Lets Craft Something
-              </div>
-              <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
-            </Link>
+          <Link href="/enquire-now" className="flex items-center gap-2">
+            <span className="bg-white text-black text-sm rounded-full px-6 py-3">
+              Let&apos;s Craft Something
+            </span>
+            <ArrowRight className="bg-red-600 text-white rounded-full p-2.5 w-10 h-10" />
+          </Link>
+        </div>
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
+            <Image
+              src={hollow || "/placeholder.svg"}
+              alt="Services Hero Graphic"
+              width={750}
+              height={750}
+              layout="responsive"
+              priority
+            />
           </div>
         </div>
-
-        <div className="w-full">
-          <Image
-            src={hollow}
-            alt="hollow"
-            width={750}
-            height={750}
-            layout="responsive"
-          />
-        </div>
       </section>
-      <section className="absolute -bottom-10 lg:bottom-0 left-0 right-0 flex overflow-x-hidden bg-transparent py-4 gap-4 rotate">
-        <div className="animate-marquee-infinite text-7xl font-bold text-white/60 flex min-w-screen shrink-0 items-center justify-around gap-8">
-          RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden py-4 md:pb-16">
+        <div className="rotate-[-4deg] transform translate-y-1/4">
+          <div className="flex whitespace-nowrap animate-marquee">
+            <span className="text-4xl md:text-5xl lg:text-7xl font-bold text-white/60 mx-4">
+              RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
+            </span>
+            <span className="text-4xl md:text-5xl lg:text-7xl font-bold text-white/60 mx-4">
+              RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
+            </span>
+          </div>
         </div>
-        <div className="animate-marquee-infinite text-7xl font-bold text-white/60 flex min-w-screen shrink-0 items-center justify-around gap-8">
-          RestoWeb. RestoBranding. RestoPrinting. RestoMerch. RestoMedia.
-        </div>
-      </section>
+      </div>
     </main>
   );
 }
