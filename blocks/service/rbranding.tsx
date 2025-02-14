@@ -95,8 +95,8 @@ function RBranding() {
             <Image src={ball} alt="ball" width={150} height={150} />
           </div>
         </div>
-        <div className="py-4 flex items-center justify-center lg:hidden">
-          <Image src={artefacts} alt="artefacts" width={250} height={250} />
+        <div className="py-8 flex items-center justify-center lg:hidden">
+          <Image src={artefacts} alt="artefacts" width={270} height={270} />
         </div>
       </section>
 
