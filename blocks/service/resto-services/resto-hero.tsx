@@ -14,7 +14,7 @@ function RestoServicesHero({
 }: RestoServicesHeroProps) {
   return (
     <main className="relative z-10 sm:-mt-32 -mt-24 mb-52 lg:mb-0 lg:-mt-0 min-h-screen flex flex-col items-start md:items-center justify-center text-left md:text-center gap-y-3 md:gap-y-4">
-      <div className="px-2 lg:px-0">
+      <div className="px-0 lg:px-0">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="w-full">
             <h1 className="relative z-0 text-left md:text-center font-medium tracking-tight rservicehero text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
