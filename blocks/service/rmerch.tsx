@@ -94,9 +94,9 @@ const restoExpectationProps = {
 
 function RMerch() {
   return (
-    <main className="py-44">
-      <section className="relative z-10 flex flex-col items-center justify-center text-center gap-y-4">
-        <h1 className="relative z-0 mb-6 text-center font-medium tracking-tight text-5xl md:text-7xl">
+    <main className="py-32 lg:py-44">
+      <section className="px-2 lg:px-0 relative z-10 flex flex-col items-start lg:items-center justify-start lg:justify-center text-left lg:text-center gap-y-4">
+        <h1 className="relative z-0 mb-0 lg:mb-6 text-left md:text-center font-medium tracking-tight rservicehero text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
           <span className="py-1.5 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
             Finally You Can
             <br />
@@ -115,10 +115,10 @@ function RMerch() {
         </Link>
       </section>
 
-      <section className="pt-12 lg:pt-16 pb-36">
+      <section className="px-2 lg:px-0 pt-6 lg:pt-16 pb-0 lg:pb-32">
         <div className="">
           <div className="mb-8 flex flex-col lg:flex-row items-center justify-between gap-4">
-            <p className="text-md w-[350px] text-white leading-relaxed">
+            <p className="text-sm md:text-base w-full md:min-w-1/2 md:w-[350px] text-white/80 mt-0 ">
               Enhance your branding with RestoMerch’s personalized products.
               From stationery to clothing, we provide custom merchandise
               solutions that help promote and amplify your brand visibility.

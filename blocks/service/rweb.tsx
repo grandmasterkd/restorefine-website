@@ -81,7 +81,7 @@ function RWeb() {
         description="we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand’s digital presence to life. "
       />
 
-      <div className="absolute z-0 top-0 lg:top-0 flex flex-col h-full items-center justify-center opacity-80">
+      <div className="px-4 lg:px-0 absolute z-0 left-0 bottom-32 lg:top-0 flex flex-col h-full lg:items-center items-baseline justify-end lg:justify-center opacity-100 lg:opacity-80">
         <Image
           src={mesh}
           alt="mesh"
