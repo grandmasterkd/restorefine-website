@@ -5,7 +5,7 @@ import { Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 const footerLinks = {
   Socials: [
     { name: "Instagram", href: "https://www.instagram.com/restorefine/" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/acharya-rohit/" },
+    { name: "LinkedIn", href: "https://uk.linkedin.com/company/restorefine" },
     // { name: "Media", href: "/services/restomedia" },
     // { name: "Print", href: "/services/restoprint" },
     // { name: "POS", href: "" },
@@ -45,7 +45,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/acharya-rohit/",
+    href: "https://uk.linkedin.com/company/restorefine",
   },
   // { name: "YouTube", icon: Youtube, href: "https://youtube.com" },
 ];
@@ -103,6 +103,11 @@ export function Footer() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
+                        target={
+                          link.name === "Instagram" || link.name === "LinkedIn"
+                            ? "_blank"
+                            : "_self"
+                        }
                         className="text-white/60 hover:text-white transition-colors"
                       >
                         {link.name}

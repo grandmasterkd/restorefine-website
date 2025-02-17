@@ -65,8 +65,8 @@ export function ContactSection() {
             Get In Touch
           </span>
         </h2>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-          <div className="space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          <div className="order-last lg:order-first space-y-12 mt-12 lg:mt-0">
             <div className="space-y-4">
               <h3 className="text-2xl font-medium text-white">
                 Enterprise Enquiries
@@ -103,7 +103,10 @@ export function ContactSection() {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-8 order-first lg:order-last"
+            >
               <div className="space-y-6">
                 <div>
                   <label
