@@ -1,6 +1,3 @@
-import React from "react";
-import ball from "@/public/rbrandingheroball.svg";
-import baloon from "@/public/rbrandingherobaloon.svg";
 import Image from "next/image";
 import RestoServicesHero from "./resto-services/resto-hero";
 import { RestoOverview } from "./resto-services/resto-overview";
@@ -14,6 +11,12 @@ import globe from "@/public/services/branding/globe.png";
 import pulse from "@/public/services/branding/iterationschart.svg";
 import avatar from "@/public/services/branding/commsavatar.svg";
 import commstext from "@/public/services/branding/commstext.svg";
+import paper from "@/public/services/print/paper.svg";
+import pin from "@/public/services/print/roller.svg";
+import menu from "@/public/services/print/openbook.svg";
+import pack from "@/public/services/print/foodpack.svg";
+import boxes from "@/public/services/print/stackedboxes.svg";
+
 const restoExpectationProps = {
   title: "And These Inspiring Benefits Await You",
   subtitle: " To turn your ideas into impactful solutions",
@@ -68,18 +71,48 @@ const benefitsContent = {
   },
 };
 
+const mobileMarqueeImages = [paper, pin, menu, pack, boxes];
+
 function RPrint() {
   return (
     <main className="">
       <RestoServicesHero
         titletop="Creating Long-Lasting"
         titlebottom="Print Impressions"
-        description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand’s excellence. "
+        description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand's excellence. "
       />
 
-      <div className="absolute z-0 left-0 right-0 top-10 lg:top-28 min-w-full mx-auto min-h-screen flex flex-col items-center justify-center">
+      {/* Mobile marquee underneath hero text */}
+      <div className="absolute bottom-32 flex lg:hidden overflow-hidden whitespace-nowrap mt-4 mr-4">
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          {mobileMarqueeImages.map((src, index) => (
+            <Image
+              key={index}
+              src={src || "/placeholder.svg"}
+              alt={`Print service icon ${index + 1}`}
+              width={180}
+              height={850}
+              className="inline-block px-3"
+            />
+          ))}
+        </div>
+        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+          {mobileMarqueeImages.map((src, index) => (
+            <Image
+              key={index + mobileMarqueeImages.length}
+              src={src || "/placeholder.svg"}
+              alt={`Print service icon ${index + 1}`}
+              width={180}
+              height={180}
+              className="inline-block px-3"
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="absolute z-0 left-0 right-0 top-10 lg:top-28 min-w-full mx-auto min-h-screen hidden lg:flex flex-col items-center justify-center">
         <Image
-          src={printsketch}
+          src={printsketch || "/placeholder.svg"}
           alt="resto print sketch"
           fill
           className="h-full object-none animate-pulse"
@@ -90,10 +123,11 @@ function RPrint() {
         <RestoBenefits {...benefitsContent} />
         <RestoExpectation {...restoExpectationProps} />
 
+        {/* Signature marquee at the bottom for both desktop and mobile */}
         <section className="absolute inset-x-0 flex w-full overflow-x-hidden bg-transparent py-0 gap-x-4">
           <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
             <Image
-              src={signature}
+              src={signature || "/placeholder.svg"}
               alt="signature"
               layout="responsive"
               width={500}
@@ -103,7 +137,7 @@ function RPrint() {
           </div>
           <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
             <Image
-              src={signature}
+              src={signature || "/placeholder.svg"}
               alt="signature"
               layout="responsive"
               width={500}
