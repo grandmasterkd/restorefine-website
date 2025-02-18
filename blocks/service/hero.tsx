@@ -30,7 +30,7 @@ function ServicesHero() {
           </Link>
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
+          <div className="w-full max-w-sm lg:max-w-lg">
             <Image
               src={hollow || "/placeholder.svg"}
               alt="Services Hero Graphic"
