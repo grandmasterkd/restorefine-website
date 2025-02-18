@@ -85,7 +85,7 @@ function RPrint() {
         />
 
         {/* Mobile marquee underneath hero text */}
-        <div className="absolute bottom-16 lg:hidden flex gap-x-4 overflow-hidden whitespace-nowrap">
+        <div className="absolute bottom-12 lg:hidden flex gap-x-4 overflow-hidden whitespace-nowrap">
           <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
             {mobileMarqueeImages.map((src, index) => (
               <Image
