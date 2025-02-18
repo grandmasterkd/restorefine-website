@@ -81,7 +81,7 @@ function RPrint() {
           titletop="Creating Long-Lasting"
           titlebottom="Print Impressions"
           description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand's excellence. "
-          heroClass="lg:mb-0 mb-4"
+          heroClass="lg:mb-0 mb-8"
         />
 
         {/* Mobile marquee underneath hero text */}
@@ -121,7 +121,7 @@ function RPrint() {
           className="h-full object-none animate-pulse"
         />
       </div>
-      <section className="pt-16 lg:pt-32">
+      <section className="pt-8 lg:pt-32">
         <RestoOverview {...rPrintServices} />
         <RestoBenefits {...benefitsContent} />
         <RestoExpectation {...restoExpectationProps} />
