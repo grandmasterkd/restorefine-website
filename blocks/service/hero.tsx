@@ -8,7 +8,7 @@ function ServicesHero() {
     <main className="min-h-screen overflow-hidden pt-12">
       <section className="px-0 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
         <div className="w-full lg:w-1/2 text-left flex flex-col items-start gap-y-4 mb-8 lg:mb-0">
-          <h1 className="rservicehero text-4xl sm:text-5xl lg:text-6xl tracking-tight font-medium ">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
             <span className="inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent">
               Transforming
               <br />
@@ -30,7 +30,7 @@ function ServicesHero() {
           </Link>
         </div>
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-          <div className="w-full max-w-md lg:max-w-lg">
+          <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
             <Image
               src={hollow || "/placeholder.svg"}
               alt="Services Hero Graphic"
