@@ -76,37 +76,40 @@ const mobileMarqueeImages = [paper, pin, menu, pack, boxes];
 function RPrint() {
   return (
     <main className="">
-      <RestoServicesHero
-        titletop="Creating Long-Lasting"
-        titlebottom="Print Impressions"
-        description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand's excellence. "
-      />
+      <div className="flex flex-col lg:block">
+        <RestoServicesHero
+          titletop="Creating Long-Lasting"
+          titlebottom="Print Impressions"
+          description="Expert guidance and execution on all your printing needs. From menus to promotional materials, we ensure high-quality print outputs that truly represent your brand's excellence. "
+          heroClass="lg:mb-0 mb-4"
+        />
 
-      {/* Mobile marquee underneath hero text */}
-      <div className="absolute bottom-32 flex lg:hidden overflow-hidden whitespace-nowrap mt-4 mr-4">
-        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
-          {mobileMarqueeImages.map((src, index) => (
-            <Image
-              key={index}
-              src={src || "/placeholder.svg"}
-              alt={`Print service icon ${index + 1}`}
-              width={180}
-              height={850}
-              className="inline-block px-3"
-            />
-          ))}
-        </div>
-        <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
-          {mobileMarqueeImages.map((src, index) => (
-            <Image
-              key={index + mobileMarqueeImages.length}
-              src={src || "/placeholder.svg"}
-              alt={`Print service icon ${index + 1}`}
-              width={180}
-              height={180}
-              className="inline-block px-3"
-            />
-          ))}
+        {/* Mobile marquee underneath hero text */}
+        <div className="absolute bottom-16 lg:hidden flex gap-x-4 overflow-hidden whitespace-nowrap">
+          <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+            {mobileMarqueeImages.map((src, index) => (
+              <Image
+                key={index}
+                src={src || "/placeholder.svg"}
+                alt={`Print service icon ${index + 1}`}
+                width={120}
+                height={120}
+                className="inline-block mx-3"
+              />
+            ))}
+          </div>
+          <div className="animate-marquee-infinite flex min-w-full shrink-0 items-center justify-around gap-0">
+            {mobileMarqueeImages.map((src, index) => (
+              <Image
+                key={index + mobileMarqueeImages.length}
+                src={src || "/placeholder.svg"}
+                alt={`Print service icon ${index + 1}`}
+                width={120}
+                height={120}
+                className="inline-block mx-3"
+              />
+            ))}
+          </div>
         </div>
       </div>
 
