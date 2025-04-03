@@ -130,7 +130,7 @@ export function RestoExpectation({
                 alt="Globe"
                 width={80}
                 height={80}
-                className="rounded-full w-16 h-16 sm:w-20 sm:h-20 coil"
+                className="rounded-full w-16 h-16 sm:w-20 sm:h-20"
               />
               <div className="text-[#ffffff]">
                 <h3 className="text-xl sm:text-2xl font-semibold">

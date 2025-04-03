@@ -39,7 +39,7 @@ export function CreativePotential() {
             <div className="responsive-height rounded-[24px] bg-[#131313] relative overflow-hidden">
               <div className="absolute top-7 left-7 space-y-2">
                 <p className="text-md md:text-xs font-medium text-white/50">
-                  Comfort
+                  Build
                 </p>
                 <h2 className="max-w-[70%] text-lg md:text-md font-medium block text-white/80">
                   All your digital needs in-one-house

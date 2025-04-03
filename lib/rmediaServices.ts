@@ -1,5 +1,5 @@
 export const rMediaServices = {
-  title: "Dynamic Social Media and Content Servicese",
+  title: "Dynamic Social Media and Content Services",
   subtitle:
     "Expertly managing your social media with high-quality content, we enhance visibility and engagement for your brand.",
   features: [

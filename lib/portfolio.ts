@@ -1,14 +1,15 @@
-import quiknest_thumb from "@/public/work/quiknest/thumbnail.jpg";
-import masala_thumb from "@/public/work/masala/thumbnail.jpg";
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image"
+import quiknest_thumb from "@/public/work/quiknest/thumbnail.jpg"
+import masala_thumb from "@/public/work/masala/thumbnail.jpg"
 
 export interface PortfolioItem {
-  id: string;
-  title: string;
-  description: string;
-  thumbnail: string | StaticImageData;
-  images: string[];
-  date: string;
+  id: string
+  title: string
+  description: string
+  thumbnail: string | StaticImageData
+  images: string[]
+  date: string
+  category: string
 }
 
 export const portfolioItems: PortfolioItem[] = [
@@ -31,6 +32,7 @@ export const portfolioItems: PortfolioItem[] = [
       "/work/quiknest/docs/Artboard 10@2x-100.jpg?height=900&width=1600",
     ],
     date: "2024-01-28",
+    category: "Branding",
   },
   {
     id: "masala-moves-by-luna-shree",
@@ -51,6 +53,7 @@ export const portfolioItems: PortfolioItem[] = [
       "/work/masala/docs/Artboard 9@2x-100.jpg?height=900&width=1600",
     ],
     date: "2024-01-15",
+    category: "Branding",
   },
   // {
   //   id: "digital-campaign",
@@ -63,6 +66,7 @@ export const portfolioItems: PortfolioItem[] = [
   //     "/placeholder.svg?height=900&width=1600",
   //   ],
   //   date: "2023-12-20",
+  //   category: "Media",
   // },
   // {
   //   id: "mobile-app",
@@ -75,6 +79,7 @@ export const portfolioItems: PortfolioItem[] = [
   //     "/placeholder.svg?height=900&width=1600",
   //   ],
   //   date: "2023-12-10",
+  //   category: "Web & Mobile",
   // },
   // {
   //   id: "website-redesign",
@@ -87,5 +92,7 @@ export const portfolioItems: PortfolioItem[] = [
   //     "/placeholder.svg?height=900&width=1600",
   //   ],
   //   date: "2023-11-30",
+  //   category: "Web & Mobile",
   // },
-];
+]
+
