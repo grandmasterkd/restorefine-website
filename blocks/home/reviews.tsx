@@ -11,7 +11,7 @@ const reviews = [
     position: "Himalayan Dine In",
     review:
       "The print quality was amazing, and I couldn't believe how affordable it was compared to my last supplier. Great service and fast delivery!",
-    image: "/placeholder.svg",
+    image: "/reviewuser.svg",
     companyLogo: "/himalayanlogo.svg",
   },
   {
@@ -20,8 +20,8 @@ const reviews = [
     position: "Favourite Spot",
     review:
       "RestoRefine Studios gave our café a fresh look with a great logo redesign and incredible food photos. The photos really improved our social media presence, which has helped bring in more customers. Highly recommend them for creative and professional work in Glasgow!",
-    image: "/placeholder.svg",
-    companyLogo: "/placeholder.svg",
+    image: "/reviewuser.svg",
+    companyLogo: "/favouritespot_logo.png",
   },
   // Add more reviews as needed
 ];
@@ -108,16 +108,17 @@ export function Reviews() {
                         src={review.companyLogo || ""}
                         alt={""}
                         fill
-                        className="rounded-full object-cover w-full "
+                        className="rounded-full object-cover w-full"
                       />
                     </div>
                     {/* Company Logo - positioned to overlap */}
-                    <div className="absolute inset-0 translate-x-4 rounded-full bg-[#2b2b2b] flex items-center justify-center">
+                    <div className="absolute inset-0 translate-x-4 rounded-full bg-white flex items-center justify-center">
                       <Image
                         src={review.image || ""}
                         alt={""}
-                        fill
-                        className="rounded-full object-cover w-full "
+                       width={25}
+                       height={25}
+                        className="object-contain"
                       />
                     </div>
                   </div>

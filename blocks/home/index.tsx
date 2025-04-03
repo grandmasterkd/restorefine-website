@@ -3,7 +3,7 @@ import Hero from "./hero";
 import { BentoGrid } from "./properties";
 import { LogoMarquee } from "./marquee";
 import { CreativePotential } from "./potential";
-import { Insights } from "./insights";
+// import { Insights } from "./insights";
 import { Reviews } from "./reviews";
 import Cta from "@/components/cta";
 
@@ -14,7 +14,7 @@ function Resto() {
       <LogoMarquee />
       <BentoGrid />
       <CreativePotential />
-      <Insights />
+      {/* <Insights /> */}
       <Reviews />
       <Cta />
     </main>

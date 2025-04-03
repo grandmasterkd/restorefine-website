@@ -1,4 +1,4 @@
-import silverRing from "@/public/metallic-abstract-silver-shape.png";
+// import silverRing from "@/public/metallic-abstract-silver-shape.png";
 import Image from "next/image";
 import nfc from "@/public/resto-nfc-des.svg";
 import dashboard from "@/public/Macbook_Air_Mockup_mod.png";
@@ -11,7 +11,7 @@ export function BentoGrid() {
     <section className="">
       {/* Text Content */}
       <div className="flex flex-col items-center text-center mb-8 md:mb-16 gap-y-3 md:gap-y-4">
-        <div className="">
+        {/* <div className="">
           <Image
             src={silverRing}
             alt="silver ring"
@@ -20,7 +20,7 @@ export function BentoGrid() {
             sizes="(max-width: 900px) 50px"
             className="hidden md:block"
           />
-        </div>
+        </div> */}
 
         <h2 className="max-w-[100%] md:max-w-[50%] text-2xl sm:text-3xl font-semibold text-white md:text-4xl">
           Not Reinventing The Wheel, Just Giving You Better
