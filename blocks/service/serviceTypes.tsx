@@ -43,31 +43,56 @@ const serviceDetails = [
     number: "01",
     title: "Web Design",
     description:
-      "Crafting visually stunning and user-friendly websites tailored to your unique needs.",
-    services: ["Product Design"],
+      "We design clean, modern, and highly functional websites that blend aesthetics with usability. Whether you're launching a new product or revamping your digital presence, we ensure every detail is crafted to match your brand's tone, vision, and audience expectations.",
+    services: [
+      "UX/UI Research & Wireframing",
+      "Responsive Web Design",
+      "Conversion-Focused Landing Pages",
+      "Design System Implementation",
+      "Prototyping with Figma",
+    ],
   },
   {
     number: "02",
     title: "Software Development",
     description:
-      "Innovative software solutions that drive efficiency and growth for your business.",
-    services: ["FrontEnd & Backend Development"],
+      "From concept to deployment, we build secure, scalable, and high-performing digital products tailored to your business goals. Our solutions cover everything from intuitive frontends to powerful backend systems, ensuring a seamless user experience across all platforms.",
+    services: [
+      "Full-Stack Development",
+      "API Architecture & Integration",
+      "Content Management Systems",
+      "Custom Web Applications",
+      "Performance Optimization",
+    ],
   },
   {
     number: "03",
     title: "Restaurant Menu",
     description:
-      "Exquisite culinary creations that tantalize your taste buds and elevate your dining experience.",
-    services: ["Menu Structure & Design", "Menu Bulk Print"],
+      "We design and structure menus that not only reflect your restaurant’s unique identity but also guide customer decisions through clear layout and strategic item placement. Our printing solutions ensure consistent quality and durability across all formats.",
+    services: [
+      "Menu Content Structuring",
+      "Visual Layout & Print Design",
+      "Menu Engineering (High-Margin Placement)",
+      "Bulk Printing & Finishing",
+      "Menu Translations & Localization",
+    ],
   },
   {
     number: "04",
     title: "Brand Identity",
     description:
-      "Building cohesive and impactful brand identities that resonate with your audience.",
-    services: ["Graphic Design", "Brand Strategy", "Social Media Management"],
+      "Your brand is more than a logo — it's how the world perceives you. We build compelling brand identities that communicate your mission, establish trust, and leave a lasting impression across all customer touchpoints.",
+    services: [
+      "Logo Design & Typography",
+      "Visual Identity Systems",
+      "Brand Strategy & Positioning",
+      "Social Media Design Kits",
+      "Brand Guidelines Documentation",
+    ],
   },
 ];
+
 
 export default function ServiceTypes() {
   const [currentIndex, setCurrentIndex] = useState(0);
