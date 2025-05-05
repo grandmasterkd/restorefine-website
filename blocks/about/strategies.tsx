@@ -5,27 +5,27 @@ const strategies = [
   {
     title: "Reach Out",
     description:
-      "We engage in a detailed consultation to align with your vision and goals, demonstrating our commitment to understanding and fulfilling your specific needs from the very first interaction.",
+      "We start by listening to you to understand your goals and what you're aiming to achieve. This ensures we are aligned from the very begining, no matter what your project might be",
   },
   {
     title: "Evaluate",
     description:
-      "We conduct an exhaustive analysis of your digital presence and market dynamics, using our expertise to uncover underutilized opportunities and areas needing enhancement. This evaluation is instrumental in paving the way for strategic improvements that drive competitive advantage.",
+      "Next we access your current situation or initial ideas. We identify what you need to succeed, whether its starting something new or improving something existing.",
   },
   {
     title: "Strategize",
     description:
-      "Leveraging our deep industry knowledge and innovative tools, we craft a comprehensive, custom strategy designed to address your unique challenges and maximize your market impact. This strategic plan is your roadmap to digital excellence, ensuring all initiatives are precise and goal oriented.",
+      "With a clear understading of your needs, we craft a tailored plan designed specifically to address your unique challenges. This strategy sets the path for effective action.",
   },
   {
     title: "Transform",
     description:
-      "We meticulously implement the agreed-upon strategies, managing every detail to ensure flawless execution. Whether enhancing your website, creating compelling content, or executing targeted marketing campaigns, our actions are designed to elevate your brand and enhance your market presence dramatically.",
+      "We put our plan into action, focusing on making the necessary changes to achieve your goals. This phase is all about bringing your vision to life with precision and care.",
   },
   {
     title: "Optimize",
     description:
-      "Beyond initial success, we continue to refine and optimize our strategies. By analysing performance data and integrating your feedback, we adapt and evolve our approaches to ensure sustained success and scalability. This continuous optimization cycle guarantees that your business not only meets but exceeds market standards and expectations.",
+      "After implementation we don't just walk away, we continue to refine and adjust our approach based on feedback and results, ensuring that you receive ongoing benefits and support.",
   },
 ];
 
