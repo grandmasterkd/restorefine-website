@@ -1,5 +1,6 @@
-import star from "@/public/restostar.svg";
-import Image from "next/image";
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 
 const strategies = [
   {
@@ -27,46 +28,82 @@ const strategies = [
     description:
       "After implementation we don't just walk away, we continue to refine and adjust our approach based on feedback and results, ensuring that you receive ongoing benefits and support.",
   },
-];
-
-const restoStar = <Image src={star} alt="star" width={50} height={50} />;
+]
 
 export function StrategySection() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return
+
+      const sectionTop = sectionRef.current.getBoundingClientRect().top
+      const windowHeight = window.innerHeight
+      const sectionHeight = sectionRef.current.offsetHeight
+
+      // Calculate which item should be active based on scroll position
+      const itemHeight = sectionHeight / strategies.length
+      const scrollPosition = (windowHeight / 2 - sectionTop) / itemHeight
+
+      const newActiveIndex = Math.min(Math.max(Math.floor(scrollPosition), 0), strategies.length - 1)
+
+      if (newActiveIndex !== activeIndex) {
+        setActiveIndex(newActiveIndex)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll() // Initialize on mount
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [activeIndex])
+
   return (
-    <section className="pt-16">
-      <div className="">
+    <section ref={sectionRef} className="py-16 bg-[#000000] min-h-screen flex items-center">
+      <div className="container mx-auto">
         <div className="mx-auto mb-16">
-          <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">
-            Our Strategy For Work
-          </h2>
-          <p className="text-white/80">Our service is simple as RESTO</p>
+          <h2 className="text-2xl font-medium text-white md:text-2xl lg:text-3xl">Our Strategy For Work</h2>
+          <p className="text-white/80">Our service is simple as <span className="italic font-medium" >RESTO</span></p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6 relative">
-          {/* Grid lines */}
-          <div className="absolute inset-0 grid grid-cols-3 pointer-events-none">
-            <div className="border-r border-white/20" />
-            <div className="border-r border-white/20" />
-          </div>
+        <div className="relative max-w-md mx-auto">
+          {/* Vertical line */}
+          <div className="absolute left-6 top-6 bottom-6 w-px bg-white/20"></div>
 
           {strategies.map((strategy, index) => (
             <div
               key={index}
-              className={`space-y-2 relative ${
-                index >= 3 ? "lg:col-span-2" : ""
-              } ${index === 4 ? "lg:col-start-2" : ""}`}
+              ref={(el) => { itemRefs.current[index] = el }}
+              className={`flex items-start gap-8 py-12 transition-colors duration-300`}
             >
-              {restoStar}
-              <h3 className="text-xl font-medium text-white">
-                {strategy.title}
-              </h3>
-              <p className="pt-2 text-sm text-white/80">
-                {strategy.description}
-              </p>
+              {/* Number circle */}
+              <div className="relative z-10 flex-shrink-0">
+                <div
+                  className={`flex items-center justify-center w-12 h-12 rounded-full border-2 ${
+                    index === activeIndex ? "border-white text-white" : "border-[#999999]/40 text-[#999999]/40"
+                  }`}
+                >
+                  <span className="text-xl font-medium">{index + 1}</span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="space-y-2">
+                <h3 className={`text-xl font-medium ${index === activeIndex ? "text-[red]" : "text-[#999999]"}`}>
+                  {strategy.title}
+                </h3>
+                <p className={`text-sm ${index === activeIndex ? "text-white/80 font-medium" : "text-[#999999]/50"}`}>
+                  {strategy.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
