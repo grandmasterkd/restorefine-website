@@ -1,13 +1,15 @@
 import React from "react";
-import luxevent from "@/public/mediahero.jpg";
+// import luxevent from "@/public/mediahero.jpg";
 import Image from "next/image";
-import mlogo from "@/public/rmedialogo.svg";
+import moneyeye from "@/public/rmediahero.svg";
 import ctabg from "@/public/rmediactabg.jpg";
 import { RestoOverview } from "./resto-services/resto-overview";
 import { rMediaServices } from "@/lib/rmediaServices";
 import signature from "@/public/restomediasignature.svg";
 import bio from "@/public/services/media/restomediabio.jpg";
 import { RestoExpectation } from "./resto-services/resto-expectation";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const restoExpectationProps = {
   title: "And These Inspiring Benefits Await You",
@@ -49,8 +51,8 @@ const restoExpectationProps = {
 function RMedia() {
   return (
     <main className="">
-      <section className="w-full min-h-screen flex items-center justify-center">
-        <div className="w-full h-full object-cover absolute top-0 left-0 z-0">
+      
+        {/* <div className="w-full h-full object-cover absolute top-0 left-0 z-0">
           <Image
             src={luxevent}
             alt="luxevent"
@@ -67,8 +69,49 @@ function RMedia() {
               className=""
             />
           </span>
+        </div> */}
+
+        
+
+         <section className="relative z-0 min-h-screen flex flex-col md:flex-row items-start md:items-center justify-center md:justify-between text-left gap-y-16 md:gap-y-4">
+          <div className="flex flex-col items-start gap-y-5" >
+  <h1 className="relative z-0 text-left font-medium tracking-tight rservicehero text-4xl md:text-7xl">
+          <span className="p-1 inline-block bg-gradient-to-b from-white to-[#6D6C6D] bg-clip-text text-transparent tracking-tight">
+           Shot, Shared,
+            <br />
+           & Selling Out
+          </span>
+        </h1>
+        <p className="md:max-w-lg max-w-full" >
+          From perfectly lit plates to behind-the-scenes reels, we turn your business into the content your audience didn&apos;t know they needed. This is digital media, tailored for visibility and built for connection.
+        </p>
+
+
+  <Link
+        href="/enquire-now"
+        className="flex items-center gap-1 mt-1 hover:opacity-90"
+      >
+        <div className="w-auto bg-white text-black text-sm rounded-[32px] px-6 py-3">
+          Lets Craft Something
+        </div>
+        <ArrowRight className="flex items-center justify-center bg-[red] text-white rounded-full p-2.5 size-10" />
+      </Link>
+
+       
+          </div>
+      
+
+        <div className="w-auto md:w-[500px]">
+          <Image
+            src={moneyeye || "/placeholder.svg"}
+            alt="Money Eye"
+            width={450}
+            height={450}
+            className="w-full h-auto"
+          />
         </div>
       </section>
+  
 
       <section className="py-24 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div className="relative h-[350px] bg-[#d9d9d9] rounded-[24px]">

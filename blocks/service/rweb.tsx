@@ -78,7 +78,7 @@ function RWeb() {
       <RestoServicesHero
         titletop="Crafting Web"
         titlebottom="Experiences That Connect"
-        description="we create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand’s digital presence to life. "
+        description="We create immersive journeys that captivate audiences and drive engagement. With strategy-led design and seamless functionality, RestoWeb brings your brand’s digital presence to life. "
       />
 
       <div className="px-4 lg:px-0 absolute z-0 bottom-32 lg:top-0 flex flex-col h-full lg:items-center items-baseline justify-end lg:justify-center opacity-100 lg:opacity-80">
