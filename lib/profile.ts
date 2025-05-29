@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image";
-import rohit from "@/public/staffportrait_rohit.jpg";
+import rohit from "@/public/staffpotrait_rohit_ii.jpg";
 import harpreet from "@/public/staffportrait_hapreet.jpg";
 
 export interface TeamMember {

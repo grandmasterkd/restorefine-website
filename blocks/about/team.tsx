@@ -65,7 +65,7 @@ export function Team() {
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="absolute z-0 right-0 w-full object-cover grayscale scale-100 hover:scale-105 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer rounded-[24px]"
+                      className="absolute z-0 right-0 w-full object-cover object-top grayscale scale-100 hover:scale-105 hover:grayscale-0 duration-700 ease-in-out transition-all cursor-pointer rounded-[24px]"
                     />
                   </div>
                   <div className="flex items-center justify-between">
